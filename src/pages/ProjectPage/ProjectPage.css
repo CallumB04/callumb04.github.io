@@ -143,6 +143,9 @@
     #project-page-section-divider {
         display: none;
     }
+    .project-page-image {
+        min-width: 85vw;
+    }
 }
 
 
