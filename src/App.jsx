@@ -17,6 +17,24 @@ function App() {
   // allTechnologies - everything used to make project, on project pages
   // images - array of image files for project
   const projects = {
+    "playrates": {
+      title: "PlayRates",
+	  description: "A video game tracking website",
+	  longAbout: `
+		PlayRates is a Video Game tracking website, which I am building using React 
+		and Tailwind CSS. I am using this project to learn new technologies, and I 
+		have potential future plans to scale the website into a fully functional 
+		platform for public use! The site will allow users to add their games to Played,
+		Playing, Backlog, or Wishlist; rate their games; and add extra information such
+		as hours played, etc.
+	  `,
+	  githubRepo: "https://github.com/CallumB04/PlayRates",
+	  liveWebsite: "https://callumb04.github.io/PlayRates",
+	  mainTechnologies: ["React", "Tailwind CSS", "Typescript"],
+	  allTechnologies: ["React", "Tailwind CSS", "Typescript", "Javascript", "HTML", "Vite",
+						"Node.js", "APIs", "JSON"],
+	  images: ["homepage2.png", "phonehomepage.jpg", "homepage.png"]
+    },
     "portfolio": {
       title: "Portfolio Website",
       description: "An up-to-date portfolio showcasing my skills and projects",
