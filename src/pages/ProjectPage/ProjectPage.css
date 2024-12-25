@@ -118,16 +118,15 @@
     width: 100%;
     margin: 0 auto;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 .project-page-images > a {
-    max-width: 26%;
-    min-width: calc(380px - 3vw);
+    max-width: 22vw;
 }
 
 .project-page-image {
-    max-width: 26%;
-    min-width: calc(380px - 3vw);
+    max-width: 22vw;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
 }
