@@ -11,9 +11,11 @@ You can view the live version of the Portfolio [here](https://callumb04.github.i
 ## Installation and Setup
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) installed on your machine. To access `npm` commands.
+
+-   [Node.js](https://nodejs.org/) installed on your machine. To access `npm` commands.
 
 ### Setup
+
 ```bash
 ## Clone the repository
 git clone https://github.com/CallumB04/callumb04.github.io.git
@@ -31,5 +33,5 @@ npm run dev
 > The application will open in your default browser at http://localhost:5173
 
 ## Future plans
-- Add a unique page for each Project. Which will display images, technologies used, and information about the Project.
-- Possible implementation of a blog section to showcase my learning journey.
+
+-   Possible implementation of a blog section to showcase my learning journey.
