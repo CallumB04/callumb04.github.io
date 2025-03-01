@@ -16,21 +16,6 @@ function App() {
     // allTechnologies - everything used to make project, on project pages
     // images - array of image files for project
     const projects = {
-        sjbsafety: {
-            title: "sjbsafety.co.uk",
-            description:
-                "A commercial website built for a scaffolding safety business",
-            longAbout: `
-        I developed a commercial website for a scaffolding safety business based in 
-        London and surrounding areas. This was my second freelance web development client, 
-        and the project gave me valuable experience in creating a clean, professional, and 
-        user-friendly website tailored to meet the client's business needs.`,
-            githubRepo: "https://github.com/CallumB04/sjbsafety.co.uk",
-            liveWebsite: "https://sjbsafety.co.uk",
-            mainTechnologies: ["Javascript", "Tailwind CSS", "HTML"],
-            allTechnologies: ["Javascript", "Tailwind CSS", "HTML"],
-            images: ["homepage.png", "services.png"],
-        },
         playrates: {
             title: "PlayRates",
             description: "A video game tracking website",
@@ -53,10 +38,30 @@ function App() {
                 "HTML",
                 "Vite",
                 "Node.js",
+                "Express.js",
                 "APIs",
-                "JSON",
             ],
-            images: ["homepage2.png", "phonehomepage.jpg", "homepage.png"],
+            images: [
+                "homepage.png",
+                "login.png",
+                "profile.png",
+                "remove-friend.png",
+            ],
+        },
+        sjbsafety: {
+            title: "sjbsafety.co.uk",
+            description:
+                "A commercial website built for a scaffolding safety business",
+            longAbout: `
+        I developed a commercial website for a scaffolding safety business based in 
+        London and surrounding areas. This was my second freelance web development client, 
+        and the project gave me valuable experience in creating a clean, professional, and 
+        user-friendly website tailored to meet the client's business needs.`,
+            githubRepo: "https://github.com/CallumB04/sjbsafety.co.uk",
+            liveWebsite: "https://sjbsafety.co.uk",
+            mainTechnologies: ["Javascript", "Tailwind CSS", "HTML"],
+            allTechnologies: ["Javascript", "Tailwind CSS", "HTML"],
+            images: ["homepage.png", "services.png"],
         },
         portfolio: {
             title: "Portfolio Website",
