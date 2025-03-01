@@ -18,6 +18,7 @@ const AboutSection = ({ sectionRef }) => {
         ["react", "react", "react"],
         ["tailwind", "tailwind css", "tailwindcss"],
         ["sfml", "SFML.svg"],
+        ["expressjs", "express.js", "express"],
     ];
     const skillsOther = [
         ["git", "git", "git"],
@@ -133,7 +134,7 @@ const AboutSection = ({ sectionRef }) => {
                             className="about-section-skill"
                             id={`about-skill-${skill[0]}`}
                         >
-                            <i className={`devicon-${skill[2]}-plain`}></i>
+                            <i className={`devicon-${skill[2]}-original`}></i>
                             <style>
                                 {`
                                 #about-skill-${skill[0]}::after {
