@@ -16,7 +16,7 @@
 
 #home-section-description {
     font-size: calc(1rem + 0.4vw);
-    width: 55ch;
+    width: 45ch;
     max-width: 80vw;
     margin-top: calc(10px + 1.5vw);
     line-height: calc(20px + 0.8vw);
@@ -31,7 +31,7 @@
     background-color: #dcdcdc;
     padding: 15px 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     display: flex;
     justify-content: space-between;
