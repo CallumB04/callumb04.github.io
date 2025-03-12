@@ -1,10 +1,9 @@
-import './ProjectPage.css';
+import "./ProjectPage.css";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from './Navbar/Navbar';
+import Navbar from "./Navbar/Navbar";
 
 const ProjectPage = ({ projects }) => {
-
     const { projectName } = useParams(); // get projectName from URL
     const project = projects[projectName]; // accessing project data from projects object
 
@@ -12,65 +11,92 @@ const ProjectPage = ({ projects }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-  
+
     // Displaying if user attemps to access non-existing project
     if (!project) {
         return (
-        <>
-            <Navbar />
-            <h2 className='project-not-found'>Project not found</h2>
-        </>
+            <>
+                <Navbar />
+                <h2 className="project-not-found">Project not found</h2>
+            </>
         );
     }
-  
+
     return (
         <>
             <Navbar />
             <main className="main project-page">
                 <section>
-                    <h1 className='project-page-title'>{project.title}</h1>
-                    
-                    <div className='project-page-links'>
-                        <a href={project.githubRepo} target='_blank' className='fab fa-github'></a>
-                        { /* displaying link to demo website if exists*/ }
-                        { project.liveWebsite ? <a href={project.liveWebsite} target='_blank' className='fa fa-link'></a> : "" }
+                    <h1 className="project-page-title">{project.title}</h1>
+
+                    <div className="project-page-links">
+                        <a
+                            href={project.githubRepo}
+                            target="_blank"
+                            className="fab fa-github"
+                        ></a>
+                        {/* displaying link to demo website if exists*/}
+                        {project.liveWebsite ? (
+                            <a
+                                href={project.liveWebsite}
+                                target="_blank"
+                                className="fa fa-link"
+                            ></a>
+                        ) : (
+                            ""
+                        )}
                     </div>
 
-                    <h2 className='project-page-subtitle'>Technologies</h2>
-                    <div className='project-page-technologies'>
-                        { project.allTechnologies.map((item) => {
-                            return <p key={item} className='project-page-technology'>{item}</p>
-                        }) }
+                    <h2 className="project-page-subtitle">Technologies</h2>
+                    <div className="project-page-technologies">
+                        {project.allTechnologies.map((item) => {
+                            return (
+                                <p
+                                    key={item}
+                                    className="project-page-technology"
+                                >
+                                    {item}
+                                </p>
+                            );
+                        })}
                     </div>
 
-                    <h2 className='project-page-subtitle'>About the Project</h2>
-                    { /* Currently shows description, add long about property to each project in object */ }
-                    <p className='project-page-about'>
-                        {project.longAbout}
-                    </p>
+                    <h2 className="project-page-subtitle">About the Project</h2>
+                    {/* Currently shows description, add long about property to each project in object */}
+                    <p className="project-page-about">{project.longAbout}</p>
                 </section>
 
-                <div id='project-page-section-divider'></div>
-                
+                <div id="project-page-section-divider"></div>
+
                 <section>
-                    <h2 className='project-page-subtitle' id='project-images-subtitle'>Project Images</h2>
-                    <div className='project-page-images'>
-                        { project.images.map((image) => {
+                    <h2
+                        className="project-page-subtitle"
+                        id="project-images-subtitle"
+                    >
+                        Project Images
+                    </h2>
+                    <div className="project-page-images">
+                        {project.images.map((image) => {
                             let imagePath = `/assets/project-images/${projectName}/${image}`;
                             return (
-                                <a href={imagePath} target='_blank'>
-                                    <img 
-                                        key={image} 
-                                        src={`/assets/project-images/${projectName}/${image}`} 
-                                        className='project-page-image' 
+                                <a
+                                    href={imagePath}
+                                    target="_blank"
+                                    className="project-page-image"
+                                    key={imagePath}
+                                >
+                                    <img
+                                        key={image}
+                                        src={`/assets/project-images/${projectName}/${image}`}
                                     />
                                 </a>
-                        )}) }
+                            );
+                        })}
                     </div>
                 </section>
             </main>
         </>
     );
-  };
+};
 
 export default ProjectPage;
