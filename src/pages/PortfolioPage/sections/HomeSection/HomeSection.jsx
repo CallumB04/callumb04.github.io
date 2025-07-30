@@ -29,13 +29,16 @@ const HomeSection = ({ sectionRefs }) => {
                     className="section-description"
                     id="home-section-description"
                 >
-                    A self-taught <strong>Software Developer</strong>, currently
-                    pursuing a Level 4 Apprenticeship!
+                    A <strong>Full-Stack Web Developer</strong>, currently
+                    pursuing a Level 4 Software Development Apprenticeship!
                 </p>
 
                 <div id="home-section-socials-wrapper">
                     <a href="https://github.com/CallumB04" target="_blank">
                         <i className="home-section-socials fab fa-github"></i>
+                    </a>
+                    <a href="https://calbgyn.itch.io" target="_blank">
+                        <i className="home-section-socials fab fa-itch-io"></i>
                     </a>
                     <a
                         href="https://www.linkedin.com/in/callum-burgoyne-1b411a324"
