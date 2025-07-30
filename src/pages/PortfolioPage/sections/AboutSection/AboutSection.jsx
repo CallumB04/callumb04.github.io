@@ -63,14 +63,12 @@ const AboutSection = ({ sectionRef }) => {
         >
             <h2 className="section-title about-section-title">About me</h2>
             <p className="section-description" id="about-section-description">
-                Hi, I'm Callum, a <strong>20 year old</strong> self-taught
-                Software Developer from <strong>Kent, United Kingdom</strong>.
-                I'm passionate about creating efficient software, with
-                experience in <strong>Full-Stack Web Development</strong>,{" "}
-                <strong>Game Development</strong>, and more. I'm currently
-                pursuing a <strong>Level 4 Apprenticeship</strong> in Software
-                Development, and eager to continue developing my knowledge and
-                skills within the industry!
+                Hi, I'm Callum/Cal, a 21 year old self-taught Software Developer
+                from Kent, United Kingdom. I'm currently pursuing a Level 4
+                Apprenticeship in Full-Stack Web Development, where I work with
+                a variety of different technologies. Outside of work, I'm also
+                extremely interested in Game Development and I'm currently
+                teaching myself how to use the Godot Engine.
             </p>
 
             <a
