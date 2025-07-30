@@ -26,6 +26,7 @@ const AboutSection = ({ sectionRef }) => {
         ["linux", "linux", "linux"],
         ["docker", "docker", "docker"],
         ["sass", "sass", "sass"],
+        ["godot", "godot", "godot"],
     ];
 
     // references to download cv button elements, for animation
