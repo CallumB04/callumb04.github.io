@@ -15,7 +15,31 @@ function App() {
     // mainTechnologies - 2-3 main technologies of project, on projects section of portfolio
     // allTechnologies - everything used to make project, on project pages
     // images - array of image files for project
+
+    // ** PROJECT TEMPLATE **
+    // name: {
+    //         title: "",
+    //         description:
+    //             "",
+    //         longAbout: ``,
+    //         githubRepo: "https://github.com/CallumB04/",
+    //         liveWebsite: "",
+    //         mainTechnologies: [],
+    //         allTechnologies: [],
+    //         images: [],
+    //     },
+
     const projects = {
+        "tree-clicker": {
+            title: "Tree Clicker",
+            description: "A 2D clicker game about growing trees",
+            longAbout: `Tree Clicker was my first project using the Godot Engine, where I experimented with many different features to learn the engine and understand how to use the GDScript language. I wanted to build a small game and publish it on itch.io, to prevent myself from trying to build something too big right away, and give myself the opportunity to learn and improve the game based on feedback. I plan to continue building a few more smaller games to experiment with different features the engine has to offer, until I feel comfortable enough to work on a large-scale project!`,
+            githubRepo: "https://github.com/CallumB04/tree-clicker",
+            liveWebsite: "https://calbgyn.itch.io/tree-clicker",
+            mainTechnologies: ["GDScript", "Godot"],
+            allTechnologies: ["GDScript", "Godot"],
+            images: ["gameplay.png", "logo.png"],
+        },
         playrates: {
             title: "PlayRates",
             description: "A video game tracking website",
