@@ -29,8 +29,8 @@ const HomeSection = ({ sectionRefs }) => {
                     className="section-description"
                     id="home-section-description"
                 >
-                    A self-taught <strong>Software Developer</strong>, currently
-                    pursuing a Level 4 Apprenticeship!
+                    A <strong>Full-Stack Web Developer</strong>, currently
+                    pursuing a Level 4 Software Development Apprenticeship!
                 </p>
 
                 <div id="home-section-socials-wrapper">
