@@ -25,8 +25,9 @@ const ProjectPage = ({ projects }) => {
     return (
         <>
             <Navbar />
-            <main className="main">
-                <div className="project-page">
+            <main className="main project-page">
+                <aside className="project-page-sidebar">Hello</aside>
+                <div className="project-content">
                     <h1 className="project-page-title">{project.title}</h1>
 
                     <div className="project-page-links">
