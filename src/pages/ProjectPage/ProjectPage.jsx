@@ -25,8 +25,8 @@ const ProjectPage = ({ projects }) => {
     return (
         <>
             <Navbar />
-            <main className="main project-page">
-                <section>
+            <main className="main">
+                <div className="project-page">
                     <h1 className="project-page-title">{project.title}</h1>
 
                     <div className="project-page-links">
@@ -64,11 +64,7 @@ const ProjectPage = ({ projects }) => {
                     <h2 className="project-page-subtitle">About the Project</h2>
                     {/* Currently shows description, add long about property to each project in object */}
                     <p className="project-page-about">{project.longAbout}</p>
-                </section>
 
-                <div id="project-page-section-divider"></div>
-
-                <section>
                     <h2
                         className="project-page-subtitle"
                         id="project-images-subtitle"
@@ -93,7 +89,7 @@ const ProjectPage = ({ projects }) => {
                             );
                         })}
                     </div>
-                </section>
+                </div>
             </main>
         </>
     );
