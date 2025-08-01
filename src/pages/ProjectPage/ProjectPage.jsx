@@ -1,6 +1,6 @@
 import "./ProjectPage.css";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 
 const ProjectPage = ({ projects }) => {
@@ -26,7 +26,19 @@ const ProjectPage = ({ projects }) => {
         <>
             <Navbar />
             <main className="main project-page">
-                <aside className="project-page-sidebar">Hello</aside>
+                <aside className="project-page-sidebar">
+                    {Object.keys(projects).map((projectKey) => {
+                        let proj = projects[projectKey];
+                        return (
+                            <Link
+                                to={`/projects/${projectKey}`}
+                                active={project === proj ? "true" : "false"}
+                            >
+                                {proj.title}
+                            </Link>
+                        );
+                    })}
+                </aside>
                 <div className="project-content">
                     <h1 className="project-page-title">{project.title}</h1>
 
