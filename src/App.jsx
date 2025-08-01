@@ -38,7 +38,7 @@ function App() {
             liveWebsite: "https://calbgyn.itch.io/tree-clicker",
             mainTechnologies: ["GDScript", "Godot"],
             allTechnologies: ["GDScript", "Godot"],
-            images: ["gameplay.png", "logo.png"],
+            images: ["logo.png", "gameplay.png"],
         },
         playrates: {
             title: "PlayRates",
