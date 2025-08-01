@@ -20,8 +20,15 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Source Sans Pro";
-    padding: 12px 8px;
+    padding: 16px 8px;
     gap: 12px;
+}
+
+.project-page-sidebar-title {
+    font-weight: 800;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .project-page-sidebar > a {

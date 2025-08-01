@@ -27,6 +27,7 @@ const ProjectPage = ({ projects }) => {
             <Navbar />
             <main className="main project-page">
                 <aside className="project-page-sidebar">
+                    <h2 className="project-page-sidebar-title">My Projects</h2>
                     {Object.keys(projects).map((projectKey) => {
                         let proj = projects[projectKey];
                         return (
