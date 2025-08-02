@@ -104,7 +104,7 @@ body {
 
 .project-page-subtitle {
     letter-spacing: 1px;
-    font-size: calc(1.6rem + 0.8vw);
+    font-size: calc(1.2rem + 0.7vw);
     margin-top: 40px;
     margin-bottom: 8px;
 }
