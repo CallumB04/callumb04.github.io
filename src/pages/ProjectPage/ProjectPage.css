@@ -1,5 +1,4 @@
 .project-not-found {
-    margin-top: 90px;
     text-align: center;
     font-size: 2.6rem;
     font-family: "Source Sans Pro";
@@ -73,14 +72,14 @@ body {
 }
 
 .project-page-title {
-    padding-top: 40px;
     font-size: calc(1.95rem + 1.35vw);
     letter-spacing: 2px;
+    margin-top: 40px;
+    margin-bottom: 8px;
 }
 
 .project-page-links {
     width: max-content;
-    margin-top: 6px;
     background-color: #dcdcdc;
     padding: calc(12px - 0.1vw) calc(17px - 0.15vw);
     border-radius: 10px;
@@ -106,17 +105,13 @@ body {
 .project-page-subtitle {
     letter-spacing: 1px;
     font-size: calc(1.6rem + 0.8vw);
-    margin-top: calc(30px + 1.5vw);
-}
-
-#project-images-subtitle {
     margin-top: 40px;
+    margin-bottom: 8px;
 }
 
 .project-page-technologies {
     width: 90%;
     max-width: 800px;
-    margin-top: 6px;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
@@ -137,7 +132,6 @@ body {
 
 .project-page-about {
     font-family: Lato;
-    margin-top: 6px;
     font-size: calc(0.95rem + 0.1vw);
     width: 90%;
     font-weight: 200;
@@ -156,7 +150,6 @@ body {
     grid-auto-rows: max-content;
     gap: 20px;
     width: 100%;
-    margin-top: 6px;
 }
 
 .project-page-image > img {
@@ -176,7 +169,6 @@ body {
 @media (max-width: 1280px) and (min-width: 1152px) {
     .project-page-images {
         grid-template-columns: 1fr;
-        margin-top: 8px;
     }
 }
 
@@ -192,7 +184,6 @@ body {
 @media (max-width: 880px) {
     .project-page-images {
         grid-template-columns: 1fr;
-        margin-top: 8px;
     }
 }
 
@@ -203,14 +194,14 @@ body {
         text-align: center;
     }
     .project-page-about {
-        margin: 8px auto 0 auto;
+        margin: 0 auto;
     }
     .project-page-links {
         justify-content: center;
-        margin: 8px auto 0 auto;
+        margin: 0 auto;
     }
     .project-page-technologies {
         justify-content: center;
-        margin: 8px auto 0 auto;
+        margin: 0 auto;
     }
 }
