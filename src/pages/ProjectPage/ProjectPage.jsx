@@ -32,6 +32,7 @@ const ProjectPage = ({ projects }) => {
                         let proj = projects[projectKey];
                         return (
                             <Link
+                                key={projectKey}
                                 to={`/projects/${projectKey}`}
                                 active={project === proj ? "true" : "false"}
                             >
