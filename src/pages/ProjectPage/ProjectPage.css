@@ -175,8 +175,13 @@ body {
 }
 
 @media (max-width: 1152px) {
+    .project-page {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .project-page-sidebar {
-        display: none;
+        position: relative;
+        width: 100vw;
     }
     .project-content {
         margin-left: 0px;
