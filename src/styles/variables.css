@@ -5,7 +5,7 @@
 /* Variables used throughout whole application */
 :root {
     /* Navigation bar */
-    --navbar-color: #2f6aa1;
+    --navbar-color: #193a58;
     --navbar-height: 70px;
     --navbar-highlighted-color: #f3f3f3; /* highlights current section in navbar */
     --navbar-text-color: #f3f3f3;
