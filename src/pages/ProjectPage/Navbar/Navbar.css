@@ -5,7 +5,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 5px;
 
     display: flex;
     justify-content: center;
@@ -13,46 +12,16 @@
     z-index: 99;
 }
 
-.project-navbar > * {
-    text-decoration: none;
-    text-align: center;
-}
-
 .project-navbar > a {
-    color: var(--text-dark-color);
-    padding: 0 10px;
+    color: var(--navbar-text-color);
     transition: color 200ms ease;
     position: relative;
 }
 
 .project-navbar > a:hover {
-    color: #222;
+    color: var(--navbar-text-hover-color);
 }
 
-.project-navbar > a::after, .project-navbar > a::before {
-    content: "";
-    position: absolute;
-    width: calc(25px + 0.4vw);
-    height: 1.5px;
-    background-color: var(--text-dark-color);
-    top: 50%;
-    translate: 0 -50%;
-}
-
-.project-navbar > a::before {
-    right: calc(-25px - 1.2vw);;
-}
-
-.project-navbar > a::after {
-    left: calc(-25px - 1.2vw);
-}
-
-.fa-house-chimney {
-    font-size: calc(2rem + 0.3vw);
-}
-
-.project-navbar p {
-    font-size: 1rem;
-    font-family: "Source Sans Pro";
-    font-weight: 600;
+.fa-house {
+    font-size: 2.5rem;
 }

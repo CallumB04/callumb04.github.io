@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PortfolioPage from "./pages/PortfolioPage/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
     // Projects information used in portfolio and project pages
@@ -38,7 +39,7 @@ function App() {
             liveWebsite: "https://calbgyn.itch.io/tree-clicker",
             mainTechnologies: ["GDScript", "Godot"],
             allTechnologies: ["GDScript", "Godot"],
-            images: ["gameplay.png", "logo.png"],
+            images: ["logo.png", "gameplay.png"],
         },
         playrates: {
             title: "PlayRates",
@@ -235,6 +236,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 <Route
                     path="/"

@@ -1,16 +1,11 @@
 import "./ProjectPage.css";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 
 const ProjectPage = ({ projects }) => {
     const { projectName } = useParams(); // get projectName from URL
     const project = projects[projectName]; // accessing project data from projects object
-
-    // ensure project page opens at top
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     // Displaying if user attemps to access non-existing project
     if (!project) {
@@ -26,7 +21,22 @@ const ProjectPage = ({ projects }) => {
         <>
             <Navbar />
             <main className="main project-page">
-                <section>
+                <aside className="project-page-sidebar">
+                    <h2 className="project-page-sidebar-title">My Projects</h2>
+                    {Object.keys(projects).map((projectKey) => {
+                        let proj = projects[projectKey];
+                        return (
+                            <Link
+                                key={projectKey}
+                                to={`/projects/${projectKey}`}
+                                active={project === proj ? "true" : "false"}
+                            >
+                                {proj.title}
+                            </Link>
+                        );
+                    })}
+                </aside>
+                <div className="project-content">
                     <h1 className="project-page-title">{project.title}</h1>
 
                     <div className="project-page-links">
@@ -34,6 +44,7 @@ const ProjectPage = ({ projects }) => {
                             href={project.githubRepo}
                             target="_blank"
                             className="fab fa-github"
+                            title="Github Repo"
                         ></a>
                         {/* displaying link to demo website if exists*/}
                         {project.liveWebsite ? (
@@ -41,6 +52,7 @@ const ProjectPage = ({ projects }) => {
                                 href={project.liveWebsite}
                                 target="_blank"
                                 className="fa fa-link"
+                                title="Live Website"
                             ></a>
                         ) : (
                             ""
@@ -64,11 +76,7 @@ const ProjectPage = ({ projects }) => {
                     <h2 className="project-page-subtitle">About the Project</h2>
                     {/* Currently shows description, add long about property to each project in object */}
                     <p className="project-page-about">{project.longAbout}</p>
-                </section>
 
-                <div id="project-page-section-divider"></div>
-
-                <section>
                     <h2
                         className="project-page-subtitle"
                         id="project-images-subtitle"
@@ -93,7 +101,7 @@ const ProjectPage = ({ projects }) => {
                             );
                         })}
                     </div>
-                </section>
+                </div>
             </main>
         </>
     );
