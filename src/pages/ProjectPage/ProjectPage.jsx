@@ -7,11 +7,6 @@ const ProjectPage = ({ projects }) => {
     const { projectName } = useParams(); // get projectName from URL
     const project = projects[projectName]; // accessing project data from projects object
 
-    // ensure project page opens at top
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     // Displaying if user attemps to access non-existing project
     if (!project) {
         return (

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PortfolioPage from "./pages/PortfolioPage/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
     // Projects information used in portfolio and project pages
@@ -235,6 +236,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 <Route
                     path="/"
