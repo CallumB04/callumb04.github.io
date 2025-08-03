@@ -52,7 +52,7 @@
     font-size: calc(1.75rem + 0.15vw);
     font-family: "Source Sans Pro";
     font-weight: 600;
-    color: var(--highlight-color);
+    color: var(--light-highlight-color);
 }
 
 .projects-section-project-description {

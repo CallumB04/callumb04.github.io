@@ -13,7 +13,7 @@ body {
     top: var(--navbar-height);
     height: calc(100vh - var(--navbar-height));
     position: fixed;
-    background-color: #fccb69;
+    background-color: var(--sidebar-color);
     box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 999;
     display: flex;
@@ -46,11 +46,11 @@ body {
 }
 
 .project-page-sidebar > a:hover {
-    background-color: var(--navbar-color);
+    background-color: var(--lightest-highlight-color);
 }
 
 .project-page-sidebar > a[active="true"] {
-    background: var(--highlight-color);
+    background: var(--light-highlight-color);
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
     font-weight: 600;
 }
@@ -119,7 +119,7 @@ body {
 }
 
 .project-page-technology {
-    background: var(--navbar-color);
+    background: var(--light-highlight-color);
     color: var(--text-dark-color);
     letter-spacing: 1px;
     font-family: Lato;

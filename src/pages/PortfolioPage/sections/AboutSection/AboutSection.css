@@ -14,7 +14,8 @@
     margin-top: 60px;
 }
 
-.about-section-title::after, .about-section-title::before {
+.about-section-title::after,
+.about-section-title::before {
     content: "";
     position: absolute;
     width: calc(20px + 2vw);
@@ -25,7 +26,7 @@
 }
 
 .about-section-title::before {
-    right: calc(-45px - 2vw);;
+    right: calc(-45px - 2vw);
 }
 
 .about-section-title::after {
@@ -50,14 +51,14 @@
     height: calc(80px + 1vw);
     margin: 0 auto;
     margin-top: 35px;
-    
+
     background-color: transparent;
     color: var(--text-light-color);
     text-decoration: none;
     border: 2.5px solid var(--highlight-color);
     border-radius: 40px;
     position: relative;
-    
+
     display: block;
 }
 
@@ -70,12 +71,13 @@
 #download-cv-button > i {
     font-size: calc(1.5rem + 0.9vw);
     left: calc(18% - 4px);
-    
+
     transition: font-size 100ms ease, left 300ms ease, color 300ms ease;
 }
 
 @keyframes fade-cv-btn-text {
-    0%, 80% {
+    0%,
+    80% {
         opacity: 0;
     }
     100% {
@@ -133,7 +135,7 @@
     white-space: nowrap;
     letter-spacing: 1px;
     font-size: calc(0.7rem + 0.5vw);
-    background-color: var(--navbar-color);
+    background-color: var(--highlight-color);
     color: var(--text-dark-color);
     padding: 2px;
     border-radius: 5px;
@@ -154,7 +156,7 @@
 }
 
 .non-devicon-skill .non-devicon-icon {
-    width: 1em; 
-    height: 1em; 
-    object-fit: contain;      
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
 }

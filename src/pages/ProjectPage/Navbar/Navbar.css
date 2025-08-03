@@ -19,28 +19,29 @@
 }
 
 .project-navbar > a {
-    color: var(--text-dark-color);
+    color: var(--navbar-text-color);
     padding: 0 10px;
     transition: color 200ms ease;
     position: relative;
 }
 
 .project-navbar > a:hover {
-    color: #222;
+    color: var(--navbar-text-hover-color);
 }
 
-.project-navbar > a::after, .project-navbar > a::before {
+.project-navbar > a::after,
+.project-navbar > a::before {
     content: "";
     position: absolute;
     width: calc(25px + 0.4vw);
     height: 1.5px;
-    background-color: var(--text-dark-color);
+    background-color: var(--navbar-text-color);
     top: 50%;
     translate: 0 -50%;
 }
 
 .project-navbar > a::before {
-    right: calc(-25px - 1.2vw);;
+    right: calc(-25px - 1.2vw);
 }
 
 .project-navbar > a::after {
