@@ -44,6 +44,7 @@ const ProjectPage = ({ projects }) => {
                             href={project.githubRepo}
                             target="_blank"
                             className="fab fa-github"
+                            title="Github Repo"
                         ></a>
                         {/* displaying link to demo website if exists*/}
                         {project.liveWebsite ? (
@@ -51,6 +52,7 @@ const ProjectPage = ({ projects }) => {
                                 href={project.liveWebsite}
                                 target="_blank"
                                 className="fa fa-link"
+                                title="Live Website"
                             ></a>
                         ) : (
                             ""
