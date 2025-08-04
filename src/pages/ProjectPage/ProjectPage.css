@@ -180,8 +180,10 @@ body {
         flex-direction: column-reverse;
     }
     .project-page-sidebar {
-        position: relative;
+        position: static;
+        height: max-content;
         width: 100vw;
+        overflow-y: hidden;
     }
     .project-content {
         margin-left: 0px;
