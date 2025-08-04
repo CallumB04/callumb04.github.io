@@ -112,8 +112,7 @@ body {
 }
 
 .project-page-technologies {
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
@@ -135,7 +134,7 @@ body {
 .project-page-about {
     font-family: Lato;
     font-size: calc(0.95rem + 0.1vw);
-    width: 90%;
+    width: 100%;
     font-weight: 200;
     color: #1a1a1a;
     line-height: calc(1.3rem + 0.2vw);
