@@ -10,7 +10,8 @@
     margin: 0 auto;
 }
 
-.projects-section-title::after, .projects-section-title::before {
+.projects-section-title::after,
+.projects-section-title::before {
     content: "";
     position: absolute;
     width: calc(20px + 2vw);
@@ -21,7 +22,7 @@
 }
 
 .projects-section-title::before {
-    right: calc(-45px - 2vw);;
+    right: calc(-45px - 2vw);
 }
 
 .projects-section-title::after {
@@ -37,4 +38,5 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     row-gap: calc(20px + 2.5vw);
+    column-gap: 16px;
 }
