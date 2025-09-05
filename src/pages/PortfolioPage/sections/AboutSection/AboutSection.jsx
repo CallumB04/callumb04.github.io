@@ -67,9 +67,9 @@ const AboutSection = ({ sectionRef }) => {
                 Hi, I'm Callum/Cal, a 21 year old self-taught Software Developer
                 from Kent, United Kingdom. I'm currently pursuing a Level 4
                 Apprenticeship in Full-Stack Web Development, where I work with
-                a variety of different technologies. Outside of work, I'm also
-                extremely interested in Game Development and I'm currently
-                teaching myself how to use the Godot Engine.
+                a variety of different technologies. Outside of work, I'm
+                currently invested in learning Go and improving my ability to
+                create a scaleable and efficient backend.
             </p>
 
             <a
