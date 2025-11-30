@@ -27,6 +27,7 @@ export interface BlogPost {
     slug: string; // unique id, in url when viewing, also name of directory containing blog data
     title: string;
     summary: string;
+    date: string; // format: 9th March 2006
     sections: BlogPostSection[]; // section for each block of markdown text or image
     relatedProject?: string; // slug of project
 }
