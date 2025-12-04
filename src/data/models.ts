@@ -3,7 +3,7 @@ export interface Project {
     title: string;
     summary: string;
     longDescription: string;
-    technologies: string[]; // key of objects in technologies.json
+    technologies: string[]; // key of objects in technologies.json, first 3 are "main" technologies, displayed on preview
     startDate?: string; // format: 9th March 2006
     finishDate?: string; // format: 9th March 2006
     images: string[]; // file names in project folder (first image is cover image) (/public/project_images/<project slug>/<filename>.png)
