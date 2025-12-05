@@ -6,7 +6,7 @@ export interface Project {
     technologies: string[]; // key of objects in technologies.json, first 3 are "main" technologies, displayed on preview
     startDate?: string; // format: 9th March 2006
     finishDate?: string; // format: 9th March 2006
-    images: string[]; // file names in project folder (first image is cover image) (/public/project_images/<project slug>/<filename>.png)
+    images: string[]; // file names in project folder (first image is cover image) (/public/project_images/<project slug>/<file>)
     githubRepo?: string; // CallumB04/<repo>
     liveURL?: string;
     collaborators?: Collaborator[];
@@ -15,7 +15,7 @@ export interface Project {
 
 export interface Collaborator {
     name: string;
-    avatar?: string;
+    avatar?: string; // image file name in avatars folder (/public/avatars/<file>)
 }
 
 export interface Technology {
@@ -34,6 +34,6 @@ export interface BlogPost {
 
 export interface BlogPostSection {
     title: string;
-    textFile?: string; // markdown file name in blog post folder (/public/blogs/<post slug>/<filename>.md)
-    imageFile?: string; // image file name in blog post folder (/public/blogs/<post slug>/<filename>.png)
+    textFile?: string; // markdown file name in blog post folder (/public/blogs/<post slug>/<file>)
+    imageFile?: string; // image file name in blog post folder (/public/blogs/<post slug>/<file>)
 }
