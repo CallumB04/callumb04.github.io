@@ -1,0 +1,52 @@
+{
+    "python": {
+        "name": "Python",
+        "devicon": "python"
+    },
+    "react": {
+        "name": "React",
+        "devicon": "react"
+    },
+    "typescript": {
+        "name": "TypeScript",
+        "devicon": "typescript"
+    },
+    "go": {
+        "name": "Go",
+        "devicon": "go"
+    },
+    "tailwind": {
+        "name": "Tailwind CSS",
+        "devicon": "tailwindcss"
+    },
+    "express-js": {
+        "name": "Express.js",
+        "devicon": "express"
+    },
+    "node-js": {
+        "name": "Node.js",
+        "devicon": "nodejs"
+    },
+    "javascript": {
+        "name": "JavaScript",
+        "devicon": "javascript"
+    },
+    "html": {
+        "name": "HTML",
+        "devicon": "html5"
+    },
+    "cpp": {
+        "name": "C++",
+        "devicon": "cplusplus"
+    },
+    "sfml": {
+        "name": "SFML"
+    },
+    "discord-py": {
+        "name": "discord.py"
+    },
+    "docker": {
+        "name": "Docker",
+        "devicon": "docker"
+    }
+}
