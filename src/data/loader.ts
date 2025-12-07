@@ -1,8 +1,8 @@
-import type { Project, Technology } from "./models";
+import type { BlogPost, Project, Technology } from "./models";
 
-const PROJECTS_FILE_PATH = "../../public/data/projects.json";
-const TECHNOLOGIES_FILE_PATH = "../../public/data/technologies.json";
-const BLOGS_FILE_PATH = "../../public/data/blogs.json";
+const PROJECTS_FILE_PATH = "/data/projects.json";
+const TECHNOLOGIES_FILE_PATH = "/data/technologies.json";
+const BLOGS_FILE_PATH = "/data/blogs.json";
 
 // Projects
 export const loadAllProjects = async (): Promise<Project[]> => {
@@ -41,6 +41,33 @@ export const loadTechnologyByKey = async (
         for (const t of Object.keys(technologies)) {
             if (t === key) {
                 return technologies[t];
+            }
+        }
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+// Blog Posts
+export const loadAllBlogPosts = async (): Promise<BlogPost[]> => {
+    try {
+        const resp = await fetch(BLOGS_FILE_PATH);
+        const blogs = await resp.json();
+        return blogs;
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+};
+
+export const loadBlogPostBySlug = async (
+    slug: string
+): Promise<BlogPost | undefined> => {
+    try {
+        const blogs = await loadAllBlogPosts();
+        for (const b of blogs) {
+            if (b.slug === slug) {
+                return b;
             }
         }
     } catch (err) {
