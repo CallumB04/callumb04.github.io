@@ -6,5 +6,23 @@
     scroll-behavior: smooth;
 }
 
+body {
+    @apply bg-background;
+}
+
+main {
+    @apply px-2 sm:px-4 py-6 sm:py-12;
+}
+
 @theme {
+    /* Fonts */
+    --font-primary: "Inter", sans-serif;
+
+    /* Colors */
+    --color-background: #171717;
+    --color-text-primary: #fafafa;
+    --color-text-secondary: #c1c1c1;
+    --color-text-dark: #0e0e0e;
+    --color-button: #f3f3f3;
+    --color-button-hover: #fff;
 }
