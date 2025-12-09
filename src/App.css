@@ -14,6 +14,20 @@ main {
     @apply px-2 py-6 sm:px-4 sm:py-12;
 }
 
+/* Material Icon Sizes */
+.material-symbols-outlined.text-xs {
+    font-size: 18px;
+}
+.material-symbols-outlined.text-sm {
+    font-size: 20px;
+}
+.material-symbols-outlined.text-lg {
+    font-size: 36px;
+}
+.material-symbols-outlined.text-xl {
+    font-size: 48px;
+}
+
 @theme {
     /* -- Fonts -- */
     --font-primary: "Inter", sans-serif;
