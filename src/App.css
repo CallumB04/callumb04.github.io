@@ -29,12 +29,12 @@ main {
     --color-text-secondary: #9ca3af;
 
     /* Highlight */
-    --color-highlight: #f5a623;
-    --color-highlight-soft: #fbb33f;
+    --color-highlight: #3ba6f6;
+    --color-highlight-soft: #7cc8ff;
 
     /* Buttons */
-    --color-button-primary: #f5a623;
-    --color-button-primary-hover: #d98c18;
+    --color-button-primary: #3ba6f6;
+    --color-button-primary-hover: #1f8fe3;
     --color-button-secondary: #ffffff;
     --color-button-secondary-hover: #e5e7eb;
 
