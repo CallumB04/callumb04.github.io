@@ -18,7 +18,7 @@ const Icon = ({ icon, variant, title, className, onClick }: IconProps) => {
             case "highlight":
                 return "text-highlight hover:text-highlight-soft";
             case "button":
-                return "text-button-primary-text group-hover:text-button-primary-text-hover";
+                return "text-button-primary-text group-hover:text-button-primary-text-hover text-sm";
         }
     }, [variant]);
     return (
