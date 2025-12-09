@@ -9,6 +9,8 @@ interface RedirectButtonProps {
     className?: string;
     onClick?: () => void;
     disabled?: boolean;
+    maxWidth?: boolean;
+    maxWidthMobile?: boolean;
 }
 
 const RedirectButton = ({
@@ -17,14 +19,24 @@ const RedirectButton = ({
     className,
     onClick,
     disabled,
+    maxWidth,
+    maxWidthMobile,
 }: RedirectButtonProps) => {
     return (
-        <Link to={to}>
+        <Link
+            to={to}
+            className={twMerge(
+                maxWidth ? "w-full" : "",
+                maxWidthMobile ? "w-full sm:w-max" : ""
+            )}
+        >
             <Button
                 variant="primary"
                 className={twMerge("cursor-pointer", className)}
                 onClick={onClick}
                 disabled={disabled}
+                maxWidth={maxWidth}
+                maxWidthMobile={maxWidthMobile}
             >
                 {children}
             </Button>
