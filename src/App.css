@@ -7,22 +7,43 @@
 }
 
 body {
-    @apply bg-background;
+    @apply bg-page-bg;
 }
 
 main {
-    @apply px-2 sm:px-4 py-6 sm:py-12;
+    @apply px-2 py-6 sm:px-4 sm:py-12;
 }
 
 @theme {
-    /* Fonts */
+    /* -- Fonts -- */
     --font-primary: "Inter", sans-serif;
 
-    /* Colors */
-    --color-background: #171717;
-    --color-text-primary: #fafafa;
-    --color-text-secondary: #c1c1c1;
-    --color-text-dark: #0e0e0e;
-    --color-button: #f3f3f3;
-    --color-button-hover: #fff;
+    /* -- Colors -- */
+    /* Page + Surfaces */
+    --color-page-bg: #0f1115;
+    --color-card-bg: #1a1d23;
+    --color-card-fg: #e5e7eb;
+
+    /* Text */
+    --color-text-primary: #f5f7fa;
+    --color-text-secondary: #9ca3af;
+
+    /* Highlight */
+    --color-highlight: #f5a623;
+    --color-highlight-soft: #fbb33f;
+
+    /* Buttons */
+    --color-button-primary: #f5a623;
+    --color-button-primary-hover: #d98c18;
+    --color-button-secondary: #ffffff;
+    --color-button-secondary-hover: #e5e7eb;
+
+    /* Buttons Text */
+    --color-button-primary-text: #1a1d23;
+    --color-button-primary-text-hover: #ffffff;
+    --color-button-secondary-text: #ffffff;
+    --color-button-secondary-text-hover: #f5f7fa;
+
+    /* UI */
+    --color-layout-border: #2a2e36;
 }
