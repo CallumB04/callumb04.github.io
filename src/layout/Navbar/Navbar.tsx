@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import RedirectButton from "../../components/Button/RedirectButton";
 import Icon from "../../components/Icon/Icon";
 import Text from "../../components/Text/Text";
 import NavbarItem from "./NavbarItem";
+import { useEffect } from "react";
 
 const Navbar = () => {
+    const location = useLocation();
+
+    // scroll to page top on page change
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
         <nav className="bg-page-bg border-b-layout-border h-navbar-height fixed top-0 left-0 w-screen border-b-1">
             {/* Navbar Content */}
