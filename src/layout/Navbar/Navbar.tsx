@@ -36,7 +36,7 @@ const Navbar = () => {
                         CB
                     </Text>
                     {/* Navbar Items */}
-                    <span className="flex w-full max-w-78 items-center justify-between md:max-w-max md:gap-12">
+                    <span className="flex w-full max-w-78 items-center justify-between md:max-w-max md:gap-10">
                         <NavbarItem text="About" icon="info" to="/" />
                         <NavbarItem
                             text="Projects"
