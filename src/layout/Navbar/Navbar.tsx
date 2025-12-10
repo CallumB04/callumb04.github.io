@@ -8,9 +8,19 @@ import { useEffect } from "react";
 const Navbar = () => {
     const location = useLocation();
 
-    // scroll to page top on page change
+    // scroll on page change
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // scroll to page top
+        if (!location.hash) {
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        // if hash (#work) exists, scroll to that element
+        const element = document.querySelector(location.hash);
+        if (element) {
+            element.scrollIntoView();
+        }
     }, [location]);
 
     return (
