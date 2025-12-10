@@ -31,6 +31,10 @@ main {
     font-size: 48px;
 }
 
+#work {
+    scroll-margin-top: var(--navbar-height);
+}
+
 @theme {
     /* -- Fonts -- */
     --font-primary: "Montserrat", sans-serif;
