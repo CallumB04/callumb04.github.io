@@ -5,10 +5,12 @@ import ProjectPage from "./pages/Project/ProjectPage";
 import BlogsPage from "./pages/Blogs/BlogsPage";
 import BlogPostPage from "./pages/BlogPost/BlogPostPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import Navbar from "./layout/Navbar/Navbar";
 
 function App() {
     return (
         <BrowserRouter>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<IndexPage />} />
                 <Route path="/project/:slug" element={<ProjectPage />} />
