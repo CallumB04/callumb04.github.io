@@ -29,7 +29,7 @@ const Text = ({ children, variant, redirect, className }: TextProps) => {
                 "font-primary",
                 variantClassName,
                 redirect &&
-                    "hover:text-highlight cursor-pointer transition-colors duration-200",
+                    "group-hover:text-highlight cursor-pointer transition-colors duration-200",
                 className
             )}
         >
