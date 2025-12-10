@@ -18,6 +18,7 @@ const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
                 icon={icon}
                 variant="primary"
                 className="hover:text-highlight md:hidden!"
+                title={text}
             ></Icon>
         </Link>
     );

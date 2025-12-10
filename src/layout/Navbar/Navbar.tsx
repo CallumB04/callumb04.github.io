@@ -43,6 +43,7 @@ const Navbar = () => {
                                 icon="mail"
                                 variant="highlight"
                                 className="cursor-pointer"
+                                title="Contact me"
                             />
                         </Link>
                     </span>
