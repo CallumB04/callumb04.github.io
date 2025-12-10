@@ -4,10 +4,11 @@ import { twMerge } from "tailwind-merge";
 interface TextProps {
     children: ReactNode;
     variant: "primary" | "secondary" | "highlight" | "highlight-soft";
+    redirect?: boolean; // text is for redirecting (<Link />)
     className?: string;
 }
 
-const Text = ({ children, variant, className }: TextProps) => {
+const Text = ({ children, variant, redirect, className }: TextProps) => {
     // update text color in tailwind classes when variant changes
     const variantClassName = useMemo(() => {
         switch (variant) {
@@ -23,7 +24,15 @@ const Text = ({ children, variant, className }: TextProps) => {
     }, [variant]);
 
     return (
-        <p className={twMerge("font-primary", variantClassName, className)}>
+        <p
+            className={twMerge(
+                "font-primary",
+                variantClassName,
+                redirect &&
+                    "hover:text-highlight cursor-pointer transition-colors duration-200",
+                className
+            )}
+        >
             {children}
         </p>
     );
