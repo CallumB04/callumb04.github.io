@@ -14,7 +14,7 @@ body {
 }
 
 main {
-    @apply mt-navbar-height px-2 py-6 sm:px-4 sm:py-12;
+    @apply mt-navbar-height mx-auto max-w-250 px-2 py-6 sm:px-4 sm:py-12;
 }
 
 /* Material Icon Sizes */
