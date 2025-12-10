@@ -27,7 +27,8 @@ const RedirectButton = ({
             to={to}
             className={twMerge(
                 maxWidth ? "w-full" : "",
-                maxWidthMobile ? "w-full sm:w-max" : ""
+                maxWidthMobile ? "w-full sm:w-max" : "",
+                className
             )}
         >
             <Button
