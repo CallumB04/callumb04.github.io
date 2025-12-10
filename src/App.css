@@ -4,6 +4,9 @@
     /* Global Styles */
     box-sizing: border-box;
     scroll-behavior: smooth;
+
+    /* Variables */
+    --navbar-height: 4.5rem;
 }
 
 body {
@@ -11,7 +14,7 @@ body {
 }
 
 main {
-    @apply px-2 py-6 sm:px-4 sm:py-12;
+    @apply mt-navbar-height px-2 py-6 sm:px-4 sm:py-12;
 }
 
 /* Material Icon Sizes */
@@ -30,7 +33,7 @@ main {
 
 @theme {
     /* -- Fonts -- */
-    --font-primary: "Inter", sans-serif;
+    --font-primary: "Montserrat", sans-serif;
 
     /* -- Colors -- */
     /* Page + Surfaces */
@@ -59,5 +62,9 @@ main {
     --color-button-secondary-text-hover: #f5f7fa;
 
     /* UI */
-    --color-layout-border: #2a2e36;
+    --color-layout-border: #1a1e26;
+
+    /* -- Sizes -- */
+    --height-navbar-height: var(--navbar-height);
+    --margin-navbar-height: var(--navbar-height);
 }
