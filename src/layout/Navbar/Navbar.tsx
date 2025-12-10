@@ -23,7 +23,7 @@ const Navbar = () => {
                         <NavbarItem
                             text="Projects"
                             icon="folder_open"
-                            to="/#projects"
+                            to="/projects"
                         />
                         <NavbarItem text="Work" icon="work" to="/#work" />
                         <NavbarItem text="Blog" icon="news" to="/blogs" />

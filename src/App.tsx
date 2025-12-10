@@ -6,6 +6,7 @@ import BlogsPage from "./pages/Blogs/BlogsPage";
 import BlogPostPage from "./pages/BlogPost/BlogPostPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import Navbar from "./layout/Navbar/Navbar";
+import ProjectsPage from "./pages/Projects/ProjectsPage";
 
 function App() {
     return (
@@ -13,7 +14,8 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<IndexPage />} />
-                <Route path="/project/:slug" element={<ProjectPage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/:slug" element={<ProjectPage />} />
                 <Route path="/blogs" element={<BlogsPage />} />
                 <Route path="/blogs/:slug" element={<BlogPostPage />} />
                 <Route path="*" element={<NotFoundPage />} />
