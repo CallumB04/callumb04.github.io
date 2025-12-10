@@ -26,7 +26,7 @@ const Icon = ({ icon, variant, title, className, onClick }: IconProps) => {
             className={twMerge(
                 "material-symbols-outlined transition-colors duration-200",
                 variantClassName,
-                onClick && "cursor-pointer",
+                onClick && "hover:text-highlight cursor-pointer",
                 className
             )}
             onClick={onClick}
