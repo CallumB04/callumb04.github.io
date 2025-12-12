@@ -24,17 +24,18 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <nav className="bg-page-bg border-b-layout-border h-navbar-height fixed top-0 left-0 w-screen border-b-1">
+        <nav className="bg-page-bg border-b-layout-border h-navbar-height fixed top-0 left-0 w-screen border-b">
             {/* Navbar Content */}
             <span className="mx-auto flex h-full max-w-300 items-center px-4 sm:px-6">
                 <span className="flex w-full items-center justify-center md:justify-between">
-                    {/* Picture of me */}
-                    <Text
-                        variant="primary"
-                        className="border-layout-border hidden rounded-full border-1 p-3 text-xl font-light md:inline"
+                    {/* My name */}
+                    <Link
+                        to="/"
+                        className="hidden h-full items-center justify-center gap-1 font-light md:flex"
                     >
-                        CB
-                    </Text>
+                        <Text variant="highlight-soft">Callum</Text>
+                        <Text variant="primary">Burgoyne</Text>
+                    </Link>
                     {/* Navbar Items */}
                     <span className="flex w-full max-w-78 items-center justify-between md:max-w-max md:gap-10">
                         <NavbarItem text="About" icon="info" to="/" />
