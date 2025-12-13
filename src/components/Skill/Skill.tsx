@@ -23,15 +23,15 @@ const Skill = ({ skill }: SkillProps) => {
     }, [skill]);
 
     return (
-        <span className="border-card-border bg-card-bg flex w-max items-center gap-2 rounded-full border-1 px-3 py-1.5">
-            <Text variant="primary" className="text-sm">
-                {technology?.name}
-            </Text>
+        <span className="border-layout-border bg-card-bg flex w-max items-center gap-3 rounded-lg border-1 px-3 py-1.5">
             {technology?.devicon && (
                 <i
-                    className={`devicon-${technology.devicon}-plain text-text-primary text-sm`}
+                    className={`devicon-${technology.devicon}-plain text-text-secondary`}
                 ></i>
             )}
+            <Text variant="secondary" className="text-sm font-medium">
+                {technology?.name}
+            </Text>
         </span>
     );
 };
