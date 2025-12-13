@@ -31,7 +31,7 @@ const Navbar = () => {
                     {/* My name */}
                     <Link
                         to="/"
-                        className="hidden h-full items-center justify-center gap-1 font-light md:flex"
+                        className="hidden h-full items-center justify-center gap-1 md:flex"
                     >
                         <Text variant="highlight-soft">Callum</Text>
                         <Text variant="primary">Burgoyne</Text>
