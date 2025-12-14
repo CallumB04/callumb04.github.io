@@ -10,6 +10,7 @@ import { loadAllProjects } from "../../data/loader";
 import Section from "../../components/Section/Section";
 import { useNavigate } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
+import Button from "../../components/Button/Button";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
@@ -67,10 +68,23 @@ const IndexPage = () => {
                         </div>
                         {/* CTA buttons */}
                         <span className="flex w-full flex-wrap gap-2">
-                            <RedirectButton to="/contact" maxWidthMobile>
-                                Contact Me
-                                <Icon icon="email" variant="button-primary" />
-                            </RedirectButton>
+                            <a
+                                href="/CV.pdf"
+                                download
+                                className="w-full sm:w-max"
+                            >
+                                <Button
+                                    variant="primary"
+                                    maxWidthMobile
+                                    className="cursor-pointer"
+                                >
+                                    Download CV
+                                    <Icon
+                                        icon="download"
+                                        variant="button-primary"
+                                    />
+                                </Button>
+                            </a>
                             <RedirectButton
                                 to="/#projects"
                                 variant="secondary"
