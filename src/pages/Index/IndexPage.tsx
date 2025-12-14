@@ -40,7 +40,10 @@ const IndexPage = () => {
                     {/* Left container */}
                     <div className="flex w-full flex-col gap-8 md:min-w-80">
                         {/* Hello text */}
-                        <Text variant="primary" className="text-4xl">
+                        <Text
+                            variant="primary"
+                            className="text-4xl font-medium"
+                        >
                             Hello, I'm{" "}
                             <span className="text-highlight">
                                 Callum Burgoyne
