@@ -26,7 +26,7 @@ const Skill = ({ skill }: SkillProps) => {
         <span className="border-layout-border bg-card-bg flex w-max items-center gap-3 rounded-lg border-1 px-3 py-1.5">
             {technology?.devicon && (
                 <i
-                    className={`devicon-${technology.devicon}-plain text-text-secondary`}
+                    className={`devicon-${technology.devicon} text-text-secondary`}
                 ></i>
             )}
             <Text variant="secondary" className="text-sm font-medium">
