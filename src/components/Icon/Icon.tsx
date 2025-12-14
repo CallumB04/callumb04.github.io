@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 interface IconProps {
     icon: string;
-    variant: "primary" | "highlight" | "button";
+    variant: "primary" | "highlight" | "button-primary" | "button-secondary";
     title?: string;
     className?: string;
     onClick?: () => void;
@@ -17,8 +17,10 @@ const Icon = ({ icon, variant, title, className, onClick }: IconProps) => {
                 return `text-text-primary ${onClick ? "hover:text-highlight" : ""}`;
             case "highlight":
                 return `text-highlight ${onClick ? "hover:text-highlight-soft" : ""}`;
-            case "button":
+            case "button-primary":
                 return "text-button-primary-text group-hover:text-button-primary-text-hover text-sm";
+            case "button-secondary":
+                return "text-button-secondary-text group-hover:text-button-secondary-text-hover text-sm";
         }
     }, [variant]);
     return (
