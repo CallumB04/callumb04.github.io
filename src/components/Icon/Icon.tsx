@@ -14,9 +14,9 @@ const Icon = ({ icon, variant, title, className, onClick }: IconProps) => {
     const variantClassName = useMemo(() => {
         switch (variant) {
             case "primary":
-                return "text-text-primary";
+                return `text-text-primary ${onClick ? "hover:text-highlight" : ""}`;
             case "highlight":
-                return "text-highlight hover:text-highlight-soft";
+                return `text-highlight ${onClick ? "hover:text-highlight-soft" : ""}`;
             case "button":
                 return "text-button-primary-text group-hover:text-button-primary-text-hover text-sm";
         }
@@ -24,9 +24,9 @@ const Icon = ({ icon, variant, title, className, onClick }: IconProps) => {
     return (
         <i
             className={twMerge(
-                "material-symbols-outlined transition-colors duration-200",
+                "material-symbols-outlined transition-colors duration-300",
                 variantClassName,
-                onClick && "hover:text-highlight cursor-pointer",
+                onClick && "cursor-pointer",
                 className
             )}
             onClick={onClick}
