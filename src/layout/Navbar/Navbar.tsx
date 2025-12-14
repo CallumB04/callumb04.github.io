@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
         <nav className="bg-page-bg border-b-layout-border h-navbar-height fixed top-0 left-0 w-screen border-b">
             {/* Navbar Content */}
-            <span className="mx-auto flex h-full max-w-300 items-center px-4 sm:px-6">
+            <span className="mx-auto flex h-full max-w-250 items-center px-4 sm:px-6">
                 <span className="flex w-full items-center justify-center md:justify-between">
                     {/* My name */}
                     <Link
@@ -37,7 +37,7 @@ const Navbar = () => {
                         <Text variant="primary">Burgoyne</Text>
                     </Link>
                     {/* Navbar Items */}
-                    <span className="flex w-full max-w-78 items-center justify-between md:max-w-max md:gap-10">
+                    <span className="flex w-full max-w-80 items-center justify-between md:max-w-max md:gap-10">
                         <NavbarItem text="About" icon="info" to="/" />
                         <NavbarItem
                             text="Projects"
@@ -49,7 +49,7 @@ const Navbar = () => {
                         {/* Contact me button */}
                         <RedirectButton
                             to="/contact"
-                            className="hidden md:inline"
+                            className="hidden hover:translate-y-0 md:inline"
                         >
                             Contact me
                         </RedirectButton>
