@@ -24,54 +24,14 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <nav className="bg-page-bg border-b-layout-border h-navbar-height fixed top-0 left-0 w-screen border-b">
-            {/* Navbar Content */}
-            <span className="mx-auto flex h-full max-w-250 items-center px-4 sm:px-6">
-                <span className="flex w-full items-center justify-center md:justify-between">
-                    {/* My name */}
-                    <Link
-                        to="/"
-                        className="hidden h-full items-center justify-center gap-1 md:flex"
-                    >
-                        <Text variant="highlight-soft">Callum</Text>
-                        <Text variant="primary">Burgoyne</Text>
-                    </Link>
-                    {/* Navbar Items */}
-                    <span className="flex w-full max-w-80 items-center justify-between md:max-w-max md:gap-10">
-                        <NavbarItem text="About" icon="home" to="/" />
-                        <NavbarItem
-                            text="Projects"
-                            icon="folder_open"
-                            to="/projects"
-                        />
-                        <NavbarItem text="Work" icon="work" to="/#work" />
-                        <NavbarItem
-                            text="Blog"
-                            icon="article_person"
-                            to="/blogs"
-                        />
-                        {/* Contact me button */}
-                        <RedirectButton
-                            to="/contact"
-                            className="hidden md:inline"
-                            preventTransform
-                        >
-                            Contact me
-                        </RedirectButton>
-                        {/* Contact me icon (mobile) */}
-                        <Link
-                            to="/contact"
-                            className="flex items-center md:hidden!"
-                        >
-                            <Icon
-                                icon="mail"
-                                variant="highlight"
-                                className="cursor-pointer"
-                                title="Contact me"
-                            />
-                        </Link>
-                    </span>
-                </span>
+        <nav className="bg-page-bg h-navbar-height border-layout-border fixed top-0 left-0 flex w-screen items-center justify-center border-b px-4 sm:items-end sm:border-b-0 sm:bg-transparent">
+            {/* Navbar Items */}
+            <span className="sm:bg-navbar-bg flex w-full max-w-80 items-center justify-between rounded-full sm:px-4 sm:py-2">
+                <NavbarItem text="Home" icon="home" to="/" />
+                <NavbarItem text="Projects" icon="folder_open" to="/projects" />
+                <NavbarItem text="Work" icon="work" to="/#work" />
+                <NavbarItem text="Blog" icon="article_person" to="/blogs" />
+                <NavbarItem text="Contact" icon="mail" to="/contact" />
             </span>
         </nav>
     );

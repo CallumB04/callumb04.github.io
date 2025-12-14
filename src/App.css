@@ -44,6 +44,7 @@ main {
     /* -- Colors -- */
     /* Page + Surfaces */
     --color-page-bg: #0f1115;
+    --color-navbar-bg: #151821;
     --color-card-bg: #0c0e12;
     --color-card-border: #191919;
     --color-card-border-hover: #313131;
