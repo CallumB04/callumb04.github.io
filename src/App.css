@@ -31,8 +31,10 @@ main {
     font-size: 48px;
 }
 
-#work {
-    scroll-margin-top: var(--navbar-height);
+#projects,
+#work,
+#blogs {
+    scroll-margin-top: calc(var(--navbar-height) + 24px);
 }
 
 @theme {
