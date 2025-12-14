@@ -49,7 +49,8 @@ const Navbar = () => {
                         {/* Contact me button */}
                         <RedirectButton
                             to="/contact"
-                            className="hidden hover:translate-y-0 md:inline"
+                            className="hidden md:inline"
+                            preventTransform
                         >
                             Contact me
                         </RedirectButton>
