@@ -3,17 +3,21 @@ import RedirectButton from "../../components/Button/RedirectButton";
 import Card from "../../components/Card/Card";
 import PersonalDetail from "../../components/PersonalDetail/PersonalDetail";
 import Skill from "../../components/Skill/Skill";
-import SectionHeader from "../../components/Text/SectionHeader";
 import Text from "../../components/Text/Text";
 import usePageTitle from "../../hooks/usePageTitle";
 import { type Project } from "../../data/models";
 import { loadAllProjects } from "../../data/loader";
+import Section from "../../components/Section/Section";
+import { useNavigate } from "react-router-dom";
+import Icon from "../../components/Icon/Icon";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
 
 const IndexPage = () => {
     usePageTitle("Callum Burgoyne - Personal Portfolio");
+
+    const navigate = useNavigate();
 
     const [projects, setProjects] = useState<Project[]>([]);
 
@@ -31,8 +35,7 @@ const IndexPage = () => {
     return (
         <main>
             {/* About me section */}
-            <div className="flex flex-col gap-6">
-                <SectionHeader>About me</SectionHeader>
+            <Section header="About me">
                 <div className="flex flex-col gap-8 md:flex-row">
                     {/* Left container */}
                     <div className="flex w-full flex-col gap-8 md:min-w-80">
@@ -60,16 +63,21 @@ const IndexPage = () => {
                             <PersonalDetail text="21 Years Old" icon="person" />
                         </div>
                         {/* CTA buttons */}
-                        <span className="flex w-full gap-2">
+                        <span className="flex w-full flex-wrap gap-2">
                             <RedirectButton to="/contact" maxWidthMobile>
                                 Contact Me
+                                <Icon icon="email" variant="button-primary" />
                             </RedirectButton>
                             <RedirectButton
-                                to="/projects"
+                                to="/#projects"
                                 variant="secondary"
                                 maxWidthMobile
                             >
                                 Go to Projects
+                                <Icon
+                                    icon="arrow_right"
+                                    variant="button-secondary"
+                                />
                             </RedirectButton>
                         </span>
                     </div>
@@ -130,11 +138,56 @@ const IndexPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* Work experience section, requires id for auto-scroll on navigation */}
-            <div id="work">
-                <SectionHeader>Work</SectionHeader>
-            </div>
+            </Section>
+            {/* Projects section (preview of max 3 and can redirect to all projects page) */}
+            <Section header="Projects" id="projects">
+                {/* 3 recent projects */}
+                <div className="flex flex-col gap-2">
+                    {projects.slice(0, 3).map((p) => (
+                        <Card
+                            className="flex w-full flex-col gap-3"
+                            onClick={() => navigate(`/projects/${p.slug}`)}
+                        >
+                            {/* Title and summary */}
+                            <div className="flex flex-col gap-1">
+                                <Text variant="primary" className="font-light">
+                                    {p.title}
+                                </Text>
+                                <Text
+                                    variant="secondary"
+                                    className="text-sm font-light"
+                                >
+                                    {p.summary}
+                                </Text>
+                            </div>
+                            {/* 3 main technologies */}
+                            <span className="flex flex-wrap gap-1">
+                                {p.technologies.slice(0, 3).map((t) => (
+                                    <Skill skill={t} />
+                                ))}
+                            </span>
+                        </Card>
+                    ))}
+                    <RedirectButton
+                        variant="secondary"
+                        to="/projects"
+                        maxWidth
+                        preventTransform
+                        className="mt-1"
+                    >
+                        View all Projects
+                        <Icon
+                            variant="button-secondary"
+                            icon="arrow_right_alt"
+                            className="text-sm"
+                        />
+                    </RedirectButton>
+                </div>
+            </Section>
+            {/* Work experience section */}
+            <Section header="Work" id="work"></Section>
+            {/* Blogs section (preview of max 3 and can redirect to all blogs page) */}
+            <Section header="Blogs" id="blogs"></Section>
         </main>
     );
 };
