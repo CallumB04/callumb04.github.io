@@ -36,7 +36,7 @@ const IndexPage = () => {
         <main>
             {/* About me section */}
             <Section header="About me">
-                <div className="flex flex-col gap-8 md:flex-row">
+                <div className="flex flex-col gap-16 md:flex-row md:gap-8">
                     {/* Left container */}
                     <div className="flex w-full flex-col gap-8 md:min-w-80">
                         {/* Hello text */}
