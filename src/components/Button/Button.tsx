@@ -23,11 +23,11 @@ const Button = ({
     return (
         <button
             className={twMerge(
-                "font-primary group flex items-center justify-center gap-2 rounded-md px-4 py-3 text-sm font-medium transition-colors duration-200",
+                "font-primary group flex h-11 transform items-center justify-center gap-2 rounded-md px-4 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5",
                 onClick && "cursor-pointer",
                 variant === "primary"
                     ? "bg-button-primary hover:bg-button-primary-hover text-button-primary-text hover:text-button-primary-text-hover"
-                    : "border-button-secondary text-button-secondary-text hover:border-button-secondary-hover hover:text-button-secondary-text-hover border-2",
+                    : "bg-button-secondary text-button-secondary-text hover:bg-button-secondary-hover hover:text-button-secondary-text-hover",
                 maxWidth && "w-full",
                 maxWidthMobile && "w-full sm:w-max",
                 className
