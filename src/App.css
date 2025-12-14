@@ -46,6 +46,7 @@ main {
     --color-page-bg: #0f1115;
     --color-card-bg: #0c0e12;
     --color-card-border: #191919;
+    --color-card-border-hover: #313131;
     --color-card-fg: #e5e7eb;
 
     /* Text */
@@ -60,13 +61,13 @@ main {
     --color-button-primary: #3ba6f6;
     --color-button-primary-hover: #1f8fe3;
     --color-button-secondary: #ffffff;
-    --color-button-secondary-hover: #e5e7eb;
+    --color-button-secondary-hover: #3ba6f6;
 
     /* Buttons Text */
     --color-button-primary-text: #1a1d23;
     --color-button-primary-text-hover: #ffffff;
     --color-button-secondary-text: #ffffff;
-    --color-button-secondary-text-hover: #f5f7fa;
+    --color-button-secondary-text-hover: #3ba6f6;
 
     /* UI */
     --color-layout-border: #1a1e26;
