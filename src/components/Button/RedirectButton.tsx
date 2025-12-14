@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 
 interface RedirectButtonProps {
     children: ReactNode;
+    variant?: "primary" | "secondary";
     to: string;
     className?: string;
     onClick?: () => void;
@@ -15,6 +16,7 @@ interface RedirectButtonProps {
 
 const RedirectButton = ({
     children,
+    variant = "primary",
     to,
     className,
     onClick,
@@ -32,7 +34,7 @@ const RedirectButton = ({
             )}
         >
             <Button
-                variant="primary"
+                variant={variant}
                 className={twMerge("cursor-pointer", className)}
                 onClick={onClick}
                 disabled={disabled}
