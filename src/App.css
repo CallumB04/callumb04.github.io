@@ -60,13 +60,13 @@ main {
     /* Buttons */
     --color-button-primary: #3ba6f6;
     --color-button-primary-hover: #1f8fe3;
-    --color-button-secondary: #ffffff;
+    --color-button-secondary: #bbb;
     --color-button-secondary-hover: #3ba6f6;
 
     /* Buttons Text */
     --color-button-primary-text: #1a1d23;
     --color-button-primary-text-hover: #ffffff;
-    --color-button-secondary-text: #ffffff;
+    --color-button-secondary-text: #bbb;
     --color-button-secondary-text-hover: #3ba6f6;
 
     /* UI */
