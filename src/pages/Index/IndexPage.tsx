@@ -140,7 +140,11 @@ const IndexPage = () => {
                 </div>
             </Section>
             {/* Projects section (preview of max 3 and can redirect to all projects page) */}
-            <Section header="Projects" id="projects">
+            <Section
+                header="Projects"
+                subheader={`Showing 3 of ${projects.length} projects`}
+                id="projects"
+            >
                 {/* 3 recent projects */}
                 <div className="flex flex-col gap-2">
                     {projects.slice(0, 3).map((p) => (
