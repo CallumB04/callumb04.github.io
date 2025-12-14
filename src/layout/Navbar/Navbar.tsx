@@ -38,14 +38,18 @@ const Navbar = () => {
                     </Link>
                     {/* Navbar Items */}
                     <span className="flex w-full max-w-80 items-center justify-between md:max-w-max md:gap-10">
-                        <NavbarItem text="About" icon="info" to="/" />
+                        <NavbarItem text="About" icon="home" to="/" />
                         <NavbarItem
                             text="Projects"
                             icon="folder_open"
                             to="/projects"
                         />
                         <NavbarItem text="Work" icon="work" to="/#work" />
-                        <NavbarItem text="Blog" icon="news" to="/blogs" />
+                        <NavbarItem
+                            text="Blog"
+                            icon="article_person"
+                            to="/blogs"
+                        />
                         {/* Contact me button */}
                         <RedirectButton
                             to="/contact"
