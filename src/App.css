@@ -14,7 +14,7 @@ body {
 }
 
 main {
-    @apply mt-navbar-height mx-auto flex max-w-200 flex-col gap-12 px-4 py-12 sm:px-8 sm:py-24;
+    @apply mt-navbar-height mx-auto flex max-w-220 flex-col gap-12 px-4 py-12 sm:px-8 sm:py-24;
 }
 
 /* Material Icon Sizes */
@@ -62,9 +62,9 @@ main {
 
     /* Buttons Text */
     --color-button-primary-text: #1a1d23;
-    --color-button-primary-text-hover: #000000;
-    --color-button-secondary-text: #1a1d23;
-    --color-button-secondary-text-hover: #000000;
+    --color-button-primary-text-hover: #ffffff;
+    --color-button-secondary-text: #ffffff;
+    --color-button-secondary-text-hover: #f5f7fa;
 
     /* UI */
     --color-layout-border: #1a1e26;
