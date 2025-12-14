@@ -104,8 +104,8 @@ const IndexPage = () => {
                             >
                                 My Experience
                             </Text>
-                            <div className="flex gap-2">
-                                <Card className="flex w-1/2 flex-col gap-1">
+                            <div className="flex flex-col gap-2 sm:flex-row">
+                                <Card className="flex w-full flex-col gap-1 sm:w-1/2">
                                     <Text
                                         variant="highlight"
                                         className="text-2xl font-medium"
@@ -119,7 +119,7 @@ const IndexPage = () => {
                                         Year working full-time in the industry
                                     </Text>
                                 </Card>
-                                <Card className="flex w-1/2 flex-col gap-1">
+                                <Card className="flex w-full flex-col gap-1 sm:w-1/2">
                                     <Text
                                         variant="highlight"
                                         className="text-2xl font-medium"
