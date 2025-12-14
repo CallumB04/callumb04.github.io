@@ -9,6 +9,7 @@ interface ButtonProps {
     disabled?: boolean;
     maxWidth?: boolean;
     maxWidthMobile?: boolean;
+    preventTransform?: boolean; // prevent the transform on button hover
 }
 
 const Button = ({
@@ -19,6 +20,7 @@ const Button = ({
     disabled,
     maxWidth,
     maxWidthMobile,
+    preventTransform,
 }: ButtonProps) => {
     return (
         <button
@@ -30,6 +32,7 @@ const Button = ({
                     : "border-button-secondary text-button-secondary-text hover:border-button-secondary-hover hover:text-button-secondary-text-hover border-1",
                 maxWidth && "w-full",
                 maxWidthMobile && "w-full sm:w-max",
+                preventTransform && "hover:translate-y-0",
                 className
             )}
             onClick={onClick}

@@ -12,6 +12,7 @@ interface RedirectButtonProps {
     disabled?: boolean;
     maxWidth?: boolean;
     maxWidthMobile?: boolean;
+    preventTransform?: boolean; // prevent the transform on button hover
 }
 
 const RedirectButton = ({
@@ -23,6 +24,7 @@ const RedirectButton = ({
     disabled,
     maxWidth,
     maxWidthMobile,
+    preventTransform,
 }: RedirectButtonProps) => {
     return (
         <Link
@@ -40,6 +42,7 @@ const RedirectButton = ({
                 disabled={disabled}
                 maxWidth={maxWidth}
                 maxWidthMobile={maxWidthMobile}
+                preventTransform={preventTransform}
             >
                 {children}
             </Button>
