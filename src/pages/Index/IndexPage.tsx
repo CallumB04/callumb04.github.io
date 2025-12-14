@@ -142,7 +142,7 @@ const IndexPage = () => {
             {/* Projects section (preview of max 3 and can redirect to all projects page) */}
             <Section
                 header="Projects"
-                subheader={`Showing 3 of ${projects.length} projects`}
+                subheader="Showing 3 most recent projects"
                 id="projects"
             >
                 {/* 3 recent projects */}
