@@ -14,7 +14,7 @@ const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
             <Text
                 variant="primary"
                 redirect
-                className="hidden text-sm font-semibold md:inline"
+                className="hidden text-sm font-medium md:inline"
             >
                 {text}
             </Text>
@@ -25,7 +25,7 @@ const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
                 title={text}
             ></Icon>
             {/* Hover Underline Effect */}
-            <span className="bg-highlight-soft absolute bottom-0 left-1/2 mx-auto hidden h-0.5 w-0 -translate-x-1/2 rounded-full transition-all duration-500 group-hover:w-full md:inline"></span>
+            <span className="bg-highlight-soft absolute bottom-0 left-1/2 mx-auto hidden h-px w-0 -translate-x-1/2 rounded-full transition-all duration-500 group-hover:w-full md:inline"></span>
         </Link>
     );
 };
