@@ -6,7 +6,7 @@ import usePageTitle from "../../hooks/usePageTitle";
 const NotFoundPage = () => {
     usePageTitle("Page not found");
     return (
-        <main className="mx-auto mt-0! flex h-screen max-w-max flex-col items-center justify-center gap-8 px-2 text-center sm:px-4">
+        <main className="mx-auto mt-0! flex h-screen max-w-max flex-col items-center justify-center gap-8! px-2 text-center sm:px-4">
             <div className="flex flex-col gap-2">
                 <Text
                     variant="highlight-soft"
@@ -27,7 +27,7 @@ const NotFoundPage = () => {
             </Text>
             <RedirectButton to="/" maxWidthMobile>
                 Return to Portfolio{" "}
-                <Icon icon="keyboard_return" variant="button" />
+                <Icon icon="keyboard_return" variant="button-primary" />
             </RedirectButton>
         </main>
     );
