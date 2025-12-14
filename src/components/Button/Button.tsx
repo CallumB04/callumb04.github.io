@@ -25,7 +25,7 @@ const Button = ({
     return (
         <button
             className={twMerge(
-                "font-primary group flex h-11 transform items-center justify-center gap-2 rounded-md px-4 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5",
+                "font-primary group flex h-11 transform items-center justify-center gap-2 rounded-md px-4 text-sm font-medium transition-all duration-300 sm:hover:-translate-y-0.5",
                 onClick && "cursor-pointer",
                 variant === "primary"
                     ? "bg-button-primary hover:bg-button-primary-hover text-button-primary-text hover:text-button-primary-text-hover"
