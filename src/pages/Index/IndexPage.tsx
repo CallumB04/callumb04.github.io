@@ -8,10 +8,10 @@ import usePageTitle from "../../hooks/usePageTitle";
 import { type Project } from "../../data/models";
 import { loadAllProjects } from "../../data/loader";
 import Section from "../../components/Section/Section";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
 import Button from "../../components/Button/Button";
-import RedirectDevicon from "../../components/Icon/RedirectDevicon";
+import RedirectIcon from "../../components/Icon/RedirectIcon";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
@@ -180,13 +180,24 @@ const IndexPage = () => {
                             {/* Github and/or Live Link */}
                             <span className="flex gap-2">
                                 {p.githubRepo && (
-                                    <RedirectDevicon
+                                    <RedirectIcon
+                                        type="devicon"
                                         to={
                                             "https://github.com/" + p.githubRepo
                                         }
                                         icon="devicon-github-original"
                                         newTab
                                         title="Github Repository"
+                                    />
+                                )}
+                                {p.liveURL && (
+                                    <RedirectIcon
+                                        type="material"
+                                        to={p.liveURL}
+                                        icon="link"
+                                        newTab
+                                        title="Live URL"
+                                        className="text-sm"
                                     />
                                 )}
                             </span>
