@@ -8,9 +8,10 @@ import usePageTitle from "../../hooks/usePageTitle";
 import { type Project } from "../../data/models";
 import { loadAllProjects } from "../../data/loader";
 import Section from "../../components/Section/Section";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
 import Button from "../../components/Button/Button";
+import RedirectDevicon from "../../components/Icon/RedirectDevicon";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
@@ -150,26 +151,43 @@ const IndexPage = () => {
                 <div className="flex flex-col gap-2">
                     {projects.slice(0, 3).map((p) => (
                         <Card
-                            className="flex w-full flex-col gap-3"
+                            className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
                             onClick={() => navigate(`/projects/${p.slug}`)}
                         >
-                            {/* Title and summary */}
-                            <div className="flex flex-col gap-1">
-                                <Text variant="primary" className="font-light">
-                                    {p.title}
-                                </Text>
-                                <Text
-                                    variant="secondary"
-                                    className="text-sm font-light"
-                                >
-                                    {p.summary}
-                                </Text>
+                            <div className="flex flex-col gap-3">
+                                {/* Title and summary */}
+                                <div className="flex flex-col gap-1">
+                                    <Text
+                                        variant="primary"
+                                        className="font-light"
+                                    >
+                                        {p.title}
+                                    </Text>
+                                    <Text
+                                        variant="secondary"
+                                        className="text-sm font-light"
+                                    >
+                                        {p.summary}
+                                    </Text>
+                                </div>
+                                {/* 3 main technologies */}
+                                <span className="flex flex-wrap gap-1">
+                                    {p.technologies.slice(0, 3).map((t) => (
+                                        <Skill skill={t} />
+                                    ))}
+                                </span>
                             </div>
-                            {/* 3 main technologies */}
-                            <span className="flex flex-wrap gap-1">
-                                {p.technologies.slice(0, 3).map((t) => (
-                                    <Skill skill={t} />
-                                ))}
+                            {/* Github and/or Live Link */}
+                            <span className="flex gap-2">
+                                {p.githubRepo && (
+                                    <RedirectDevicon
+                                        to={
+                                            "https://github.com/" + p.githubRepo
+                                        }
+                                        icon="devicon-github-original"
+                                        newTab
+                                    />
+                                )}
                             </span>
                         </Card>
                     ))}
