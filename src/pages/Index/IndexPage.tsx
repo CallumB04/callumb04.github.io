@@ -186,6 +186,7 @@ const IndexPage = () => {
                                         }
                                         icon="devicon-github-original"
                                         newTab
+                                        title="Github Repository"
                                     />
                                 )}
                             </span>
