@@ -11,7 +11,7 @@ const Card = ({ children, onClick, className }: CardProps) => {
     return (
         <div
             className={twMerge(
-                "bg-card-bg text-card-fg border-card-border w-max rounded-md border-1 p-4",
+                "bg-card-bg text-card-fg border-card-border w-max rounded-md border p-4",
                 onClick &&
                     "hover:border-card-border-hover cursor-pointer transition-colors duration-300",
                 className
