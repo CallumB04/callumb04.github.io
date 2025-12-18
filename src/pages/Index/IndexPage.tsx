@@ -66,37 +66,21 @@ const IndexPage = () => {
                             />
                             <PersonalDetail text="21 Years Old" icon="person" />
                         </div>
-                        {/* CTA buttons */}
-                        <span className="flex w-full flex-wrap gap-2">
-                            <a
-                                href="/CV.pdf"
-                                download
-                                className="w-full sm:w-max"
+                        {/* Download CV Button */}
+                        <a href="/CV.pdf" download className="w-full">
+                            <Button
+                                variant="primary"
+                                className="h-12 cursor-pointer rounded-full text-base font-semibold"
+                                maxWidth
                             >
-                                <Button
-                                    variant="primary"
-                                    maxWidthMobile
-                                    className="cursor-pointer"
-                                >
-                                    Download CV
-                                    <Icon
-                                        icon="download"
-                                        variant="button-primary"
-                                    />
-                                </Button>
-                            </a>
-                            <RedirectButton
-                                to="/#projects"
-                                variant="secondary"
-                                maxWidthMobile
-                            >
-                                Go to Projects
+                                Download CV
                                 <Icon
-                                    icon="arrow_right"
-                                    variant="button-secondary"
+                                    icon="download"
+                                    variant="button-primary"
+                                    className="text-base"
                                 />
-                            </RedirectButton>
-                        </span>
+                            </Button>
+                        </a>
                     </div>
                     <div className="flex w-full flex-col gap-8">
                         {/* Key Skills */}
