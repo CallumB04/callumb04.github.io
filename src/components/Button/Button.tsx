@@ -29,10 +29,10 @@ const Button = ({
                 onClick && "cursor-pointer",
                 variant === "primary"
                     ? "bg-button-primary hover:bg-button-primary-hover text-button-primary-text hover:text-button-primary-text-hover"
-                    : "border-button-secondary text-button-secondary-text hover:border-button-secondary-hover hover:text-button-secondary-text-hover border-1",
+                    : "border-button-secondary text-button-secondary-text hover:border-button-secondary-hover hover:text-button-secondary-text-hover border",
                 maxWidth && "w-full",
                 maxWidthMobile && "w-full sm:w-max",
-                preventTransform && "hover:translate-y-0",
+                preventTransform && "sm:hover:translate-y-0",
                 className
             )}
             onClick={onClick}
