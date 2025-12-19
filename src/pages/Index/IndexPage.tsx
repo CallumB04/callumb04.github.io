@@ -51,7 +51,7 @@ const IndexPage = () => {
                                 Callum Burgoyne
                             </span>
                         </Text>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4.5">
                             {/* Personal details */}
                             <div className="flex flex-col gap-3">
                                 <PersonalDetail
@@ -79,6 +79,7 @@ const IndexPage = () => {
                                     icon="github-original"
                                     hoverText="Github"
                                     newTab
+                                    className="size-10"
                                 />
                                 <RedirectIcon
                                     type="devicon"
@@ -86,6 +87,15 @@ const IndexPage = () => {
                                     icon="linkedin-plain"
                                     hoverText="Linkedin"
                                     newTab
+                                    className="size-10"
+                                />
+                                <RedirectIcon
+                                    type="material"
+                                    to="/CV.pdf"
+                                    icon="download"
+                                    hoverText="Download CV"
+                                    newTab
+                                    className="size-10"
                                 />
                                 <RedirectIcon
                                     type="material"
@@ -93,24 +103,10 @@ const IndexPage = () => {
                                     icon="mail"
                                     hoverText="Email"
                                     newTab
+                                    className="size-10"
                                 />
                             </span>
                         </div>
-                        {/* Download CV Button */}
-                        <a href="/CV.pdf" download className="w-full">
-                            <Button
-                                variant="primary"
-                                className="h-12 cursor-pointer rounded-full text-base font-semibold"
-                                maxWidth
-                            >
-                                Download CV
-                                <Icon
-                                    icon="download"
-                                    variant="button-primary"
-                                    className="text-base"
-                                />
-                            </Button>
-                        </a>
                     </div>
                     <div className="flex w-full flex-col gap-8">
                         {/* Key Skills */}
