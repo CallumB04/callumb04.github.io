@@ -51,21 +51,50 @@ const IndexPage = () => {
                                 Callum Burgoyne
                             </span>
                         </Text>
-                        {/* Personal details */}
-                        <div className="flex flex-col gap-3">
-                            <PersonalDetail
-                                text="Full-Stack Web Developer"
-                                icon="code"
-                            />
-                            <PersonalDetail
-                                text="10X Managers (L4 Apprentice)"
-                                icon="work"
-                            />
-                            <PersonalDetail
-                                text="Kent, United Kingdom"
-                                icon="location_on"
-                            />
-                            <PersonalDetail text="21 Years Old" icon="person" />
+                        <div className="flex flex-col gap-4">
+                            {/* Personal details */}
+                            <div className="flex flex-col gap-3">
+                                <PersonalDetail
+                                    text="Full-Stack Web Developer"
+                                    icon="code"
+                                />
+                                <PersonalDetail
+                                    text="10X Managers (L4 Apprentice)"
+                                    icon="work"
+                                />
+                                <PersonalDetail
+                                    text="Kent, United Kingdom"
+                                    icon="location_on"
+                                />
+                                <PersonalDetail
+                                    text="21 Years Old"
+                                    icon="person"
+                                />
+                            </div>
+                            {/* Social links */}
+                            <span className="flex gap-2">
+                                <RedirectIcon
+                                    type="devicon"
+                                    to="https://github.com/CallumB04"
+                                    icon="github-original"
+                                    hoverText="Github"
+                                    newTab
+                                />
+                                <RedirectIcon
+                                    type="devicon"
+                                    to="https://www.linkedin.com/in/callum-burgoyne-1b411a324/"
+                                    icon="linkedin-plain"
+                                    hoverText="Linkedin"
+                                    newTab
+                                />
+                                <RedirectIcon
+                                    type="material"
+                                    to="mailto:burgoynecallum04@gmail.com"
+                                    icon="mail"
+                                    hoverText="Email"
+                                    newTab
+                                />
+                            </span>
                         </div>
                         {/* Download CV Button */}
                         <a href="/CV.pdf" download className="w-full">
@@ -185,7 +214,7 @@ const IndexPage = () => {
                                         to={
                                             "https://github.com/" + p.githubRepo
                                         }
-                                        icon="devicon-github-original"
+                                        icon="github-original"
                                         newTab
                                         hoverText="Github Repo"
                                     />

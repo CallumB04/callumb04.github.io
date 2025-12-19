@@ -24,14 +24,14 @@ const RedirectIcon = ({
             to={to}
             target={newTab ? "_blank" : ""}
             className={twMerge(
-                "border-card-border group hover:border-card-border-hover relative flex size-9 items-center justify-center rounded-full border transition-colors duration-300",
+                "border-card-border group hover:border-card-border-hover text-text-primary relative flex size-9 items-center justify-center rounded-full border transition-colors duration-300",
                 className
             )}
             onClick={(e) => e.stopPropagation()}
         >
             <i
                 className={twMerge(
-                    type === "devicon" && icon + " " + "text-xl",
+                    type === "devicon" && "devicon-" + icon + " " + "text-xl",
                     type === "material" && "material-symbols-outlined text-base"
                 )}
             >
