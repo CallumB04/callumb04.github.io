@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
+import Text from "../Text/Text";
 
 interface RedirectIconProps {
     type: "devicon" | "material";
     to: string;
     icon: string;
     newTab?: boolean;
-    title?: string;
+    hoverText?: string;
     className?: string;
 }
 
@@ -15,7 +16,7 @@ const RedirectIcon = ({
     to,
     icon,
     newTab,
-    title,
+    hoverText,
     className,
 }: RedirectIconProps) => {
     return (
@@ -23,10 +24,9 @@ const RedirectIcon = ({
             to={to}
             target={newTab ? "_blank" : ""}
             className={twMerge(
-                "border-card-border hover:border-card-border-hover flex size-9 items-center justify-center rounded-full border transition-colors duration-300",
+                "border-card-border group hover:border-card-border-hover relative flex size-9 items-center justify-center rounded-full border transition-colors duration-300",
                 className
             )}
-            title={title}
             onClick={(e) => e.stopPropagation()}
         >
             <i
@@ -37,6 +37,12 @@ const RedirectIcon = ({
             >
                 {type === "material" ? icon : ""}
             </i>
+            <Text
+                variant="primary"
+                className="pointer-events-none absolute bottom-0 left-1/2 w-max -translate-x-1/2 text-center text-xs opacity-0 transition-all duration-300 sm:group-hover:-bottom-6 sm:group-hover:opacity-100"
+            >
+                {hoverText}
+            </Text>
         </Link>
     );
 };

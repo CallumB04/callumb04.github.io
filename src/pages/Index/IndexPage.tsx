@@ -187,7 +187,7 @@ const IndexPage = () => {
                                         }
                                         icon="devicon-github-original"
                                         newTab
-                                        title="Github Repository"
+                                        hoverText="Github Repo"
                                     />
                                 )}
                                 {p.liveURL && (
@@ -196,7 +196,7 @@ const IndexPage = () => {
                                         to={p.liveURL}
                                         icon="link"
                                         newTab
-                                        title="Live URL"
+                                        hoverText="Live URL"
                                         className="text-sm"
                                     />
                                 )}
