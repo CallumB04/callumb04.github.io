@@ -93,7 +93,7 @@ const IndexPage = () => {
                             </Text>
                             <div className="flex flex-wrap gap-1">
                                 {KEY_SKILLS.map((ts) => (
-                                    <Skill skill={ts} />
+                                    <Skill key={ts} skill={ts} />
                                 ))}
                             </div>
                         </div>
@@ -145,6 +145,7 @@ const IndexPage = () => {
                 <div className="flex flex-col gap-2">
                     {projects.slice(0, 3).map((p) => (
                         <Card
+                            key={p.slug}
                             className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
                             onClick={() => navigate(`/projects/${p.slug}`)}
                         >
@@ -167,7 +168,7 @@ const IndexPage = () => {
                                 {/* 3 main technologies */}
                                 <span className="flex flex-wrap gap-1">
                                     {p.technologies.slice(0, 3).map((t) => (
-                                        <Skill skill={t} />
+                                        <Skill key={t} skill={t} />
                                     ))}
                                 </span>
                             </div>
