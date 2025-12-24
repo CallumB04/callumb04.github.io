@@ -136,68 +136,67 @@ const IndexPage = () => {
                 </div>
             </Section>
             {/* Projects section (preview of max 3 and can redirect to all projects page) */}
-            <Section
-                header="Projects"
-                subheader="Showing 3 most recent projects"
-                id="projects"
-            >
+            <Section header="Featured Projects" id="projects">
                 {/* 3 recent projects */}
                 <div className="flex flex-col gap-2">
-                    {projects.slice(0, 3).map((p) => (
-                        <Card
-                            key={p.slug}
-                            className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
-                            onClick={() => navigate(`/projects/${p.slug}`)}
-                        >
-                            <div className="flex flex-col gap-3">
-                                {/* Title and summary */}
-                                <div className="flex flex-col gap-1">
-                                    <Text
-                                        variant="primary"
-                                        className="font-light"
-                                    >
-                                        {p.title}
-                                    </Text>
-                                    <Text
-                                        variant="secondary"
-                                        className="text-sm font-light"
-                                    >
-                                        {p.summary}
-                                    </Text>
+                    {projects
+                        .filter((p) => p.featured)
+                        .map((p) => (
+                            <Card
+                                key={p.slug}
+                                className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
+                                onClick={() => navigate(`/projects/${p.slug}`)}
+                            >
+                                <div className="flex flex-col gap-3">
+                                    {/* Title and summary */}
+                                    <div className="flex flex-col gap-1">
+                                        <Text
+                                            variant="primary"
+                                            className="font-light"
+                                        >
+                                            {p.title}
+                                        </Text>
+                                        <Text
+                                            variant="secondary"
+                                            className="text-sm font-light"
+                                        >
+                                            {p.summary}
+                                        </Text>
+                                    </div>
+                                    {/* 3 main technologies */}
+                                    <span className="flex flex-wrap gap-1">
+                                        {p.technologies.slice(0, 3).map((t) => (
+                                            <Skill key={t} skill={t} />
+                                        ))}
+                                    </span>
                                 </div>
-                                {/* 3 main technologies */}
-                                <span className="flex flex-wrap gap-1">
-                                    {p.technologies.slice(0, 3).map((t) => (
-                                        <Skill key={t} skill={t} />
-                                    ))}
+                                {/* Github and/or Live Link */}
+                                <span className="flex gap-2">
+                                    {p.githubRepo && (
+                                        <RedirectIcon
+                                            type="devicon"
+                                            to={
+                                                "https://github.com/" +
+                                                p.githubRepo
+                                            }
+                                            icon="github-original"
+                                            newTab
+                                            hoverText="Github Repo"
+                                        />
+                                    )}
+                                    {p.liveURL && (
+                                        <RedirectIcon
+                                            type="material"
+                                            to={p.liveURL}
+                                            icon="link"
+                                            newTab
+                                            hoverText="Live URL"
+                                            className="text-sm"
+                                        />
+                                    )}
                                 </span>
-                            </div>
-                            {/* Github and/or Live Link */}
-                            <span className="flex gap-2">
-                                {p.githubRepo && (
-                                    <RedirectIcon
-                                        type="devicon"
-                                        to={
-                                            "https://github.com/" + p.githubRepo
-                                        }
-                                        icon="github-original"
-                                        newTab
-                                        hoverText="Github Repo"
-                                    />
-                                )}
-                                {p.liveURL && (
-                                    <RedirectIcon
-                                        type="material"
-                                        to={p.liveURL}
-                                        icon="link"
-                                        newTab
-                                        hoverText="Live URL"
-                                        className="text-sm"
-                                    />
-                                )}
-                            </span>
-                        </Card>
-                    ))}
+                            </Card>
+                        ))}
                     <RedirectButton
                         variant="secondary"
                         to="/projects"
@@ -216,8 +215,8 @@ const IndexPage = () => {
             </Section>
             {/* Work experience section */}
             <Section header="Work" id="work"></Section>
-            {/* Blogs section (preview of max 3 and can redirect to all blogs page) */}
-            <Section header="Blogs" id="blogs"></Section>
+            {/* Recent Blogs section (preview of max 3 and can redirect to all blogs page) */}
+            <Section header="Recent Blogs" id="blogs"></Section>
         </main>
     );
 };

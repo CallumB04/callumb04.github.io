@@ -11,6 +11,7 @@ export interface Project {
     liveURL?: string;
     collaborators?: Collaborator[];
     relatedBlogPost?: string; // slug of blog post
+    featured?: boolean; // is featured on portfolio index page?
 }
 
 export interface Collaborator {

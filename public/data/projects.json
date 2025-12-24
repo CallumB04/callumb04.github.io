@@ -9,7 +9,8 @@
         "finishDate": "23rd November 2025",
         "images": ["shop.png", "preview.png", "item.png", "checkout.png"],
         "githubRepo": "CallumB04/clothing-shop",
-        "relatedBlogPost": "clothing-shop"
+        "relatedBlogPost": "clothing-shop",
+        "featured": true
     },
     {
         "slug": "playrates",
@@ -30,7 +31,8 @@
             "login.png",
             "remove-friend.png"
         ],
-        "githubRepo": "CallumB04/PlayRates"
+        "githubRepo": "CallumB04/PlayRates",
+        "featured": true
     },
     {
         "slug": "sjb-safety",
@@ -42,7 +44,8 @@
         "finishDate": "5th January 2025",
         "images": ["homepage.png", "services.png"],
         "githubRepo": "CallumB04/sjbsafety.co.uk",
-        "liveURL": "https://sjbsafety.co.uk"
+        "liveURL": "https://sjbsafety.co.uk",
+        "featured": true
     },
     {
         "slug": "platform-shooter",
