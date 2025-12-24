@@ -34,9 +34,9 @@ const Skill = ({ skill }: SkillProps) => {
             {technology?.devicon && (
                 <i
                     className={twMerge(
-                        "text-text-secondary transition-colors duration-300",
+                        "text-text-secondary transition-all duration-300",
                         "devicon-" + technology.devicon,
-                        hovered && "colored"
+                        hovered && "colored animate-pulse"
                     )}
                 ></i>
             )}
