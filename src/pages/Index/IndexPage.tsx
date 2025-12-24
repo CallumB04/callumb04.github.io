@@ -51,27 +51,60 @@ const IndexPage = () => {
                                 Callum Burgoyne
                             </span>
                         </Text>
-                        <div className="flex flex-col gap-4.5">
-                            {/* Personal details */}
-                            <div className="flex flex-col gap-3">
-                                <PersonalDetail
-                                    text="Full-Stack Web Developer"
-                                    icon="code"
+                        {/* Personal details */}
+                        <div className="flex flex-col gap-3">
+                            <PersonalDetail
+                                text="Full-Stack Web Developer"
+                                icon="code"
+                            />
+                            <PersonalDetail
+                                text="10X Managers (L4 Apprentice)"
+                                icon="work"
+                            />
+                            <PersonalDetail
+                                text="Kent, United Kingdom"
+                                icon="location_on"
+                            />
+                            <PersonalDetail text="21 Years Old" icon="person" />
+                        </div>
+                        {/* Download CV Button */}
+                        <a href="/CV.pdf" download className="w-full">
+                            <Button
+                                variant="primary"
+                                maxWidth
+                                className="h-12 cursor-pointer font-semibold"
+                            >
+                                Download my CV
+                                <Icon
+                                    icon="download"
+                                    variant="button-primary"
                                 />
-                                <PersonalDetail
-                                    text="10X Managers (L4 Apprentice)"
-                                    icon="work"
-                                />
-                                <PersonalDetail
-                                    text="Kent, United Kingdom"
-                                    icon="location_on"
-                                />
-                                <PersonalDetail
-                                    text="21 Years Old"
-                                    icon="person"
-                                />
+                            </Button>
+                        </a>
+                    </div>
+                    <div className="flex w-full flex-col gap-8">
+                        {/* Key Skills */}
+                        <div className="flex flex-col gap-3">
+                            <Text
+                                variant="primary"
+                                className="text-sm font-medium"
+                            >
+                                Key Skills
+                            </Text>
+                            <div className="flex flex-wrap gap-1">
+                                {KEY_SKILLS.map((ts) => (
+                                    <Skill skill={ts} />
+                                ))}
                             </div>
-                            {/* Social links */}
+                        </div>
+                        {/* My links */}
+                        <div className="flex flex-col gap-3">
+                            <Text
+                                variant="primary"
+                                className="text-sm font-medium"
+                            >
+                                My Links
+                            </Text>
                             <span className="flex gap-2">
                                 <RedirectIcon
                                     type="devicon"
@@ -91,14 +124,6 @@ const IndexPage = () => {
                                 />
                                 <RedirectIcon
                                     type="material"
-                                    to="/CV.pdf"
-                                    icon="download"
-                                    hoverText="Download CV"
-                                    newTab
-                                    className="size-10"
-                                />
-                                <RedirectIcon
-                                    type="material"
                                     to="mailto:burgoynecallum04@gmail.com"
                                     icon="mail"
                                     hoverText="Email"
@@ -106,62 +131,6 @@ const IndexPage = () => {
                                     className="size-10"
                                 />
                             </span>
-                        </div>
-                    </div>
-                    <div className="flex w-full flex-col gap-8">
-                        {/* Key Skills */}
-                        <div className="flex flex-col gap-4">
-                            <Text
-                                variant="primary"
-                                className="text-sm font-medium"
-                            >
-                                Key Skills
-                            </Text>
-                            <div className="flex flex-wrap gap-1">
-                                {KEY_SKILLS.map((ts) => (
-                                    <Skill skill={ts} />
-                                ))}
-                            </div>
-                        </div>
-                        {/* My Experience */}
-                        <div className="flex flex-col gap-4">
-                            <Text
-                                variant="primary"
-                                className="text-sm font-medium"
-                            >
-                                My Experience
-                            </Text>
-                            <div className="flex flex-col gap-2 sm:flex-row">
-                                <Card className="flex w-full flex-col gap-1 sm:w-1/2">
-                                    <Text
-                                        variant="highlight"
-                                        className="text-2xl font-medium"
-                                    >
-                                        {"> 1"}
-                                    </Text>
-                                    <Text
-                                        variant="secondary"
-                                        className="text-sm font-light"
-                                    >
-                                        Year working full-time in the industry
-                                    </Text>
-                                </Card>
-                                <Card className="flex w-full flex-col gap-1 sm:w-1/2">
-                                    <Text
-                                        variant="highlight"
-                                        className="text-2xl font-medium"
-                                    >
-                                        {projects.length}+
-                                    </Text>
-                                    <Text
-                                        variant="secondary"
-                                        className="text-sm font-light"
-                                    >
-                                        Finished projects with varying
-                                        technologies
-                                    </Text>
-                                </Card>
-                            </div>
                         </div>
                     </div>
                 </div>
