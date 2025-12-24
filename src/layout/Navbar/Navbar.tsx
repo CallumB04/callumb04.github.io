@@ -1,7 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
-import RedirectButton from "../../components/Button/RedirectButton";
-import Icon from "../../components/Icon/Icon";
-import Text from "../../components/Text/Text";
+import { useLocation } from "react-router-dom";
 import NavbarItem from "./NavbarItem";
 import { useEffect } from "react";
 
