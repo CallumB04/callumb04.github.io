@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <nav className="bg-page-bg h-navbar-height border-layout-border fixed top-0 left-0 flex w-screen items-center justify-center border-b px-4 sm:items-end sm:border-b-0 sm:bg-transparent">
+        <nav className="bg-page-bg h-navbar-height border-layout-border fixed top-0 left-0 z-99 flex w-screen items-center justify-center border-b px-4 sm:items-end sm:border-b-0 sm:bg-transparent">
             {/* Navbar Items */}
             <span className="sm:bg-navbar-bg flex w-full max-w-80 items-center justify-between rounded-full sm:px-4 sm:py-2">
                 <NavbarItem text="Home" icon="home" to="/" />
