@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import RedirectButton from "../../components/Button/RedirectButton";
 import Card from "../../components/Card/Card";
 import PersonalDetail from "../../components/PersonalDetail/PersonalDetail";
 import Skill from "../../components/Skill/Skill";
@@ -136,7 +135,11 @@ const IndexPage = () => {
                 </div>
             </Section>
             {/* Projects section (preview of max 3 and can redirect to all projects page) */}
-            <Section header="Featured Projects" id="projects">
+            <Section
+                header="Featured Projects"
+                redirect={{ text: "View all", to: "/projects" }}
+                id="projects"
+            >
                 {/* 3 recent projects */}
                 <div className="flex flex-col gap-2">
                     {projects
@@ -197,20 +200,6 @@ const IndexPage = () => {
                                 </span>
                             </Card>
                         ))}
-                    <RedirectButton
-                        variant="secondary"
-                        to="/projects"
-                        maxWidth
-                        preventTransform
-                        className="mt-1"
-                    >
-                        View all Projects
-                        <Icon
-                            variant="button-secondary"
-                            icon="arrow_right_alt"
-                            className="text-sm"
-                        />
-                    </RedirectButton>
                 </div>
             </Section>
             {/* Work experience section */}
