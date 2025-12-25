@@ -112,7 +112,8 @@ const IndexPage = () => {
                                     icon="github-original"
                                     hoverText="Github"
                                     newTab
-                                    className="size-10"
+                                    className="size-12"
+                                    iconClassName="text-2xl"
                                 />
                                 <RedirectIcon
                                     type="devicon"
@@ -120,7 +121,8 @@ const IndexPage = () => {
                                     icon="linkedin-plain"
                                     hoverText="Linkedin"
                                     newTab
-                                    className="size-10"
+                                    className="size-12"
+                                    iconClassName="text-2xl"
                                 />
                                 <RedirectIcon
                                     type="material"
@@ -128,7 +130,8 @@ const IndexPage = () => {
                                     icon="mail"
                                     hoverText="Email"
                                     newTab
-                                    className="size-10"
+                                    className="size-12"
+                                    iconClassName="text-lg"
                                 />
                             </span>
                         </div>
