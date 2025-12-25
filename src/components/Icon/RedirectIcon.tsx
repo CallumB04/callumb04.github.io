@@ -9,6 +9,7 @@ interface RedirectIconProps {
     newTab?: boolean;
     hoverText?: string;
     className?: string;
+    iconClassName?: string;
 }
 
 const RedirectIcon = ({
@@ -18,6 +19,7 @@ const RedirectIcon = ({
     newTab,
     hoverText,
     className,
+    iconClassName,
 }: RedirectIconProps) => {
     return (
         <Link
@@ -32,7 +34,9 @@ const RedirectIcon = ({
             <i
                 className={twMerge(
                     type === "devicon" && "devicon-" + icon + " " + "text-xl",
-                    type === "material" && "material-symbols-outlined text-base"
+                    type === "material" &&
+                        "material-symbols-outlined text-base",
+                    iconClassName
                 )}
             >
                 {type === "material" ? icon : ""}
