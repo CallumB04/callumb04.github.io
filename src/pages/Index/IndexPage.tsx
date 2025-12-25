@@ -113,7 +113,7 @@ const IndexPage = () => {
                                     hoverText="Github"
                                     newTab
                                     className="size-12"
-                                    iconClassName="text-2xl"
+                                    iconClassName="text-3xl"
                                 />
                                 <RedirectIcon
                                     type="devicon"
