@@ -188,7 +188,7 @@ const IndexPage = () => {
                                             }
                                             icon="github-original"
                                             newTab
-                                            hoverText="Github Repo"
+                                            hoverText="Repository"
                                         />
                                     )}
                                     {p.liveURL && (
