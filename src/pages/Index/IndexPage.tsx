@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
 import Button from "../../components/Button/Button";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
+import WorkExperience from "./components/WorkExperience";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
@@ -203,7 +204,33 @@ const IndexPage = () => {
                 </div>
             </Section>
             {/* Work experience section */}
-            <Section header="Work" id="work"></Section>
+            <Section header="Work" id="work">
+                <div className="flex flex-col gap-2">
+                    <WorkExperience
+                        timeframe="Jan 2025 - Current"
+                        workplace="10X Managers"
+                        role="Apprentice Software Developer"
+                        workLogo="10X.png"
+                        details={[
+                            "My first full-time professional role",
+                            "Primarily working in Full-Stack Web Development",
+                            "Quickly gained team lead responsibilities, involving managing product roadmap; delegating tasks; and mentoring members of my team",
+                        ]}
+                        technologies={["bubble", "n8n", "docker", "react"]}
+                    />
+                    <WorkExperience
+                        timeframe="Oct 2024 - Jan 2025"
+                        workplace="Freelance"
+                        role="Freelance Web Developer"
+                        workLogo="freelance.jpg"
+                        details={[
+                            "Developed commercial websites for real-world local businesses",
+                            "Connected with clients through facebook and maintained frequent communication through the development process",
+                        ]}
+                        technologies={["javascript", "tailwind"]}
+                    />
+                </div>
+            </Section>
             {/* Recent Blogs section (preview of max 3 and can redirect to all blogs page) */}
             <Section header="Recent Blogs" id="blogs"></Section>
         </main>
