@@ -11,7 +11,7 @@ interface SectionProps {
 
 const Section = ({ children, header, redirect, id }: SectionProps) => {
     return (
-        <section id={id} className="flex flex-col gap-6">
+        <section id={id} className="z-20 flex flex-col gap-6">
             <span className="flex w-full items-center justify-between">
                 <SectionHeader>{header}</SectionHeader>
                 {redirect && (

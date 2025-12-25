@@ -7,11 +7,15 @@ import BlogPostPage from "./pages/BlogPost/BlogPostPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import Navbar from "./layout/Navbar/Navbar";
 import ProjectsPage from "./pages/Projects/ProjectsPage";
+import { Particles } from "./layout/Particles/Particles";
 
 function App() {
     return (
         <BrowserRouter>
             <Navbar />
+            <div className="fixed z-10 size-full overflow-hidden">
+                <Particles quantity={60} className="opacity-40" />
+            </div>
             <Routes>
                 <Route path="/" element={<IndexPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
