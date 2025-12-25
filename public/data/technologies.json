@@ -48,5 +48,11 @@
     "docker": {
         "name": "Docker",
         "devicon": "docker-plain"
+    },
+    "bubble": {
+        "name": "Bubble.io"
+    },
+    "n8n": {
+        "name": "n8n"
     }
 }
