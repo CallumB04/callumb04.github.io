@@ -45,6 +45,11 @@ const ProjectsPage = () => {
                             className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
                             onClick={() => navigate(`/projects/${p.slug}`)}
                         >
+                            {/* Project Image */}
+                            <img
+                                src={`/project_images/${p.slug}/banner.png`}
+                                className="aspect-7/1 w-full rounded object-cover"
+                            />
                             <div className="flex flex-col gap-3">
                                 {/* Dates, Title and summary */}
                                 <div className="flex flex-col gap-1">
@@ -52,8 +57,14 @@ const ProjectsPage = () => {
                                         variant="secondary"
                                         className="text-xs"
                                     >
-                                        {shortenDate(p.startDate) ?? "???"} -{" "}
-                                        {shortenDate(p.finishDate) ?? "???"}
+                                        {shortenDate(p.startDate) ?? "???"}
+                                        {shortenDate(p.startDate) ===
+                                        shortenDate(p.finishDate)
+                                            ? ""
+                                            : shortenDate(p.finishDate)
+                                              ? " - " +
+                                                shortenDate(p.finishDate)
+                                              : " - ???"}
                                     </Text>
                                     <Text
                                         variant="primary"
