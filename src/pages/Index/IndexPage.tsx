@@ -17,7 +17,7 @@ import WorkExperience from "./components/WorkExperience";
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
 
 const IndexPage = () => {
-    usePageTitle("Callum Burgoyne - Personal Portfolio");
+    usePageTitle("Callum Burgoyne | Software Developer");
 
     const navigate = useNavigate();
 

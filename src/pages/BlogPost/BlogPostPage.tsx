@@ -4,7 +4,7 @@ const BlogPostPage = () => {
     const { slug } = useParams();
 
     // add page title when pulled blog post info
-    // usePageTitle("Callum Burgoyne - <blog post name>")
+    // usePageTitle("<blog post name> | Callum Burgoyne")
 
     return <main>BlogPostPage</main>;
 };

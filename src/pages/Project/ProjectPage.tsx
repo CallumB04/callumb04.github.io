@@ -4,7 +4,7 @@ const ProjectPage = () => {
     const { slug } = useParams();
 
     // add page title when pulled project info
-    // usePageTitle("Callum Burgoyne - <project name>")
+    // usePageTitle("<project name> | Callum Burgoyne")
 
     return <main>ProjectPage</main>;
 };

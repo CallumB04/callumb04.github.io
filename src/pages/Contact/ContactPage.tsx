@@ -1,7 +1,7 @@
 import usePageTitle from "../../hooks/usePageTitle";
 
 const ContactPage = () => {
-    usePageTitle("Callum Burgoyne - Contact Me");
+    usePageTitle("Contact Me | Callum Burgoyne");
     return <main>ContactPage</main>;
 };
 

@@ -1,7 +1,7 @@
 import usePageTitle from "../../hooks/usePageTitle";
 
 const BlogsPage = () => {
-    usePageTitle("Callum Burgoyne - Blog");
+    usePageTitle("Blog | Callum Burgoyne");
     return <main>BlogsPage</main>;
 };
 

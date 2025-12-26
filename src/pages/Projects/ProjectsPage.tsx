@@ -18,7 +18,7 @@ const shortenDate = (date: string | undefined) => {
 };
 
 const ProjectsPage = () => {
-    usePageTitle("Callum Burgoyne - Projects");
+    usePageTitle("Projects | Callum Burgoyne");
     const navigate = useNavigate();
 
     const [projects, setProjects] = useState<Project[]>([]);
