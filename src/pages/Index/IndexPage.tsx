@@ -4,8 +4,8 @@ import PersonalDetail from "../../components/PersonalDetail/PersonalDetail";
 import Skill from "../../components/Skill/Skill";
 import Text from "../../components/Text/Text";
 import usePageTitle from "../../hooks/usePageTitle";
-import { type Project } from "../../data/models";
-import { loadAllProjects } from "../../data/loader";
+import { type BlogPost, type Project } from "../../data/models";
+import { loadAllBlogPosts, loadAllProjects } from "../../data/loader";
 import Section from "../../components/Section/Section";
 import { useNavigate } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
@@ -22,6 +22,7 @@ const IndexPage = () => {
     const navigate = useNavigate();
 
     const [projects, setProjects] = useState<Project[]>([]);
+    const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
 
     // load projects into state
     useEffect(() => {
@@ -32,6 +33,17 @@ const IndexPage = () => {
             }
         };
         loadProjects();
+    }, []);
+
+    // load blog posts into state
+    useEffect(() => {
+        const loadBlogPosts = async () => {
+            const resp = await loadAllBlogPosts();
+            if (resp) {
+                setBlogPosts(resp);
+            }
+        };
+        loadBlogPosts();
     }, []);
 
     return (
@@ -144,7 +156,7 @@ const IndexPage = () => {
                 redirect={{ text: "View all", to: "/projects" }}
                 id="projects"
             >
-                {/* 3 recent projects */}
+                {/* list of featured projects */}
                 <div className="flex flex-col gap-2">
                     {projects
                         .filter((p) => p.featured)
@@ -159,13 +171,13 @@ const IndexPage = () => {
                                     <div className="flex flex-col gap-1">
                                         <Text
                                             variant="primary"
-                                            className="font-light"
+                                            className="font-semibold"
                                         >
                                             {p.title}
                                         </Text>
                                         <Text
                                             variant="secondary"
-                                            className="text-sm font-light"
+                                            className="text-sm"
                                         >
                                             {p.summary}
                                         </Text>
@@ -235,7 +247,47 @@ const IndexPage = () => {
                 </div>
             </Section>
             {/* Recent Blogs section (preview of max 3 and can redirect to all blogs page) */}
-            <Section header="Recent Blogs" id="blogs"></Section>
+            <Section
+                header="Recent Blogs"
+                redirect={{ text: "View all", to: "/blogs" }}
+                id="blogs"
+            >
+                {/* 3 recent blog posts */}
+                <div className="flex flex-col gap-2">
+                    {blogPosts.slice(0, 3).map((b) => (
+                        <Card
+                            key={b.slug}
+                            className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
+                            onClick={() => navigate(`/blogs/${b.slug}`)}
+                        >
+                            {/* Date, Title and summary */}
+                            <div className="flex flex-col gap-1">
+                                <Text variant="secondary" className="text-xs">
+                                    {b.date}
+                                </Text>
+                                <Text
+                                    variant="primary"
+                                    className="font-semibold"
+                                >
+                                    {b.title}
+                                </Text>
+                                <Text variant="secondary" className="text-sm">
+                                    {b.summary}
+                                </Text>
+                            </div>
+                            {/* Open related project icon */}
+                            {b.relatedProject && (
+                                <RedirectIcon
+                                    type="material"
+                                    to={"/projects/" + b.relatedProject}
+                                    icon="folder_open"
+                                    hoverText="Related Project"
+                                />
+                            )}
+                        </Card>
+                    ))}
+                </div>
+            </Section>
         </main>
     );
 };
