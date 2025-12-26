@@ -25,6 +25,7 @@
             "tailwind"
         ],
         "startDate": "11th December 2024",
+        "finishDate": "1st May 2025",
         "images": [
             "homepage.png",
             "profile.png",
@@ -51,7 +52,7 @@
         "slug": "platform-shooter",
         "title": "Platform Shooter",
         "summary": "An unfinished 2D platformer game",
-        "longDescription": "Platform Shooter is an unfinished 2d platforming shooter game. I built this project using C++ and the SFML rendering library, which I have also used before to re-create basic games like Pong and Snake. Although unfinished, this project helped me improve on my Object-oriented programming skills, through the creation of a basic game engine, with a machine for handling state.\n\nDue to my focus transitioning to primarily web development, I stopped working on this project, however plan to return to C++ and this project in the future once I am satisfied with my web development ability.",
+        "longDescription": "Platform Shooter is an unfinished 2d platforming shooter game. I built this project using C++ and the SFML rendering library, which I have also used before to re-create basic games like Pong and Snake. Although unfinished, this project helped me improve on my Object-oriented programming skills, through the creation of a basic game engine, with a machine for handling state.\n\nDue to my focus transitioning to primarily web development, I stopped working on this project, however plan to return to C++ and potentially this project in the future once I am satisfied with my web development ability.",
         "technologies": ["cpp", "sfml"],
         "startDate": "19th August 2024",
         "images": ["game.png", "menu.png"],
@@ -63,6 +64,7 @@
         "summary": "A Discord bot for automation and moderation",
         "longDescription": "A Discord bot with many automation and moderation features. I presented this application as the final project for A-Level Computer Science course, where I was tasked with conducting rigorous testing during and following the development. Also, this project was my first experience using Docker for basic containerization.",
         "technologies": ["python", "discord-py", "docker"],
+        "startDate": "7th May 2022",
         "finishDate": "13th May 2022",
         "images": ["logo.png", "chat.png"],
         "githubRepo": "CallumB04/auto-mate"
