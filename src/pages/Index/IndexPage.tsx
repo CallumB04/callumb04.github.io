@@ -217,7 +217,7 @@ const IndexPage = () => {
                         details={[
                             "My first full-time professional role",
                             "Primarily working in Full-Stack Web Development",
-                            "Quickly gained team lead responsibilities, involving managing product roadmap; delegating tasks; and mentoring members of my team",
+                            "Quickly gained team lead responsibilities, involving managing product roadmap; delegating tasks; reporting team progress in weekly company meetings; and mentoring members of my team",
                         ]}
                         technologies={["bubble", "n8n", "docker", "react"]}
                     />
@@ -228,7 +228,7 @@ const IndexPage = () => {
                         workLogo="freelance.jpg"
                         details={[
                             "Developed commercial websites for real-world local businesses",
-                            "Connected with clients through facebook and maintained frequent communication through the development process",
+                            "Connected with clients through facebook and maintained frequent communication during the development process",
                         ]}
                         technologies={["javascript", "tailwind"]}
                     />
