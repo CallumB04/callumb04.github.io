@@ -113,7 +113,7 @@ const IndexPage = () => {
                                     hoverText="Github"
                                     newTab
                                     className="size-12"
-                                    iconClassName="text-3xl"
+                                    iconClassName="text-[26px]"
                                 />
                                 <RedirectIcon
                                     type="devicon"
@@ -188,7 +188,7 @@ const IndexPage = () => {
                                             }
                                             icon="github-original"
                                             newTab
-                                            hoverText="Repository"
+                                            hoverText="Github"
                                         />
                                     )}
                                     {p.liveURL && (
@@ -197,7 +197,7 @@ const IndexPage = () => {
                                             to={p.liveURL}
                                             icon="link"
                                             newTab
-                                            hoverText="Live URL"
+                                            hoverText="Live Demo"
                                             className="text-sm"
                                         />
                                     )}
