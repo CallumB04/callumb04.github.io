@@ -1,0 +1,12 @@
+[
+    {
+        "slug": "clothing-shop",
+        "title": "Building 'Clothing Shop'",
+        "summary": "My first experience building a full-stack project using Go",
+        "date": "25th December 2025",
+        "sections": [
+            { "title": "Why did I choose Go?", "textFile": "why-choose-go.md" }
+        ],
+        "relatedProject": "clothing-shop"
+    }
+]
