@@ -26,7 +26,7 @@ const RedirectIcon = ({
             to={to}
             target={newTab ? "_blank" : ""}
             className={twMerge(
-                "border-card-border group hover:border-card-border-hover text-text-primary hover:bg-card-border-hover relative flex size-9 items-center justify-center rounded-full border transition-colors duration-300",
+                "group text-button-primary-text bg-text-primary hover:text-highlight relative flex size-9 items-center justify-center rounded-full transition-colors duration-300",
                 className
             )}
             onClick={(e) => e.stopPropagation()}
