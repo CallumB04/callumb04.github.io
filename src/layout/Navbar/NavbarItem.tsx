@@ -15,7 +15,6 @@ const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
                 icon={icon}
                 variant="primary"
                 className="group-hover:text-highlight"
-                title={text}
             ></Icon>
             <Text
                 variant="primary"
