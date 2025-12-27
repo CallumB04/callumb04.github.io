@@ -1,6 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NavbarItem from "./NavbarItem";
 import { useEffect } from "react";
+import Text from "../../components/Text/Text";
 
 const Navbar = () => {
     const location = useLocation();
@@ -30,6 +31,21 @@ const Navbar = () => {
                 <NavbarItem text="Blog" icon="article_person" to="/blogs" />
                 <NavbarItem text="Contact" icon="mail" to="/contact" />
             </span>
+            {/* Optional floating navbar item, for returning back to all projects/blogs pages */}
+            {(location.pathname.includes("/projects/") ||
+                location.pathname.includes("/blogs/")) && (
+                <span className="bg-navbar-bg absolute -bottom-16 z-90 hidden w-max items-center gap-2 rounded-full p-2 sm:flex">
+                    <NavbarItem
+                        text={
+                            "Return to all" +
+                            " " +
+                            location.pathname.split("/")[1]
+                        }
+                        icon="arrow_left_alt"
+                        to={"/" + location.pathname.split("/")[1]}
+                    />
+                </span>
+            )}
         </nav>
     );
 };
