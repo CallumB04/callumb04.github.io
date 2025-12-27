@@ -20,7 +20,7 @@ const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
             <Text
                 variant="primary"
                 redirect
-                className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 text-sm font-medium opacity-0 transition-all duration-300 sm:group-hover:-bottom-8 sm:group-hover:opacity-100"
+                className="pointer-events-none absolute bottom-0 left-1/2 z-99 w-max -translate-x-1/2 text-sm font-medium opacity-0 transition-all duration-300 sm:group-hover:-bottom-8 sm:group-hover:opacity-100"
             >
                 {text}
             </Text>
