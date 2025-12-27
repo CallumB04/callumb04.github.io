@@ -5,17 +5,18 @@ import type { Project } from "../../data/models";
 import { loadProjectBySlug } from "../../data/loader";
 import usePageTitle from "../../hooks/usePageTitle";
 import Text from "../../components/Text/Text";
-import Card from "../../components/Card/Card";
-import Divider from "../../components/Divider/Divider";
 import Skill from "../../components/Skill/Skill";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import { shortenDate } from "../Projects/ProjectsPage";
+import { twMerge } from "tailwind-merge";
 
 const ProjectPage = () => {
     // get project slug from url to load data
     const { slug } = useParams();
 
     const [project, setProject] = useState<Project | undefined>(undefined);
+
+    const [selectedImage, setSelectedImage] = useState<string>("");
 
     // load project data into state
     useEffect(() => {
@@ -24,6 +25,7 @@ const ProjectPage = () => {
                 const resp = await loadProjectBySlug(slug);
                 if (resp) {
                     setProject(resp);
+                    setSelectedImage(resp.images[0]);
                 }
             }
         };
@@ -94,7 +96,54 @@ const ProjectPage = () => {
                     </span>
                 </div>
             </Section>
-            <Section header="Project Images"></Section>
+            <Section header="Project Images">
+                <div className="flex gap-4">
+                    {/* Image previews */}
+                    <div className="flex w-24 flex-col gap-2">
+                        {project?.images.map((img) => (
+                            <div
+                                className={twMerge(
+                                    "size-24 cursor-pointer rounded border-2 p-1",
+                                    selectedImage === img
+                                        ? "border-highlight-soft"
+                                        : "border-[#272727]"
+                                )}
+                                onClick={() => setSelectedImage(img)}
+                            >
+                                <img
+                                    src={
+                                        "/project_images/" +
+                                        project.slug +
+                                        "/" +
+                                        img
+                                    }
+                                    className="size-full object-cover"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    {/* Selected image */}
+                    <a
+                        href={
+                            "/project_images/" +
+                            project?.slug +
+                            "/" +
+                            selectedImage
+                        }
+                        target="_blank"
+                    >
+                        <img
+                            src={
+                                "/project_images/" +
+                                project?.slug +
+                                "/" +
+                                selectedImage
+                            }
+                            className="h-max w-full rounded"
+                        />
+                    </a>
+                </div>
+            </Section>
         </main>
     );
 };
