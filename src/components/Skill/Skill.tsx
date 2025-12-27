@@ -34,13 +34,16 @@ const Skill = ({ skill }: SkillProps) => {
             {technology?.devicon && (
                 <i
                     className={twMerge(
-                        "text-text-secondary transition-all duration-300",
+                        "text-text-secondary text-sm transition-all duration-300 sm:text-base",
                         "devicon-" + technology.devicon,
                         hovered && "colored animate-pulse"
                     )}
                 ></i>
             )}
-            <Text variant="secondary" className="text-sm font-medium">
+            <Text
+                variant="secondary"
+                className="text-xs font-medium sm:text-sm"
+            >
                 {technology?.name}
             </Text>
         </span>
