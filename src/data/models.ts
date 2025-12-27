@@ -9,14 +9,8 @@ export interface Project {
     images: string[]; // file names in project folder (folder also includes banner.png for preview card) (/public/project_images/<project slug>/<file>)
     githubRepo?: string; // CallumB04/<repo>
     liveURL?: string;
-    collaborators?: Collaborator[];
     relatedBlogPost?: string; // slug of blog post
     featured?: boolean; // is featured on portfolio index page?
-}
-
-export interface Collaborator {
-    name: string;
-    avatar?: string; // image file name in avatars folder (/public/avatars/<file>)
 }
 
 export interface Technology {
