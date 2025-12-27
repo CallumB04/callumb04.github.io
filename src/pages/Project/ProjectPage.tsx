@@ -106,7 +106,7 @@ const ProjectPage = () => {
                                     "size-24 cursor-pointer rounded border-2 p-1 transition-colors duration-200",
                                     selectedImage === img
                                         ? "border-highlight-soft"
-                                        : "border-[#272727]"
+                                        : "border-[#272727] hover:border-[#444]"
                                 )}
                                 onClick={() => setSelectedImage(img)}
                             >
