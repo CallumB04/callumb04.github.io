@@ -103,7 +103,7 @@ const ProjectPage = () => {
                         {project?.images.map((img) => (
                             <div
                                 className={twMerge(
-                                    "size-24 cursor-pointer rounded border-2 p-1",
+                                    "size-24 cursor-pointer rounded border-2 p-1 transition-colors duration-200",
                                     selectedImage === img
                                         ? "border-highlight-soft"
                                         : "border-[#272727]"
