@@ -10,7 +10,7 @@ import Skill from "../../components/Skill/Skill";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 
 // function to shorten start/finish date for card preview
-const shortenDate = (date: string | undefined) => {
+export const shortenDate = (date: string | undefined) => {
     if (date) {
         const dateArr = date.split(" ");
         return dateArr[1].slice(0, 3) + " " + dateArr[2];
