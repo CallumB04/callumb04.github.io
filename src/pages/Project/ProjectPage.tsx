@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import type { Project } from "../../data/models";
 import { loadProjectBySlug } from "../../data/loader";
 import usePageTitle from "../../hooks/usePageTitle";
+import Text from "../../components/Text/Text";
+import Card from "../../components/Card/Card";
+import Divider from "../../components/Divider/Divider";
+import Skill from "../../components/Skill/Skill";
+import RedirectIcon from "../../components/Icon/RedirectIcon";
+import { shortenDate } from "../Projects/ProjectsPage";
 
 const ProjectPage = () => {
     // get project slug from url to load data
@@ -29,7 +35,65 @@ const ProjectPage = () => {
 
     return (
         <main>
-            <Section header="Project Info"></Section>
+            <Section header="Project Info">
+                <div className="flex flex-col gap-2">
+                    {/* Title */}
+                    <Text
+                        variant="highlight"
+                        className="text-4xl font-medium sm:text-5xl"
+                    >
+                        {project?.title}
+                    </Text>
+                    {/* Start and/or Finish date */}
+                    <Text variant="secondary" className="text-xs sm:text-sm">
+                        {shortenDate(project?.startDate) ?? "???"}
+                        {shortenDate(project?.startDate) ===
+                        shortenDate(project?.finishDate)
+                            ? ""
+                            : shortenDate(project?.finishDate)
+                              ? " - " + shortenDate(project?.finishDate)
+                              : " - ???"}
+                    </Text>
+                </div>
+                {/* Project Details */}
+                <div className="flex flex-col gap-4">
+                    {/* Technologies */}
+                    <span className="flex flex-wrap gap-1">
+                        {project?.technologies.map((t) => (
+                            <Skill key={t} skill={t} />
+                        ))}
+                    </span>
+                    {/* Description */}
+                    <Text variant="secondary" className="text-xs sm:text-sm">
+                        {project?.longDescription}
+                    </Text>
+                    {/* Github and/or Live Link */}
+                    <span className="flex gap-2">
+                        {project?.githubRepo && (
+                            <RedirectIcon
+                                type="devicon"
+                                to={"https://github.com/" + project.githubRepo}
+                                icon="github-original"
+                                newTab
+                                hoverText="Github"
+                                className="h-11 sm:w-11"
+                                iconClassName="text-[26px]"
+                            />
+                        )}
+                        {project?.liveURL && (
+                            <RedirectIcon
+                                type="material"
+                                to={project.liveURL}
+                                icon="link"
+                                newTab
+                                hoverText="Live Demo"
+                                className="h-11 sm:w-11"
+                                iconClassName="text-[26px]"
+                            />
+                        )}
+                    </span>
+                </div>
+            </Section>
             <Section header="Project Images"></Section>
         </main>
     );
