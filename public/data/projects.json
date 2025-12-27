@@ -9,7 +9,6 @@
         "finishDate": "23rd November 2025",
         "images": ["shop.png", "preview.png", "item.png", "checkout.png"],
         "githubRepo": "CallumB04/clothing-shop",
-        "relatedBlogPost": "clothing-shop",
         "featured": true
     },
     {
