@@ -99,14 +99,14 @@ const ProjectPage = () => {
             <Section header="Project Images">
                 <div className="flex gap-4">
                     {/* Image previews */}
-                    <div className="flex w-24 flex-col gap-2">
+                    <div className="flex w-full flex-col gap-2 sm:w-24">
                         {project?.images.map((img) => (
                             <div
                                 className={twMerge(
-                                    "size-24 cursor-pointer rounded border-2 p-1 transition-colors duration-200",
+                                    "size-full cursor-pointer rounded p-1 transition-colors duration-200 sm:size-24 sm:border-2",
                                     selectedImage === img
-                                        ? "border-highlight-soft"
-                                        : "border-[#272727] hover:border-[#444]"
+                                        ? "sm:border-highlight-soft"
+                                        : "sm:border-[#272727] sm:hover:border-[#444]"
                                 )}
                                 onClick={() => setSelectedImage(img)}
                             >
@@ -117,7 +117,7 @@ const ProjectPage = () => {
                                         "/" +
                                         img
                                     }
-                                    className="size-full object-cover"
+                                    className="size-full rounded object-cover sm:rounded-none"
                                 />
                             </div>
                         ))}
@@ -131,6 +131,7 @@ const ProjectPage = () => {
                             selectedImage
                         }
                         target="_blank"
+                        className="hidden sm:block"
                     >
                         <img
                             src={
