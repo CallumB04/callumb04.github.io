@@ -65,7 +65,7 @@
         "technologies": ["python", "discord-py", "docker"],
         "startDate": "7th May 2022",
         "finishDate": "13th May 2022",
-        "images": ["logo.png", "chat.png"],
+        "images": ["chat.png", "logo.png"],
         "githubRepo": "CallumB04/auto-mate"
     }
 ]
