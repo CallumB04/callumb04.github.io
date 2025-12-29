@@ -5,7 +5,16 @@
         "summary": "My first experience building a full-stack project using Go",
         "date": "25th December 2025",
         "sections": [
-            { "title": "Why did I choose Go?", "textFile": "why-choose-go.md" }
+            { "title": "Introduction", "textFile": "intro.md" },
+            {
+                "title": "A screenshot of the shop page",
+                "imageFile": "shop.png"
+            },
+            { "title": "Why did I choose Go?", "textFile": "why-choose-go.md" },
+            {
+                "title": "A screenshot of the checkout page, showing the applied discount and basket total calculated in the backend",
+                "imageFile": "checkout.png"
+            }
         ],
         "relatedProject": "clothing-shop"
     }
