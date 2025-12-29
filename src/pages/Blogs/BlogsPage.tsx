@@ -64,7 +64,7 @@ const BlogsPage = () => {
                                     {b.summary}
                                 </Text>
                             </div>
-                            {/* Github and/or Live Link */}
+                            {/* Related Project */}
                             <span className="flex gap-2">
                                 {b.relatedProject && (
                                     <RedirectIcon
