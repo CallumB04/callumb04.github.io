@@ -17,6 +17,32 @@ main {
     @apply mt-navbar-height mx-auto flex max-w-220 flex-col gap-16 px-4 py-20 sm:gap-20 sm:px-8 sm:py-32;
 }
 
+/* Markdown Conversion Styling */
+.blog-post-markdown > h1 {
+    @apply text-text-primary mb-2 text-2xl;
+}
+.blog-post-markdown > h2 {
+    @apply text-text-primary mb-1.5 text-xl;
+}
+.blog-post-markdown > h3 {
+    @apply text-text-primary mb-1.5 text-lg;
+}
+.blog-post-markdown > h4 {
+    @apply text-text-primary mb-1 text-base;
+}
+.blog-post-markdown > p {
+    @apply text-text-secondary mb-1 text-sm;
+}
+.blog-post-markdown > ul {
+    @apply text-text-secondary mb-1 ml-3 list-disc text-sm;
+}
+.blog-post-markdown > ol {
+    @apply text-text-secondary mb-1 ml-3 list-decimal text-sm;
+}
+.blog-post-markdown > hr {
+    @apply text-layout-border my-3;
+}
+
 /* Material Icon Sizes */
 .material-symbols-outlined.text-xs {
     font-size: 18px;
