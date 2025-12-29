@@ -66,7 +66,10 @@ const ProjectPage = () => {
                         ))}
                     </span>
                     {/* Description */}
-                    <Text variant="secondary" className="text-xs sm:text-sm">
+                    <Text
+                        variant="secondary"
+                        className="text-justify text-xs sm:text-sm"
+                    >
                         {project?.longDescription}
                     </Text>
                     {/* Github and/or Live Link */}
