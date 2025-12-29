@@ -8,14 +8,6 @@ import { useNavigate } from "react-router-dom";
 import Text from "../../components/Text/Text";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 
-// function to shorten start/finish date for card preview
-export const shortenDate = (date: string | undefined) => {
-    if (date) {
-        const dateArr = date.split(" ");
-        return dateArr[1].slice(0, 3) + " " + dateArr[2];
-    }
-};
-
 const BlogsPage = () => {
     usePageTitle("Blogs | Callum Burgoyne");
     const navigate = useNavigate();
@@ -52,7 +44,7 @@ const BlogsPage = () => {
                             {/* Date, Title and summary */}
                             <div className="flex flex-col gap-1">
                                 <Text variant="secondary" className="text-xs">
-                                    {shortenDate(b.date)}
+                                    {b.date}
                                 </Text>
                                 <Text
                                     variant="primary"
