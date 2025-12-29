@@ -54,5 +54,13 @@
     },
     "n8n": {
         "name": "n8n"
+    },
+    "vite": {
+        "name": "Vite",
+        "devicon": "vitejs-plain"
+    },
+    "vitest": {
+        "name": "Vitest",
+        "devicon": "vitest-plain"
     }
 }

@@ -4,7 +4,14 @@
         "title": "Clothing Shop",
         "summary": "An e-commerce clothing website",
         "longDescription": "Clothing Shop is a full-stack e-commerce website, written using React/TypeScript (Frontend) and Go (Backend). This was my first project using Go, where I experimented with the language, and different libraries within Go, such as Zap for logging. Although I opted to use local json files for data storage instead of a database, for easier development, I still created a fully functional backend for providing data to the frontend, with serverside filtering.\n\nAlso in this project, for the first time, I experimented with testing libraries and implementing unit testing using Vitest and Go's built-in testing library.\n\nThis project was a great learning experience for me, where I used alot of new technologies for the first time. In my next project, I plan to built upon this new knowledge further, with the implementation of a proper database, and continued experimentation with the Go programme language to further my knowledge and try out even more libraries and technologies.",
-        "technologies": ["react", "typescript", "go", "tailwind"],
+        "technologies": [
+            "react",
+            "typescript",
+            "go",
+            "tailwind",
+            "vite",
+            "vitest"
+        ],
         "startDate": "14th September 2025",
         "finishDate": "23rd November 2025",
         "images": ["shop.png", "preview.png", "item.png", "checkout.png"],
@@ -21,7 +28,8 @@
             "typescript",
             "express-js",
             "node-js",
-            "tailwind"
+            "tailwind",
+            "vite"
         ],
         "startDate": "11th December 2024",
         "finishDate": "1st May 2025",
