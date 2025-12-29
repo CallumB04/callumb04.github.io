@@ -74,3 +74,14 @@ export const loadBlogPostBySlug = async (
         console.error(err);
     }
 };
+
+export const loadBlogPostMarkdown = async (path: string): Promise<string> => {
+    try {
+        const resp = await fetch(path);
+        const text = await resp.text();
+        return text;
+    } catch (err) {
+        console.error(err);
+        return "";
+    }
+};
