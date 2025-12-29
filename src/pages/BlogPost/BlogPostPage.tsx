@@ -6,6 +6,7 @@ import { loadBlogPostBySlug } from "../../data/loader";
 import usePageTitle from "../../hooks/usePageTitle";
 import Text from "../../components/Text/Text";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
+import BlogPostPageSection from "./components/BlogPostPageSection";
 
 const BlogPostPage = () => {
     // get blog post slug from url to load data
@@ -57,7 +58,13 @@ const BlogPostPage = () => {
                 )}
                 {/* Blog Post Sections */}
                 <div className="flex flex-col gap-4">
-                    {/* TODO: Add sections */}
+                    {blogPost?.sections.map((s) => (
+                        <BlogPostPageSection
+                            key={s.title}
+                            section={s}
+                            blogSlug={slug}
+                        />
+                    ))}
                 </div>
             </Section>
         </main>
