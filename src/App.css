@@ -19,25 +19,25 @@ main {
 
 /* Markdown Conversion Styling */
 .blog-post-markdown > h1 {
-    @apply text-text-primary mb-2 text-2xl;
+    @apply text-text-primary mb-3 text-2xl sm:text-3xl;
 }
 .blog-post-markdown > h2 {
-    @apply text-text-primary mb-1.5 text-xl;
+    @apply text-text-primary mb-2.5 text-xl sm:text-2xl;
 }
 .blog-post-markdown > h3 {
-    @apply text-text-primary mb-1.5 text-lg;
+    @apply text-text-primary mb-2 text-lg sm:text-xl;
 }
 .blog-post-markdown > h4 {
-    @apply text-text-primary mb-1 text-base;
+    @apply text-text-primary mb-1.5 text-base sm:text-lg;
 }
 .blog-post-markdown > p {
-    @apply text-text-secondary mb-1 text-sm;
+    @apply text-text-secondary mb-1.5 text-justify text-xs sm:text-sm;
 }
 .blog-post-markdown > ul {
-    @apply text-text-secondary mb-1 ml-3 list-disc text-sm;
+    @apply text-text-secondary mb-1.5 ml-3 list-disc text-xs sm:text-sm;
 }
 .blog-post-markdown > ol {
-    @apply text-text-secondary mb-1 ml-3 list-decimal text-sm;
+    @apply text-text-secondary mb-1.5 ml-3 list-decimal text-xs sm:text-sm;
 }
 .blog-post-markdown > hr {
     @apply text-layout-border my-3;
