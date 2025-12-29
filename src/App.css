@@ -59,7 +59,8 @@ main {
 
 #projects,
 #work,
-#blogs {
+#blogs,
+.blog-post-markdown {
     scroll-margin-top: calc(var(--navbar-height) + 24px);
 }
 

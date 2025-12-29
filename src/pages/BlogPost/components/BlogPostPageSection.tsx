@@ -7,11 +7,13 @@ import Text from "../../../components/Text/Text";
 interface BlogPostPageSectionProps {
     section: BlogPostSection;
     blogSlug: string | undefined;
+    id: string;
 }
 
 const BlogPostPageSection = ({
     section,
     blogSlug,
+    id,
 }: BlogPostPageSectionProps) => {
     const [markdownText, setMarkdownText] = useState<string | Promise<string>>(
         ""
@@ -34,7 +36,7 @@ const BlogPostPageSection = ({
     // Image Section
     if (section.imageFile) {
         return (
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5" id={id}>
                 <a
                     href={"/blogs/" + blogSlug + "/" + section.imageFile}
                     target="_blank"
@@ -56,6 +58,7 @@ const BlogPostPageSection = ({
         <div
             dangerouslySetInnerHTML={{ __html: markdownText }}
             className="font-primary blog-post-markdown"
+            id={id}
         ></div>
     );
 };

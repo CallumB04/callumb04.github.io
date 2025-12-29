@@ -7,6 +7,12 @@ import usePageTitle from "../../hooks/usePageTitle";
 import Text from "../../components/Text/Text";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import BlogPostPageSection from "./components/BlogPostPageSection";
+import Card from "../../components/Card/Card";
+import Divider from "../../components/Divider/Divider";
+
+// function to convert blog post section title to slug for element ID
+const sectionTitleToSlug = (title: string) =>
+    title.replaceAll(" ", "-").replaceAll("?", "").toLowerCase();
 
 const BlogPostPage = () => {
     // get blog post slug from url to load data
@@ -56,6 +62,30 @@ const BlogPostPage = () => {
                         iconClassName="text-[26px]"
                     />
                 )}
+                {/* Contents */}
+                <Card className="flex w-full flex-col gap-2">
+                    <Text variant="primary" className="font-medium">
+                        Contents
+                    </Text>
+                    <div className="flex flex-col gap-1">
+                        {blogPost?.sections
+                            .filter((s) => s.textFile)
+                            .map((s, i) => (
+                                <a
+                                    href={"#" + sectionTitleToSlug(s.title)}
+                                    className="group w-max"
+                                >
+                                    <Text
+                                        variant="primary"
+                                        redirect
+                                        className="text-sm"
+                                    >
+                                        {i + 1} - {s.title}
+                                    </Text>
+                                </a>
+                            ))}
+                    </div>
+                </Card>
                 {/* Blog Post Sections */}
                 <div className="flex flex-col gap-6">
                     {blogPost?.sections.map((s) => (
@@ -63,6 +93,7 @@ const BlogPostPage = () => {
                             key={s.title}
                             section={s}
                             blogSlug={slug}
+                            id={sectionTitleToSlug(s.title)}
                         />
                     ))}
                 </div>
