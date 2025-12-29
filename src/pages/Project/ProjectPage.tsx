@@ -105,6 +105,7 @@ const ProjectPage = () => {
                     <div className="flex w-full flex-col gap-2 sm:w-24">
                         {project?.images.map((img) => (
                             <div
+                                key={img}
                                 className={twMerge(
                                     "size-full cursor-pointer rounded p-1 transition-colors duration-200 sm:size-24 sm:border-2",
                                     selectedImage === img
