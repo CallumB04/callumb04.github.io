@@ -28,7 +28,7 @@ const Navbar = () => {
                 <NavbarItem text="Home" icon="home" to="/" />
                 <NavbarItem text="Projects" icon="folder_open" to="/projects" />
                 <NavbarItem text="Work" icon="work" to="/#work" />
-                <NavbarItem text="Blog" icon="article_person" to="/blogs" />
+                <NavbarItem text="Blogs" icon="article_person" to="/blogs" />
                 <NavbarItem text="Contact" icon="mail" to="/contact" />
             </span>
             {/* Optional floating navbar item, for returning back to all projects/blogs pages */}
