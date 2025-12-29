@@ -76,9 +76,9 @@ const BlogPostPage = () => {
                                     className="group w-max"
                                 >
                                     <Text
-                                        variant="primary"
+                                        variant="secondary"
                                         redirect
-                                        className="text-sm"
+                                        className="text-sm font-light"
                                     >
                                         {i + 1} - {s.title}
                                     </Text>
