@@ -1,7 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import NavbarItem from "./NavbarItem";
 import { useEffect } from "react";
-import Text from "../../components/Text/Text";
 
 const Navbar = () => {
     const location = useLocation();

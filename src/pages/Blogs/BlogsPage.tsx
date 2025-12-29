@@ -6,7 +6,6 @@ import { loadAllBlogPosts } from "../../data/loader";
 import Card from "../../components/Card/Card";
 import { useNavigate } from "react-router-dom";
 import Text from "../../components/Text/Text";
-import Skill from "../../components/Skill/Skill";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 
 // function to shorten start/finish date for card preview
