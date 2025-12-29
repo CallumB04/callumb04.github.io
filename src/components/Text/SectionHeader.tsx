@@ -7,7 +7,7 @@ interface SectionHeaderProps {
 
 const SectionHeader = ({ children }: SectionHeaderProps) => {
     return (
-        <Text variant="secondary" className="text-sm uppercase">
+        <Text variant="secondary" className="text-xs uppercase sm:text-sm">
             {children}
         </Text>
     );
