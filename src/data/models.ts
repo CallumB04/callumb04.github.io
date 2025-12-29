@@ -27,7 +27,7 @@ export interface BlogPost {
 }
 
 export interface BlogPostSection {
-    title: string;
+    title: string; // used in contents for text sections, used a image descriptor for image sections
     textFile?: string; // markdown file name in blog post folder (/public/blogs/<post slug>/<file>)
     imageFile?: string; // image file name in blog post folder (/public/blogs/<post slug>/<file>)
 }
