@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { BlogPostSection } from "../../../data/models";
 import { loadBlogPostMarkdown } from "../../../data/loader";
 import { marked } from "marked";
+import Text from "../../../components/Text/Text";
 
 interface BlogPostPageSectionProps {
     section: BlogPostSection;
@@ -33,10 +34,20 @@ const BlogPostPageSection = ({
     // Image Section
     if (section.imageFile) {
         return (
-            <img
-                src={"/blogs/" + blogSlug + "/" + section.imageFile}
-                className="w-full rounded"
-            />
+            <div className="flex flex-col gap-1.5">
+                <a
+                    href={"/blogs/" + blogSlug + "/" + section.imageFile}
+                    target="_blank"
+                >
+                    <img
+                        src={"/blogs/" + blogSlug + "/" + section.imageFile}
+                        className="w-full rounded"
+                    />
+                </a>
+                <Text variant="secondary" className="text-right text-xs">
+                    {section.title}
+                </Text>
+            </div>
         );
     }
 
