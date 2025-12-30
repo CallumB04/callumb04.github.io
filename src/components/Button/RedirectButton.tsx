@@ -24,7 +24,6 @@ const RedirectButton = ({
     disabled,
     maxWidth,
     maxWidthMobile,
-    preventTransform,
 }: RedirectButtonProps) => {
     return (
         <Link
@@ -42,7 +41,6 @@ const RedirectButton = ({
                 disabled={disabled}
                 maxWidth={maxWidth}
                 maxWidthMobile={maxWidthMobile}
-                preventTransform={preventTransform}
             >
                 {children}
             </Button>
