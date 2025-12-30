@@ -117,14 +117,14 @@ const IndexPage = () => {
                             >
                                 My Links
                             </Text>
-                            <span className="flex gap-3">
+                            <span className="flex flex-wrap gap-3">
                                 <RedirectIcon
                                     type="devicon"
                                     to="https://github.com/CallumB04"
                                     icon="github-original"
                                     hoverText="Github"
                                     newTab
-                                    className="h-11 sm:w-11"
+                                    className="size-11"
                                     iconClassName="text-[26px]"
                                 />
                                 <RedirectIcon
@@ -133,7 +133,7 @@ const IndexPage = () => {
                                     icon="linkedin-plain"
                                     hoverText="Linkedin"
                                     newTab
-                                    className="h-11 sm:w-11"
+                                    className="size-11"
                                     iconClassName="text-2xl"
                                 />
                                 <RedirectIcon
@@ -142,7 +142,7 @@ const IndexPage = () => {
                                     icon="mail"
                                     hoverText="Email me"
                                     newTab
-                                    className="h-11 sm:w-11"
+                                    className="size-11"
                                     iconClassName="text-lg"
                                 />
                             </span>
