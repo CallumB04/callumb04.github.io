@@ -90,7 +90,7 @@ const ProjectPage = () => {
                                 icon="github-original"
                                 newTab
                                 hoverText="Github"
-                                className="h-11 sm:w-11"
+                                className="size-11"
                                 iconClassName="text-[26px]"
                             />
                         )}
@@ -101,7 +101,7 @@ const ProjectPage = () => {
                                 icon="link"
                                 newTab
                                 hoverText="Live Demo"
-                                className="h-11 sm:w-11"
+                                className="size-11"
                                 iconClassName="text-[26px]"
                             />
                         )}

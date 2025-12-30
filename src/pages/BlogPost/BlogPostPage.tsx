@@ -68,7 +68,7 @@ const BlogPostPage = () => {
                         to={"/projects/" + blogPost.relatedProject}
                         icon="folder_open"
                         hoverText="Related Project"
-                        className="h-11 sm:w-11"
+                        className="size-11"
                         iconClassName="text-[26px]"
                     />
                 )}
