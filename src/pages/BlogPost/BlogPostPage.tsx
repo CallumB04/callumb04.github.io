@@ -8,7 +8,6 @@ import Text from "../../components/Text/Text";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import BlogPostPageSection from "./components/BlogPostPageSection";
 import Card from "../../components/Card/Card";
-import Divider from "../../components/Divider/Divider";
 
 // function to convert blog post section title to slug for element ID
 const sectionTitleToSlug = (title: string) =>
