@@ -6,10 +6,15 @@ const ContactPage = () => {
     usePageTitle("Contact Me | Callum Burgoyne");
     return (
         <main className="relative z-20 mx-auto mt-0! flex h-screen max-w-max flex-col items-center justify-center gap-6! px-2 text-center sm:gap-8! sm:px-4">
-            <div className="flex flex-col gap-4 sm:gap-6">
+            <div className="flex flex-col items-center gap-3 sm:gap-4">
+                {/* Image of me */}
+                <img
+                    src="/work_logos/freelance.jpg"
+                    className="size-24 rounded-full sm:size-32"
+                />
                 <Text
                     variant="highlight"
-                    className="text-5xl font-medium sm:text-6xl"
+                    className="text-3xl font-medium sm:text-4xl"
                 >
                     Contact me
                 </Text>
@@ -20,7 +25,6 @@ const ContactPage = () => {
                     </span>
                 </Text>
             </div>
-
             {/* Socials */}
             <span className="flex flex-wrap justify-center gap-3">
                 <RedirectIcon
