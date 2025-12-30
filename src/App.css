@@ -33,6 +33,9 @@ main {
 .blog-post-markdown > p {
     @apply text-text-secondary mb-1.5 text-justify text-xs sm:text-sm;
 }
+.blog-post-markdown a {
+    @apply text-text-primary hover:text-highlight font-medium transition-colors duration-200;
+}
 .blog-post-markdown > ul {
     @apply text-text-secondary mb-1.5 ml-3 list-disc text-xs sm:text-sm;
 }
