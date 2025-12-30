@@ -9,12 +9,14 @@ import Skill from "../../components/Skill/Skill";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import { shortenDate } from "../Projects/ProjectsPage";
 import { twMerge } from "tailwind-merge";
+import NotFoundPage from "../NotFound/NotFoundPage";
 
 const ProjectPage = () => {
     // get project slug from url to load data
     const { slug } = useParams();
 
     const [project, setProject] = useState<Project | undefined>(undefined);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const [selectedImage, setSelectedImage] = useState<string>("");
 
@@ -27,13 +29,20 @@ const ProjectPage = () => {
                     setProject(resp);
                     setSelectedImage(resp.images[0]);
                 }
+                setIsLoading(false);
             }
         };
 
         loadProjectData();
     }, [slug]);
 
-    usePageTitle(project?.title + " | Callum Burgoyne");
+    usePageTitle(
+        project?.title ? project.title + " | Callum Burgoyne" : "Page not found"
+    );
+
+    if (!isLoading && !project) {
+        return <NotFoundPage />;
+    }
 
     return (
         <main>

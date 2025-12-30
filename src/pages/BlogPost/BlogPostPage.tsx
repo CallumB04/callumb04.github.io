@@ -8,6 +8,7 @@ import Text from "../../components/Text/Text";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import BlogPostPageSection from "./components/BlogPostPageSection";
 import Card from "../../components/Card/Card";
+import NotFoundPage from "../NotFound/NotFoundPage";
 
 // function to convert blog post section title to slug for element ID
 const sectionTitleToSlug = (title: string) =>
@@ -18,6 +19,7 @@ const BlogPostPage = () => {
     const { slug } = useParams();
 
     const [blogPost, setBlogPost] = useState<BlogPost | undefined>(undefined);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     // load blogPost data into state
     useEffect(() => {
@@ -27,13 +29,22 @@ const BlogPostPage = () => {
                 if (resp) {
                     setBlogPost(resp);
                 }
+                setIsLoading(false);
             }
         };
 
         loadBlogPostData();
     }, [slug]);
 
-    usePageTitle(blogPost?.title + " | Callum Burgoyne");
+    usePageTitle(
+        blogPost?.title
+            ? blogPost.title + " | Callum Burgoyne"
+            : "Page not found"
+    );
+
+    if (!isLoading && !blogPost) {
+        return <NotFoundPage />;
+    }
 
     return (
         <main>
