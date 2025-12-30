@@ -8,6 +8,7 @@ interface RedirectTextProps {
     children: string;
     newTab?: boolean;
     className?: string;
+    textClassName?: string;
 }
 
 const RedirectText = ({
@@ -15,6 +16,7 @@ const RedirectText = ({
     children,
     newTab,
     className,
+    textClassName,
 }: RedirectTextProps) => {
     return (
         <Link
@@ -29,7 +31,10 @@ const RedirectText = ({
             <Text
                 variant="primary"
                 redirect
-                className="group-hover:text-highlight text-sm"
+                className={twMerge(
+                    "group-hover:text-highlight text-sm",
+                    textClassName
+                )}
             >
                 {children}
             </Text>
