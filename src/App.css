@@ -36,6 +36,9 @@ main {
 .blog-post-markdown a {
     @apply text-text-primary hover:text-highlight font-medium transition-colors duration-200;
 }
+.blog-post-markdown > pre {
+    @apply text-text-secondary bg-card-bg border-card-border w-full rounded border p-2;
+}
 .blog-post-markdown > ul {
     @apply text-text-secondary mb-1.5 ml-3 list-disc text-xs sm:text-sm;
 }
