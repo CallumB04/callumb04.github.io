@@ -27,7 +27,11 @@ const BlogPostPageSection = ({
             );
 
             const parsed = marked.parse(markdown);
-            setMarkdownText(parsed);
+            // ensuring all anchors go to new tab
+            const content = parsed
+                .toString()
+                .replaceAll("<a", "<a target='_blank'");
+            setMarkdownText(content);
         };
 
         loadMarkdown();
