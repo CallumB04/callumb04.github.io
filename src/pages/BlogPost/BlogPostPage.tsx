@@ -88,7 +88,7 @@ const BlogPostPage = () => {
                                     <Text
                                         variant="secondary"
                                         redirect
-                                        className="text-sm font-light"
+                                        className="text-sm"
                                     >
                                         {i + 1} - {s.title}
                                     </Text>
