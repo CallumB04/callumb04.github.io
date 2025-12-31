@@ -31,7 +31,7 @@ main {
     @apply text-text-primary mb-1.5 text-base sm:text-lg;
 }
 .blog-post-markdown > p {
-    @apply text-text-secondary mb-1.5 text-justify text-xs sm:text-sm;
+    @apply text-text-secondary mb-1.5 text-justify text-xs leading-5.5 sm:text-sm;
 }
 .blog-post-markdown a {
     @apply text-text-primary hover:text-highlight font-medium transition-colors duration-200;

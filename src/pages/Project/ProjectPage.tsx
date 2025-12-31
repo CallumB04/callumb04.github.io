@@ -77,7 +77,7 @@ const ProjectPage = () => {
                     {/* Description */}
                     <Text
                         variant="secondary"
-                        className="text-justify text-xs sm:text-sm"
+                        className="text-justify text-xs leading-5.5 sm:text-sm"
                     >
                         {project?.longDescription}
                     </Text>
