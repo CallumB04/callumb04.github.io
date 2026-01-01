@@ -1,6 +1,6 @@
 # Introduction
 
-Between September and November of 2025, I built a Full-stack e-commerce clothing website called 'Clothing Shop'... _yes, very original, I know_. I wanted to create a strong example of my current ability as a Full-stack developer, whilst ensuring not to fall into scope creep, and found that a simple e-commerce website would fit this criteria.
+Between September and November of 2025, I built a Full-stack e-commerce clothing website called 'Clothing Shop'... _yes, very original, I know_. I wanted to create a strong example of my current ability as a Full-stack developer, whilst ensuring not to fall into scope creep, and decided that a simple e-commerce website would fit this criteria.
 
 Another purpose of this project for me, was to attempt to improve the modularity and cleanliness of my React.js code, and improve my usage of components, as opposed to previous projects using a similar tech stack. To achieve this, I did some basic research prior to development on some common industry standards, and attempted to implement them instead of what I had been doing before, which greatly improved my ability to navigate through and use the components I had built, once the project's code base began to grow. I also followed these ideologies up by taking testing more seriously and implementing unit tests through Vitest within my frontend.
 
