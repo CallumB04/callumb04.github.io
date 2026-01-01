@@ -23,7 +23,7 @@ const BlogPostPageSection = ({
     useEffect(() => {
         const loadMarkdown = async () => {
             const markdown = await loadBlogPostMarkdown(
-                "/blogs/" + blogSlug + "/" + section.textFile
+                "/blogs/" + blogSlug + "/text/" + section.textFile
             );
 
             const parsed = marked.parse(markdown);
@@ -42,11 +42,16 @@ const BlogPostPageSection = ({
         return (
             <div className="flex flex-col gap-1.5" id={id}>
                 <a
-                    href={"/blogs/" + blogSlug + "/" + section.imageFile}
+                    href={"/blogs/" + blogSlug + "/images/" + section.imageFile}
                     target="_blank"
                 >
                     <img
-                        src={"/blogs/" + blogSlug + "/" + section.imageFile}
+                        src={
+                            "/blogs/" +
+                            blogSlug +
+                            "/images/" +
+                            section.imageFile
+                        }
                         className="w-full rounded"
                     />
                 </a>
