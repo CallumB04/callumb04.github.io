@@ -12,8 +12,21 @@
             },
             { "title": "Why did I choose Go?", "textFile": "why-choose-go.md" },
             {
+                "title": "A screenshot of the backend logs, showing fast response times",
+                "imageFile": "logging.png"
+            },
+            { "title": "What went well", "textFile": "what-went-well.md" },
+            {
                 "title": "A screenshot of the checkout page, showing the applied discount and basket total calculated in the backend",
                 "imageFile": "checkout.png"
+            },
+            {
+                "title": "What I could have done better",
+                "textFile": "what-i-could-have-done-better.md"
+            },
+            {
+                "title": "A screenshot of the order complete page",
+                "imageFile": "order-complete.png"
             }
         ],
         "relatedProject": "clothing-shop"
