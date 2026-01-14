@@ -82,6 +82,7 @@ const BlogPostPage = () => {
                             .filter((s) => s.textFile)
                             .map((s, i) => (
                                 <a
+                                    key={s.title}
                                     href={"#" + sectionTitleToSlug(s.title)}
                                     className="group w-max"
                                 >
