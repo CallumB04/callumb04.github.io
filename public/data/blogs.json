@@ -3,7 +3,7 @@
         "slug": "clothing-shop",
         "title": "Building 'Clothing Shop'",
         "summary": "My first experience building a full-stack project using Go",
-        "date": "25th December 2025",
+        "date": "14th January 2026",
         "sections": [
             { "title": "Introduction", "textFile": "intro.md" },
             {
@@ -25,7 +25,7 @@
                 "textFile": "what-i-could-have-done-better.md"
             },
             {
-                "title": "A screenshot of the order complete page",
+                "title": "A screenshot of the order complete page, without proper payment implementation",
                 "imageFile": "order-complete.png"
             }
         ],
