@@ -56,6 +56,18 @@
         "featured": true
     },
     {
+        "slug": "react-todolist",
+        "title": "React Todolist",
+        "summary": "A simple and interactive todolist app",
+        "longDescription": "I created a simple and interactive todolist app using React. This project was my first experience using React, where I was learning as I built the project, and my first time using any Web Development framework. Prior to this project, I had only used basic JavaScript, HTML and CSS to create web applications, and therefore was a key learning experience to progress myself and grow as a web developer. Although the React code was not perfect, I learnt alot of key lessons whilst building this project and implemented improvements in my projects that followed.",
+        "technologies": ["react", "javascript", "css"],
+        "startDate": "10th November 2024",
+        "finishDate": "30th November 2024",
+        "images": ["todolist.png", "add-task.png"],
+        "githubRepo": "CallumB04/react-todolist",
+        "liveURL": "https://callumb04.github.io/react-todolist"
+    },
+    {
         "slug": "platform-shooter",
         "title": "Platform Shooter",
         "summary": "An unfinished 2D platformer game",
