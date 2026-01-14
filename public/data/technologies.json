@@ -62,5 +62,9 @@
     "vitest": {
         "name": "Vitest",
         "devicon": "vitest-plain"
+    },
+    "css": {
+        "name": "CSS",
+        "devicon": "css3-plain"
     }
 }
