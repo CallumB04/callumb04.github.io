@@ -48,6 +48,9 @@ main {
 .blog-post-markdown hr {
     @apply text-layout-border my-3;
 }
+.blog-post-markdown code {
+    @apply text-text-primary;
+}
 
 /* Material Icon Sizes */
 .material-symbols-outlined.text-xs {
