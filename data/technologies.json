@@ -1,0 +1,70 @@
+{
+    "python": {
+        "name": "Python",
+        "devicon": "python-plain"
+    },
+    "react": {
+        "name": "React",
+        "devicon": "react-plain"
+    },
+    "typescript": {
+        "name": "TypeScript",
+        "devicon": "typescript-plain"
+    },
+    "go": {
+        "name": "Go",
+        "devicon": "go-plain"
+    },
+    "tailwind": {
+        "name": "Tailwind CSS",
+        "devicon": "tailwindcss-plain"
+    },
+    "express-js": {
+        "name": "Express.js",
+        "devicon": "express-original"
+    },
+    "node-js": {
+        "name": "Node.js",
+        "devicon": "nodejs-plain"
+    },
+    "javascript": {
+        "name": "JavaScript",
+        "devicon": "javascript-plain"
+    },
+    "html": {
+        "name": "HTML",
+        "devicon": "html5-plain"
+    },
+    "cpp": {
+        "name": "C++",
+        "devicon": "cplusplus-plain"
+    },
+    "sfml": {
+        "name": "SFML"
+    },
+    "discord-py": {
+        "name": "discord.py"
+    },
+    "docker": {
+        "name": "Docker",
+        "devicon": "docker-plain"
+    },
+    "bubble": {
+        "name": "Bubble.io"
+    },
+    "n8n": {
+        "name": "n8n"
+    },
+    "vite": {
+        "name": "Vite",
+        "devicon": "vitejs-plain"
+    },
+    "vitest": {
+        "name": "Vitest",
+        "devicon": "vitest-plain"
+    },
+    "css": {
+        "name": "CSS",
+        "devicon": "css3-plain"
+    }
+}

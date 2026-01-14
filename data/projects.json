@@ -1,0 +1,91 @@
+[
+    {
+        "slug": "clothing-shop",
+        "title": "Clothing Shop",
+        "summary": "An e-commerce clothing website",
+        "longDescription": "Clothing Shop is a full-stack e-commerce website, written using React/TypeScript (Frontend) and Go (Backend). This was my first project using Go, where I experimented with the language, and different libraries within Go, such as Zap for logging. Although I opted to use local json files for data storage instead of a database, for easier development, I still created a fully functional backend for providing data to the frontend, with serverside filtering.\n\nAlso in this project, for the first time, I experimented with testing libraries and implementing unit testing using Vitest and Go's built-in testing library.\n\nThis project was a great learning experience for me, where I used alot of new technologies for the first time. In my next project, I plan to built upon this new knowledge further, with the implementation of a proper database, and continued experimentation with the Go programme language to further my knowledge and try out even more libraries and technologies.",
+        "technologies": [
+            "react",
+            "typescript",
+            "go",
+            "tailwind",
+            "vite",
+            "vitest"
+        ],
+        "startDate": "14th September 2025",
+        "finishDate": "23rd November 2025",
+        "images": ["shop.png", "preview.png", "item.png", "checkout.png"],
+        "githubRepo": "CallumB04/clothing-shop",
+        "featured": true
+    },
+    {
+        "slug": "playrates",
+        "title": "PlayRates",
+        "summary": "A video game tracking website",
+        "longDescription": "PlayRates is a full-stack Video Game tracking website, which I built using React/TypeScript (Frontend) and Express.js (Backend). This was my first time creating a backend server, and building a full-stack project, which was a massive learning experience for me.\n\nThis website allows for the creation of user accounts; a friendship system; tracking, rating and reviewing of Video Games; etc. My end goal with this project is to add necessary functionalities such as a proper database; secure user accounts and authentication; and a few small improvement, and then host the website live and give access to the public. However, for now, I have put this plan on hold whilst I focus on other projects.\n\n ",
+        "technologies": [
+            "react",
+            "typescript",
+            "express-js",
+            "node-js",
+            "tailwind",
+            "vite"
+        ],
+        "startDate": "11th December 2024",
+        "finishDate": "1st May 2025",
+        "images": [
+            "homepage.png",
+            "profile.png",
+            "login.png",
+            "remove-friend.png"
+        ],
+        "githubRepo": "CallumB04/PlayRates",
+        "featured": true
+    },
+    {
+        "slug": "sjb-safety",
+        "title": "sjbsafety.co.uk",
+        "summary": "A commercial website built for a scaffolding safety business",
+        "longDescription": "I developed a commercial website for a scaffolding safety business based in London and surrounding areas.\n\nThis was my second freelance web development client, and the project gave me valuable experience in creating a clean, professional, and user-friendly website tailored to meet the client's business needs.\n\nThroughout the development process, I maintained constant communication with the client, to give updates about progress and ensure the website was tailored to their exact requirements.",
+        "technologies": ["javascript", "tailwind", "html"],
+        "startDate": "31st December 2024",
+        "finishDate": "5th January 2025",
+        "images": ["homepage.png", "services.png"],
+        "githubRepo": "CallumB04/sjbsafety.co.uk",
+        "liveURL": "https://sjbsafety.co.uk",
+        "featured": true
+    },
+    {
+        "slug": "react-todolist",
+        "title": "React Todolist",
+        "summary": "A simple and interactive todolist app",
+        "longDescription": "I created a simple and interactive todolist app using React. This project was my first experience using React, where I was learning as I built the project, and my first time using any Web Development framework. Prior to this project, I had only used basic JavaScript, HTML and CSS to create web applications, and therefore was a key learning experience to progress myself and grow as a web developer. Although the React code was not perfect, I learnt alot of key lessons whilst building this project and implemented improvements in my projects that followed.",
+        "technologies": ["react", "javascript", "css"],
+        "startDate": "10th November 2024",
+        "finishDate": "30th November 2024",
+        "images": ["todolist.png", "add-task.png"],
+        "githubRepo": "CallumB04/react-todolist",
+        "liveURL": "https://callumb04.github.io/react-todolist"
+    },
+    {
+        "slug": "platform-shooter",
+        "title": "Platform Shooter",
+        "summary": "An unfinished 2D platformer game",
+        "longDescription": "Platform Shooter is an unfinished 2d platforming shooter game. I built this project using C++ and the SFML rendering library, which I have also used before to re-create basic games like Pong and Snake. Although unfinished, this project helped me improve on my Object-oriented programming skills, through the creation of a basic game engine, with a machine for handling state.\n\nDue to my focus transitioning to primarily web development, I stopped working on this project, however plan to return to C++ and potentially this project in the future once I am satisfied with my web development ability.",
+        "technologies": ["cpp", "sfml"],
+        "startDate": "19th August 2024",
+        "images": ["game.png", "menu.png"],
+        "githubRepo": "CallumB04/platform-shooter"
+    },
+    {
+        "slug": "auto-mate",
+        "title": "Auto-mate",
+        "summary": "A Discord bot for automation and moderation",
+        "longDescription": "A Discord bot with many automation and moderation features. I presented this application as the final project for A-Level Computer Science course, where I was tasked with conducting rigorous testing during and following the development. Also, this project was my first experience using Docker for basic containerization.",
+        "technologies": ["python", "discord-py", "docker"],
+        "startDate": "7th May 2022",
+        "finishDate": "13th May 2022",
+        "images": ["chat.png", "logo.png"],
+        "githubRepo": "CallumB04/auto-mate"
+    }
+]
