@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
             <Navbar />
             <div className="fixed z-10 size-full overflow-hidden">
-                <Particles quantity={60} className="opacity-40" />
+                <Particles quantity={60} className="size-full opacity-40" />
             </div>
             <Routes>
                 <Route path="/" element={<IndexPage />} />
