@@ -22,7 +22,7 @@
         "slug": "playrates",
         "title": "PlayRates",
         "summary": "A video game tracking website",
-        "longDescription": "PlayRates is a full-stack Video Game tracking website, which I built using React/TypeScript (Frontend) and Express.js (Backend). This was my first time creating a backend server, and building a full-stack project, which was a massive learning experience for me.\n\nThis website allows for the creation of user accounts; a friendship system; tracking, rating and reviewing of Video Games; etc. My end goal with this project is to add necessary functionalities such as a proper database; secure user accounts and authentication; and a few small improvement, and then host the website live and give access to the public. However, for now, I have put this plan on hold whilst I focus on other projects.\n\n ",
+        "longDescription": "PlayRates is a full-stack Video Game tracking website, built using React/TypeScript (Frontend) and Express.js (Backend). This was my first time creating a backend server, and building a full-stack project, which was a massive learning experience for me.\n\nThis website allows for the creation of user accounts; a friendship system; tracking, rating and reviewing of Video Games; etc. My end goal with this project is to add necessary functionalities such as a proper database; secure user accounts and authentication; and a few small improvements, and then host the website live for public use. However, for now, I have put this plan on hold whilst I focus on other projects.\n\n ",
         "technologies": [
             "react",
             "typescript",
