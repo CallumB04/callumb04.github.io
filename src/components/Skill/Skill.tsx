@@ -27,7 +27,7 @@ const Skill = ({ skill }: SkillProps) => {
 
     return (
         <span
-            className="border-layout-border bg-card-bg flex w-max items-center gap-3 rounded-lg border px-3 py-1.5"
+            className="border-layout-border bg-card-bg flex w-max cursor-default items-center gap-3 rounded-lg border px-3 py-1.5"
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
         >
