@@ -64,7 +64,7 @@ const IndexPage = () => {
                             </span>
                         </Text>
                         {/* Personal details */}
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-4">
                             <PersonalDetail
                                 text="Full-Stack Web Developer"
                                 icon="code"
@@ -77,7 +77,6 @@ const IndexPage = () => {
                                 text="Kent, United Kingdom"
                                 icon="location_on"
                             />
-                            <PersonalDetail text="21 Years Old" icon="person" />
                         </div>
                         {/* Download CV Button */}
                         <a href="/CV.pdf" download className="w-full">
@@ -163,7 +162,7 @@ const IndexPage = () => {
                         .map((p) => (
                             <Card
                                 key={p.slug}
-                                className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
+                                className="flex w-full flex-wrap items-start justify-between gap-x-16 gap-y-4"
                                 onClick={() => navigate(`/projects/${p.slug}`)}
                             >
                                 <div className="flex flex-col gap-3">
@@ -257,7 +256,7 @@ const IndexPage = () => {
                     {blogPosts.slice(0, 3).map((b) => (
                         <Card
                             key={b.slug}
-                            className="flex w-full flex-wrap items-start justify-between gap-x-8 gap-y-4"
+                            className="flex w-full flex-wrap items-start justify-between gap-x-16 gap-y-4"
                             onClick={() => navigate(`/blogs/${b.slug}`)}
                         >
                             {/* Date, Title and summary */}
