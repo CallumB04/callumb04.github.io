@@ -10,7 +10,10 @@ interface NavbarItemProps {
 
 const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
     return (
-        <Link to={to} className="group relative flex items-center p-1">
+        <Link
+            to={to}
+            className="group relative flex items-center px-2 py-2 sm:px-5"
+        >
             <Icon
                 icon={icon}
                 variant="primary"
