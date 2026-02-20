@@ -35,6 +35,7 @@ const Navbar = () => {
                 location.pathname.includes("/blogs/")) && (
                 <span className="bg-navbar-bg absolute -bottom-16 z-90 hidden w-max items-center gap-2 rounded-full p-2 sm:flex">
                     <NavbarItem
+                        className="sm:px-2"
                         text={
                             "Return to all" +
                             " " +

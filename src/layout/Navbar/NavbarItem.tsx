@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
 import Text from "../../components/Text/Text";
 import Icon from "../../components/Icon/Icon";
+import { twMerge } from "tailwind-merge";
 
 interface NavbarItemProps {
     text: string;
     icon: string; // material icon
     to: string;
+    className?: string;
 }
 
-const NavbarItem = ({ text, icon, to }: NavbarItemProps) => {
+const NavbarItem = ({ text, icon, to, className }: NavbarItemProps) => {
     return (
         <Link
             to={to}
-            className="group relative flex items-center px-2 py-2 sm:px-5"
+            className={twMerge(
+                "group relative flex items-center px-2 py-2 sm:px-5",
+                className
+            )}
         >
             <Icon
                 icon={icon}
