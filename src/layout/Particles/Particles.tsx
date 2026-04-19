@@ -99,6 +99,10 @@ export const Particles: React.FC<ParticlesProps> = ({
     const rafID = useRef<number | null>(null);
     const resizeTimeout = useRef<NodeJS.Timeout | null>(null);
 
+    const reducedMotion =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     useEffect(() => {
         if (canvasRef.current) {
             context.current = canvasRef.current.getContext("2d");
@@ -311,6 +315,10 @@ export const Particles: React.FC<ParticlesProps> = ({
         });
         rafID.current = window.requestAnimationFrame(animate);
     };
+
+    if (reducedMotion) {
+        return null;
+    }
 
     return (
         <div

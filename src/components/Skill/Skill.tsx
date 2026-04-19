@@ -27,22 +27,22 @@ const Skill = ({ skill }: SkillProps) => {
 
     return (
         <span
-            className="border-layout-border bg-card-bg flex w-max cursor-default items-center gap-3 rounded-lg border px-3 py-1.5"
+            className="group border-card-border bg-card-bg hover:border-highlight/60 hover:shadow-highlight/10 flex w-max cursor-default items-center gap-3 rounded-md border px-3 py-1.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
         >
             {technology?.devicon && (
                 <i
                     className={twMerge(
-                        "text-text-secondary text-sm transition-all duration-300 sm:text-base",
+                        "text-text-secondary text-sm sm:text-base",
                         "devicon-" + technology.devicon,
-                        hovered && "colored animate-pulse"
+                        hovered && "colored"
                     )}
                 ></i>
             )}
             <Text
                 variant="secondary"
-                className="text-xs font-medium sm:text-sm"
+                className="group-hover:text-text-primary text-xs font-medium transition-colors sm:text-sm"
             >
                 {technology?.name}
             </Text>

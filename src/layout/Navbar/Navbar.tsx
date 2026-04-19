@@ -13,11 +13,27 @@ const Navbar = () => {
             return;
         }
 
-        // if hash (#work) exists, scroll to that element
-        const element = document.querySelector(location.hash);
-        if (element) {
-            element.scrollIntoView();
-        }
+        // retry scroll until the target element is in the DOM
+        // (handles navigating to /#work from another route while the home page mounts)
+        let attempts = 0;
+        let cancelled = false;
+        const tryScroll = () => {
+            if (cancelled) return;
+            const element = document.querySelector(location.hash);
+            if (element) {
+                element.scrollIntoView();
+                return;
+            }
+            if (attempts < 20) {
+                attempts++;
+                setTimeout(tryScroll, 50);
+            }
+        };
+        tryScroll();
+
+        return () => {
+            cancelled = true;
+        };
     }, [location]);
 
     return (
@@ -43,6 +59,7 @@ const Navbar = () => {
                         }
                         icon="arrow_left_alt"
                         to={"/" + location.pathname.split("/")[1]}
+                        suppressActive
                     />
                 </span>
             )}

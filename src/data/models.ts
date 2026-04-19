@@ -1,3 +1,9 @@
+export type ProjectStatusType =
+    | "finished"
+    | "in-progress"
+    | "on-hold"
+    | "discontinued";
+
 export interface Project {
     slug: string; // unique id, in url when viewing
     title: string;
@@ -6,6 +12,7 @@ export interface Project {
     technologies: string[]; // key of objects in technologies.json, first 3 are "main" technologies, displayed on preview
     startDate?: string; // format: 9th March 2006
     finishDate?: string; // format: 9th March 2006
+    status: ProjectStatusType;
     images: string[]; // file names in project folder (folder also includes banner.png for preview card) (/public/project_images/<project slug>/<file>)
     githubRepo?: string; // CallumB04/<repo>
     liveURL?: string;

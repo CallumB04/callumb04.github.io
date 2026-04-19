@@ -26,7 +26,7 @@ const Button = ({
                 "font-primary group flex h-11 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium transition-colors duration-300",
                 onClick && "cursor-pointer",
                 variant === "primary"
-                    ? "bg-button-primary hover:bg-button-primary-hover text-button-primary-text hover:text-button-primary-text-hover"
+                    ? "bg-button-primary hover:bg-button-primary-hover text-button-primary-text hover:text-button-primary-text-hover btn-shine relative overflow-hidden"
                     : "border-button-secondary text-button-secondary-text hover:border-button-secondary-hover hover:text-button-secondary-text-hover border",
                 maxWidth && "w-full",
                 maxWidthMobile && "w-full sm:w-max",
