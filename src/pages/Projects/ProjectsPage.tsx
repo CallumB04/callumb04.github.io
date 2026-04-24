@@ -96,13 +96,13 @@ const ProjectsPage = () => {
                                     )}
                                 </div>
                                 <Card
-                                    className="flex w-full flex-col gap-0 overflow-hidden p-0"
+                                    className="flex w-full flex-col gap-0 p-0"
                                     onClick={() =>
                                         navigate(`/projects/${p.slug}`)
                                     }
                                 >
                                     {/* Banner */}
-                                    <div className="relative hidden aspect-[7/1] w-full overflow-hidden sm:block">
+                                    <div className="relative hidden aspect-[7/1] w-full overflow-hidden rounded-t-md sm:block">
                                         <img
                                             src={`/project_images/${p.slug}/banner.png`}
                                             className="size-full object-cover"

@@ -34,11 +34,11 @@ const BlogsPage = () => {
                     {blogs.map((b) => (
                         <Card
                             key={b.slug}
-                            className="flex w-full flex-col gap-0 overflow-hidden p-0"
+                            className="flex w-full flex-col gap-0 p-0"
                             onClick={() => navigate(`/blogs/${b.slug}`)}
                         >
                             {/* Banner */}
-                            <div className="relative hidden aspect-[7/1] w-full overflow-hidden sm:block">
+                            <div className="relative hidden aspect-[7/1] w-full overflow-hidden rounded-t-md sm:block">
                                 <img
                                     src={`/blogs/${b.slug}/banner.png`}
                                     className="size-full object-cover"
