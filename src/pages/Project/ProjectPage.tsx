@@ -120,7 +120,7 @@ const ProjectPage = () => {
                             <Text
                                 key={i}
                                 variant="secondary"
-                                className="font-serif text-[1.0625rem] leading-8 tracking-[0.01em] sm:text-[1.125rem] sm:leading-[1.85]"
+                                className="font-body text-[1.0625rem] leading-8 tracking-[0.01em] sm:text-[1.125rem] sm:leading-[1.85]"
                             >
                                 {paragraph}
                             </Text>

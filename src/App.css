@@ -51,18 +51,18 @@ main {
     @apply text-text-primary mt-5 mb-2 text-lg font-semibold sm:text-xl;
 }
 .blog-post-markdown p {
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     @apply text-text-secondary mb-4 text-[1.0625rem] leading-8 font-normal tracking-[0.01em] sm:text-[1.125rem] sm:leading-[1.85];
 }
 .blog-post-markdown a {
     @apply text-highlight hover:text-highlight-soft decoration-highlight/40 hover:decoration-highlight-soft font-medium underline underline-offset-2 transition-colors duration-200;
 }
 .blog-post-markdown ul {
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     @apply text-text-secondary marker:text-highlight my-4 ml-6 flex list-disc flex-col gap-2 text-[1.0625rem] leading-8 tracking-[0.01em] sm:text-[1.125rem] sm:leading-[1.85];
 }
 .blog-post-markdown ol {
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     @apply text-text-secondary marker:text-highlight my-4 ml-6 flex list-decimal flex-col gap-2 text-[1.0625rem] leading-8 tracking-[0.01em] marker:font-semibold sm:text-[1.125rem] sm:leading-[1.85];
 }
 .blog-post-markdown hr {
@@ -89,7 +89,7 @@ main {
     @apply text-text-secondary border-0 bg-transparent p-0;
 }
 .blog-post-markdown blockquote {
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     @apply text-text-secondary my-4 py-2 pr-3 pl-4 italic;
     border-left: 3px solid var(--color-highlight);
     background: linear-gradient(
@@ -240,7 +240,7 @@ main {
     /* -- Fonts -- */
     --font-primary: "Montserrat", sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    --font-serif: "Lora", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
 
     /* -- Colors -- */
     /* Page + Surfaces */
