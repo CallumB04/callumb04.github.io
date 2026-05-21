@@ -72,7 +72,7 @@
         "devicon": "supabase-plain"
     },
     "postgresql": {
-        "name": "Supabase",
+        "name": "PostgreSQL",
         "devicon": "postgresql-plain"
     }
 }
