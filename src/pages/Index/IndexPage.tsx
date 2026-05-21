@@ -17,7 +17,7 @@ import { shortenDate } from "../Projects/ProjectsPage";
 import WorkExperience from "./components/WorkExperience";
 
 // My Key Skills
-const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python", "cpp"];
+const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python"];
 
 const IndexPage = () => {
     usePageTitle("Callum Burgoyne | Software Developer");
