@@ -193,22 +193,20 @@ const IndexPage = () => {
                             onClick={() => navigate(`/projects/${p.slug}`)}
                         >
                             {/* Banner */}
-                            <div className="relative hidden aspect-[7/1] w-full overflow-hidden rounded-t-md sm:block">
+                            <div className="relative hidden aspect-7/1 w-full overflow-hidden rounded-t-md sm:block">
                                 <img
                                     src={`/project_images/${p.slug}/banner.png`}
                                     className="size-full object-cover"
                                     loading="lazy"
                                 />
-                                <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-gradient-to-t to-transparent"></div>
+                                <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-linear-to-t to-transparent"></div>
                             </div>
                             {/* Body */}
                             <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-16">
                                 <div className="flex flex-col gap-3">
                                     <div className="flex flex-col gap-1">
                                         <span className="flex flex-wrap items-center gap-2">
-                                            <ProjectStatus
-                                                status={p.status}
-                                            />
+                                            <ProjectStatus status={p.status} />
                                             <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
                                                 <i
                                                     className="material-symbols-outlined"
@@ -348,13 +346,13 @@ const IndexPage = () => {
                             onClick={() => navigate(`/blogs/${b.slug}`)}
                         >
                             {/* Banner */}
-                            <div className="relative hidden aspect-[7/1] w-full overflow-hidden sm:block">
+                            <div className="relative hidden aspect-7/1 w-full overflow-hidden sm:block">
                                 <img
                                     src={`/blogs/${b.slug}/banner.png`}
                                     className="size-full object-cover"
                                     loading="lazy"
                                 />
-                                <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-gradient-to-t to-transparent"></div>
+                                <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-linear-to-t to-transparent"></div>
                             </div>
                             {/* Body */}
                             <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-8">
