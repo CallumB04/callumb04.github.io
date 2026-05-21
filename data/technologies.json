@@ -66,5 +66,13 @@
     "css": {
         "name": "CSS",
         "devicon": "css3-plain"
+    },
+    "supabase": {
+        "name": "Supabase",
+        "devicon": "supabase-plain"
+    },
+    "postgresql": {
+        "name": "PostgreSQL",
+        "devicon": "postgresql-plain"
     }
 }

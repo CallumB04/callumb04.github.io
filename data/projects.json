@@ -1,5 +1,27 @@
 [
     {
+        "slug": "booth",
+        "title": "booth",
+        "summary": "An AI-powered internal ticketing system",
+        "longDescription": "booth is a full-stack ticketing system app I am building, using React/TypeScript (frontend) and Go (backend). This is a long term project that I am working on alongside my full-stack web developer role, however, the project is not currently my main focus as I am currently branching out into other areas of software development and balancing my time and learning.\nThe app will use AI-powered functionalities to create an internal system for task management and assignment, and cross-functional collaboration within an organisation. booth is targeted at teams with varying technical knowledge, to assist in translating non-technical requests into technical solutions.",
+        "technologies": [
+            "react",
+            "typescript",
+            "go",
+            "tailwind",
+            "docker",
+            "postgresql",
+            "supabase",
+            "vite",
+            "vitest"
+        ],
+        "startDate": "1st February 2026",
+        "status": "in-progress",
+        "images": ["home.png"],
+        "githubRepo": "CallumB04/booth",
+        "featured": true
+    },
+    {
         "slug": "clothing-shop",
         "title": "Clothing Shop",
         "summary": "An e-commerce clothing website",
@@ -55,32 +77,7 @@
         "status": "finished",
         "images": ["homepage.png", "services.png"],
         "githubRepo": "CallumB04/sjbsafety.co.uk",
-        "liveURL": "https://sjbsafety.co.uk",
-        "featured": true
-    },
-    {
-        "slug": "react-todolist",
-        "title": "React Todolist",
-        "summary": "A simple and interactive todolist app",
-        "longDescription": "I created a simple and interactive todolist app using React. This project was my first experience using React, where I was learning as I built the project, and my first time using any Web Development framework. Prior to this project, I had only used basic JavaScript, HTML and CSS to create web applications, and therefore was a key learning experience to progress myself and grow as a web developer. Although the React code was not perfect, I learnt alot of key lessons whilst building this project and implemented improvements in my projects that followed.",
-        "technologies": ["react", "javascript", "css"],
-        "startDate": "10th November 2024",
-        "finishDate": "30th November 2024",
-        "status": "finished",
-        "images": ["todolist.png", "add-task.png"],
-        "githubRepo": "CallumB04/react-todolist",
-        "liveURL": "https://callumb04.github.io/react-todolist"
-    },
-    {
-        "slug": "platform-shooter",
-        "title": "Platform Shooter",
-        "summary": "An unfinished 2D platformer game",
-        "longDescription": "Platform Shooter is an unfinished 2d platforming shooter game. I built this project using C++ and the SFML rendering library, which I have also used before to re-create basic games like Pong and Snake. Although unfinished, this project helped me improve on my Object-oriented programming skills, through the creation of a basic game engine, with a machine for handling state.\nDue to my focus transitioning to primarily web development, I stopped working on this project, however plan to return to C++ and potentially this project in the future once I am satisfied with my web development ability.",
-        "technologies": ["cpp", "sfml"],
-        "startDate": "19th August 2024",
-        "status": "discontinued",
-        "images": ["game.png", "menu.png"],
-        "githubRepo": "CallumB04/platform-shooter"
+        "liveURL": "https://sjbsafety.co.uk"
     },
     {
         "slug": "auto-mate",
