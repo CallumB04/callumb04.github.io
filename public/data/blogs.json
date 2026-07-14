@@ -1,9 +1,35 @@
 [
     {
+        "slug": "booth",
+        "title": "Why am I building booth?",
+        "summary": "How my experiences in a full-stack web development role, turned into a project idea",
+        "date": "15th July 2026",
+        "sections": [
+            { "title": "What is booth?", "textFile": "what-is-booth.md" },
+            {
+                "title": "A screenshot of the landing page",
+                "imageFile": "home.png"
+            },
+            {
+                "title": "What problem is this solving?",
+                "textFile": "what-problem-is-this-solving.md"
+            },
+            {
+                "title": "Tech stack",
+                "textFile": "tech-stack.md"
+            },
+            {
+                "title": "Future plans",
+                "textFile": "future-plans.md"
+            }
+        ],
+        "relatedProject": "booth"
+    },
+    {
         "slug": "clothing-shop",
         "title": "Building 'Clothing Shop'",
         "summary": "My first experience building a full-stack project using Go",
-        "date": "14th January 2026",
+        "date": "13th January 2026",
         "sections": [
             { "title": "Introduction", "textFile": "intro.md" },
             {
