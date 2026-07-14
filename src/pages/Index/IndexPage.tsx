@@ -7,7 +7,7 @@ import usePageTitle from "../../hooks/usePageTitle";
 import { type BlogPost, type Project } from "../../data/models";
 import { loadAllBlogPosts, loadAllProjects } from "../../data/loader";
 import Section from "../../components/Section/Section";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
 import Button from "../../components/Button/Button";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
@@ -23,6 +23,16 @@ const IndexPage = () => {
     usePageTitle("Callum Burgoyne | Software Developer");
 
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+
+    // Support deep links like callumb04.github.io?blog=<slug> which avoid the
+    // GitHub Pages 404 on direct /blogs/:slug URLs by landing on the index first.
+    useEffect(() => {
+        const blogSlug = searchParams.get("blog");
+        if (blogSlug) {
+            navigate(`/blogs/${blogSlug}`, { replace: true });
+        }
+    }, [searchParams, navigate]);
 
     const [projects, setProjects] = useState<Project[]>([]);
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
