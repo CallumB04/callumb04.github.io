@@ -3,7 +3,7 @@
         "slug": "booth",
         "title": "booth",
         "summary": "An AI-powered internal ticketing system",
-        "longDescription": "booth is a full-stack ticketing system app I am building, using React/TypeScript (frontend) and Go (backend).\nThe app will use AI-powered functionalities to create an internal system for task management and assignment, and cross-functional collaboration within an organisation. booth is targeted at teams with varying technical knowledge, to assist in translating non-technical requests into technical solutions.",
+        "longDescription": "booth is a full-stack ticketing system app I am building, using React/TypeScript (frontend) and Go (backend). This is a long-term project that I am developing alongside my full-stack web development role, to apply my new knowledge and improve my comfort with a large scale code-base.\nThe app will use AI-powered functionalities to create an internal system for task management and assignment, and cross-functional collaboration within an organisation. booth is targeted at teams with varying technical knowledge, to assist in translating non-technical requests into technical solutions.\nThe app uses Supabase PostgreSQL as a database, and docker to containerize the build. I also plan to self-host n8n for AI functionality to create easily manageable AI workflows, which can be interacted with through simple webhooks from the code.\nThis project will also provide me with further experience in multiple other languages and technologies, as I will build external integrations to interact with the primary app, such as Discord/Slack Bots in Python/Node.js.",
         "technologies": [
             "react",
             "typescript",
