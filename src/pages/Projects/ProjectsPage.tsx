@@ -69,7 +69,7 @@ const ProjectsPage = () => {
                                 <div className="hidden w-20 flex-shrink-0 flex-col items-end pt-5 xl:flex">
                                     <Text
                                         variant="secondary"
-                                        className="text-text-tertiary font-mono text-xs tracking-wide text-right leading-tight"
+                                        className="text-text-tertiary text-right font-mono text-xs leading-tight tracking-wide"
                                     >
                                         {startShort ?? "???"}
                                     </Text>
@@ -77,7 +77,7 @@ const ProjectsPage = () => {
                                         finishShort !== startShort && (
                                             <Text
                                                 variant="secondary"
-                                                className="text-text-tertiary font-mono text-xs tracking-wide text-right leading-tight"
+                                                className="text-text-tertiary text-right font-mono text-xs leading-tight tracking-wide"
                                             >
                                                 — {finishShort}
                                             </Text>
@@ -108,7 +108,7 @@ const ProjectsPage = () => {
                                             className="size-full object-cover"
                                             loading="lazy"
                                         />
-                                        <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-gradient-to-t to-transparent"></div>
+                                        <div className="from-card-bg/70 via-card-bg/20 absolute inset-0 bg-gradient-to-t to-transparent"></div>
                                     </div>
                                     {/* Body */}
                                     <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-8">

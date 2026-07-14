@@ -199,7 +199,7 @@ const IndexPage = () => {
                                     className="size-full object-cover"
                                     loading="lazy"
                                 />
-                                <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-linear-to-t to-transparent"></div>
+                                <div className="from-card-bg/70 via-card-bg/20 absolute inset-0 bg-linear-to-t to-transparent"></div>
                             </div>
                             {/* Body */}
                             <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-16">
@@ -352,7 +352,7 @@ const IndexPage = () => {
                                     className="size-full object-cover"
                                     loading="lazy"
                                 />
-                                <div className="from-card-bg via-card-bg/40 absolute inset-0 bg-linear-to-t to-transparent"></div>
+                                <div className="from-card-bg/70 via-card-bg/20 absolute inset-0 bg-linear-to-t to-transparent"></div>
                             </div>
                             {/* Body */}
                             <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-8">
