@@ -2,7 +2,7 @@
     {
         "slug": "booth",
         "title": "Why am I building booth?",
-        "summary": "How my experiences in a full-stack web development role, turned into a project idea",
+        "summary": "How the experiences in my first full-time role, turned into a project idea",
         "date": "15th July 2026",
         "sections": [
             { "title": "What is booth?", "textFile": "what-is-booth.md" },
