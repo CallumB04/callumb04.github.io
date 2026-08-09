@@ -13,7 +13,6 @@ import Button from "../../components/Button/Button";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import RedirectLabel from "../../components/Icon/RedirectLabel";
 import ProjectStatus from "../../components/ProjectStatus/ProjectStatus";
-import { shortenDate } from "../Projects/ProjectsPage";
 import WorkExperience from "./components/WorkExperience";
 
 // My Key Skills
@@ -85,7 +84,7 @@ const IndexPage = () => {
                                 icon="code"
                             />
                             <PersonalDetail
-                                text="10X Managers (L4 Apprentice)"
+                                text="10X Managers"
                                 icon="work"
                             />
                             <PersonalDetail
@@ -217,27 +216,19 @@ const IndexPage = () => {
                                     <div className="flex flex-col gap-1">
                                         <span className="flex flex-wrap items-center gap-2">
                                             <ProjectStatus status={p.status} />
-                                            <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
-                                                <i
-                                                    className="material-symbols-outlined"
-                                                    style={{
-                                                        fontSize: "14px",
-                                                    }}
-                                                >
-                                                    calendar_month
-                                                </i>
-                                                {shortenDate(p.startDate) ??
-                                                    "???"}
-                                                {shortenDate(p.startDate) ===
-                                                shortenDate(p.finishDate)
-                                                    ? ""
-                                                    : shortenDate(p.finishDate)
-                                                      ? " — " +
-                                                        shortenDate(
-                                                            p.finishDate
-                                                        )
-                                                      : " — ???"}
-                                            </span>
+                                            {p.date && (
+                                                <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
+                                                    <i
+                                                        className="material-symbols-outlined"
+                                                        style={{
+                                                            fontSize: "14px",
+                                                        }}
+                                                    >
+                                                        calendar_month
+                                                    </i>
+                                                    {p.date}
+                                                </span>
+                                            )}
                                         </span>
                                         <Text
                                             variant="primary"
@@ -320,7 +311,6 @@ const IndexPage = () => {
                         role="Apprentice Software Developer"
                         workLogo="10X.png"
                         details={[
-                            "My first full-time professional role",
                             "Primarily working in Full-Stack Web Development",
                             "Quickly gained team lead responsibilities, involving managing product roadmap; delegating tasks; reporting team progress in weekly company meetings; and mentoring members of my team",
                         ]}

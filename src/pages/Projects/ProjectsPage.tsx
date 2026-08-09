@@ -19,14 +19,6 @@ const TIMELINE_DOT_CLASSES: Record<ProjectStatusType, string> = {
     discontinued: "bg-card-border-hover",
 };
 
-// function to shorten start/finish date for card preview
-export const shortenDate = (date: string | undefined) => {
-    if (date) {
-        const dateArr = date.split(" ");
-        return dateArr[1].slice(0, 3) + " " + dateArr[2];
-    }
-};
-
 const ProjectsPage = () => {
     usePageTitle("Projects | Callum Burgoyne");
     const navigate = useNavigate();
@@ -51,37 +43,21 @@ const ProjectsPage = () => {
                 <div className="flex flex-col">
                     {projects.map((p, i) => {
                         const isLast = i === projects.length - 1;
-                        const startShort = shortenDate(p.startDate);
-                        const finishShort = shortenDate(p.finishDate);
-                        const mobileDate = startShort
-                            ? startShort === finishShort
-                                ? startShort
-                                : finishShort
-                                  ? startShort + " — " + finishShort
-                                  : startShort + " — ???"
-                            : "???";
                         return (
                             <div
                                 key={p.slug}
                                 className="relative flex gap-4 pb-6 last:pb-0 xl:-ml-[124px] xl:w-[calc(100%_+_124px)]"
                             >
-                                {/* Timeline date column (xl+) */}
+                                {/* Timeline year column (xl+) */}
                                 <div className="hidden w-20 flex-shrink-0 flex-col items-end pt-5 xl:flex">
-                                    <Text
-                                        variant="secondary"
-                                        className="text-text-tertiary text-right font-mono text-xs leading-tight tracking-wide"
-                                    >
-                                        {startShort ?? "???"}
-                                    </Text>
-                                    {finishShort &&
-                                        finishShort !== startShort && (
-                                            <Text
-                                                variant="secondary"
-                                                className="text-text-tertiary text-right font-mono text-xs leading-tight tracking-wide"
-                                            >
-                                                — {finishShort}
-                                            </Text>
-                                        )}
+                                    {p.date && (
+                                        <Text
+                                            variant="secondary"
+                                            className="text-text-tertiary text-right font-mono text-xs leading-tight tracking-wide"
+                                        >
+                                            {p.date}
+                                        </Text>
+                                    )}
                                 </div>
                                 {/* Rail (xl+) */}
                                 <div className="relative hidden w-3 flex-shrink-0 xl:block">
@@ -119,18 +95,20 @@ const ProjectsPage = () => {
                                                     <ProjectStatus
                                                         status={p.status}
                                                     />
-                                                    <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide xl:hidden">
-                                                        <i
-                                                            className="material-symbols-outlined"
-                                                            style={{
-                                                                fontSize:
-                                                                    "14px",
-                                                            }}
-                                                        >
-                                                            calendar_month
-                                                        </i>
-                                                        {mobileDate}
-                                                    </span>
+                                                    {p.date && (
+                                                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide xl:hidden">
+                                                            <i
+                                                                className="material-symbols-outlined"
+                                                                style={{
+                                                                    fontSize:
+                                                                        "14px",
+                                                                }}
+                                                            >
+                                                                calendar_month
+                                                            </i>
+                                                            {p.date}
+                                                        </span>
+                                                    )}
                                                 </span>
                                                 <Text
                                                     variant="primary"

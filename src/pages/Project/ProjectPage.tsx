@@ -8,7 +8,6 @@ import Text from "../../components/Text/Text";
 import Skill from "../../components/Skill/Skill";
 import RedirectLabel from "../../components/Icon/RedirectLabel";
 import ProjectStatus from "../../components/ProjectStatus/ProjectStatus";
-import { shortenDate } from "../Projects/ProjectsPage";
 import { twMerge } from "tailwind-merge";
 import NotFoundPage from "../NotFound/NotFoundPage";
 
@@ -58,7 +57,7 @@ const ProjectPage = () => {
                             {project?.title}
                         </span>
                     </Text>
-                    {/* Status + Start/Finish date */}
+                    {/* Status + year */}
                     <span className="flex flex-wrap items-center gap-2">
                         {project && (
                             <ProjectStatus
@@ -66,21 +65,17 @@ const ProjectPage = () => {
                                 size="md"
                             />
                         )}
-                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide sm:gap-2 sm:px-2.5 sm:py-1 sm:text-[13px]">
-                            <i
-                                className="material-symbols-outlined"
-                                style={{ fontSize: "14px" }}
-                            >
-                                calendar_month
-                            </i>
-                            {shortenDate(project?.startDate) ?? "???"}
-                            {shortenDate(project?.startDate) ===
-                            shortenDate(project?.finishDate)
-                                ? ""
-                                : shortenDate(project?.finishDate)
-                                  ? " — " + shortenDate(project?.finishDate)
-                                  : " — ???"}
-                        </span>
+                        {project?.date && (
+                            <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide sm:gap-2 sm:px-2.5 sm:py-1 sm:text-[13px]">
+                                <i
+                                    className="material-symbols-outlined"
+                                    style={{ fontSize: "14px" }}
+                                >
+                                    calendar_month
+                                </i>
+                                {project.date}
+                            </span>
+                        )}
                     </span>
                 </div>
                 {/* Technologies + links */}
