@@ -83,10 +83,7 @@ const IndexPage = () => {
                                 text="Full-Stack Web Developer"
                                 icon="code"
                             />
-                            <PersonalDetail
-                                text="10X Managers"
-                                icon="work"
-                            />
+                            <PersonalDetail text="10X Managers" icon="work" />
                             <PersonalDetail
                                 text="Kent, United Kingdom"
                                 icon="location_on"
@@ -306,27 +303,50 @@ const IndexPage = () => {
             <Section header="Work" id="work">
                 <div className="flex flex-col gap-0">
                     <WorkExperience
-                        timeframe="Jan 2025 - Current"
                         workplace="10X Managers"
-                        role="Apprentice Software Developer"
                         workLogo="10X.png"
-                        details={[
-                            "Primarily working in Full-Stack Web Development",
-                            "Quickly gained team lead responsibilities, involving managing product roadmap; delegating tasks; reporting team progress in weekly company meetings; and mentoring members of my team",
+                        roles={[
+                            {
+                                timeframe: "Aug 2026 - Current",
+                                role: "Software Developer",
+                                details: [
+                                    "Migrating large low-code applications into full-code rebuilds, using Go and React",
+                                    "Developing AI-powered features, including a personalised AI coach",
+                                    "Owning technical and architectural decisions across the business",
+                                ],
+                                technologies: [
+                                    "react",
+                                    "go",
+                                    "docker",
+                                    "supabase",
+                                ],
+                            },
+                            {
+                                timeframe: "Jan 2025 - Aug 2026",
+                                role: "Apprentice Software Developer",
+                                details: [
+                                    "Primarily worked with low-code technologies such as Bubble.io and n8n",
+                                    "Quickly gained team lead responsibilities - managing the product roadmap, delegating work, reporting team progress in company meetings, and mentoring team members",
+                                ],
+                                technologies: ["bubble", "n8n", "docker"],
+                            },
                         ]}
-                        technologies={["bubble", "n8n", "docker", "react"]}
                         isCurrent
                     />
                     <WorkExperience
-                        timeframe="Oct 2024 - Jan 2025"
                         workplace="Freelance"
-                        role="Freelance Web Developer"
                         workLogo="freelance.jpg"
-                        details={[
-                            "Developed commercial websites for real-world local businesses",
-                            "Connected with clients through facebook and maintained frequent communication during the development process",
+                        roles={[
+                            {
+                                timeframe: "Oct 2024 - Jan 2025",
+                                role: "Freelance Web Developer",
+                                details: [
+                                    "Developed commercial websites for real-world local businesses",
+                                    "Connected with clients through Facebook and maintained frequent communication during the development process",
+                                ],
+                                technologies: ["javascript", "tailwind"],
+                            },
                         ]}
-                        technologies={["javascript", "tailwind"]}
                         isLast
                     />
                 </div>

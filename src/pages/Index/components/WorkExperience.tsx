@@ -4,27 +4,78 @@ import Icon from "../../../components/Icon/Icon";
 import Skill from "../../../components/Skill/Skill";
 import Text from "../../../components/Text/Text";
 
-interface WorkExperienceProps {
+export interface WorkRole {
     timeframe: string; // Jan 2024 - Feb 2025
-    workplace: string;
     role: string;
-    workLogo: string; // /public/work_logos/<imageFile>
     details?: string[]; // bullet points
     technologies?: string[];
+}
+
+interface WorkExperienceProps {
+    workplace: string;
+    workLogo: string; // /public/work_logos/<imageFile>
+    roles: WorkRole[]; // most recent role first
     isCurrent?: boolean;
     isLast?: boolean;
 }
 
+// Timeframe badge, e.g. "Jan 2025 - Current"
+const Timeframe = ({ timeframe }: { timeframe: string }) => (
+    <span className="bg-card-bg-elevated text-text-tertiary border-card-border mb-1 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
+        <i className="material-symbols-outlined" style={{ fontSize: "14px" }}>
+            calendar_month
+        </i>
+        {timeframe}
+    </span>
+);
+
+const RoleDetails = ({ role }: { role: WorkRole }) => (
+    <div className="flex flex-col gap-3">
+        {/* Bullet point details */}
+        {role.details && role.details.length > 0 && (
+            <div className="flex flex-col gap-1.5">
+                {role.details.map((d) => (
+                    <span key={d} className="flex gap-1">
+                        <Icon
+                            variant="highlight"
+                            icon="chevron_right"
+                            className="shrink-0 text-xs leading-5"
+                        />
+                        <Text variant="secondary" className="text-sm">
+                            {d}
+                        </Text>
+                    </span>
+                ))}
+            </div>
+        )}
+        {/* Technologies */}
+        {role.technologies && role.technologies.length > 0 && (
+            <span className="mt-1 flex flex-wrap gap-1">
+                {role.technologies.map((t) => (
+                    <Skill key={t} skill={t} />
+                ))}
+            </span>
+        )}
+    </div>
+);
+
+// Combined span across every role at the workplace, e.g. roles running
+// "Jan 2025 - Aug 2026" and "Aug 2026 - Current" become "Jan 2025 - Current"
+const combinedTimeframe = (roles: WorkRole[]): string => {
+    const start = roles[roles.length - 1].timeframe.split(" - ")[0];
+    const end = roles[0].timeframe.split(" - ").slice(-1)[0];
+    return `${start} - ${end}`;
+};
+
 const WorkExperience = ({
-    timeframe,
     workplace,
-    role,
     workLogo,
-    details,
-    technologies,
+    roles,
     isCurrent,
     isLast,
 }: WorkExperienceProps) => {
+    const isMultiRole = roles.length > 1;
+
     return (
         <div className="relative flex gap-4 pb-6 last:pb-0 xl:-ml-[28px] xl:w-[calc(100%_+_28px)]">
             {/* Timeline rail (desktop) */}
@@ -49,47 +100,53 @@ const WorkExperience = ({
                     />
                     {/* Job Info */}
                     <div className="flex w-full flex-col gap-0.5">
-                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border mb-1 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
-                            <i
-                                className="material-symbols-outlined"
-                                style={{ fontSize: "14px" }}
-                            >
-                                calendar_month
-                            </i>
-                            {timeframe}
-                        </span>
+                        <Timeframe
+                            timeframe={
+                                isMultiRole
+                                    ? combinedTimeframe(roles)
+                                    : roles[0].timeframe
+                            }
+                        />
                         <Text variant="primary" className="font-semibold">
                             {workplace}
                         </Text>
-                        <Text variant="secondary" className="text-sm">
-                            {role}
-                        </Text>
+                        {!isMultiRole && (
+                            <Text variant="secondary" className="text-sm">
+                                {roles[0].role}
+                            </Text>
+                        )}
                     </div>
                 </div>
-                {/* Bullet point details */}
-                {details && (
-                    <div className="flex flex-col gap-1.5 sm:ml-18">
-                        {details.map((d) => (
-                            <span key={d} className="flex gap-1.5">
-                                <Icon
-                                    variant="highlight"
-                                    icon="subdirectory_arrow_right"
-                                    className="text-xs"
-                                />
-                                <Text variant="secondary" className="text-sm">
-                                    {d}
-                                </Text>
-                            </span>
-                        ))}
+                {/* Single role: details sit directly under the workplace header */}
+                {!isMultiRole && (
+                    <div className="sm:ml-18">
+                        <RoleDetails role={roles[0]} />
                     </div>
                 )}
-                {/* Technologies */}
-                {technologies && (
-                    <span className="mt-1 flex flex-wrap gap-1 sm:ml-18">
-                        {technologies.map((t) => (
-                            <Skill key={t} skill={t} />
+                {/* Multiple roles at the same workplace, most recent first */}
+                {isMultiRole && (
+                    <div className="flex flex-col gap-5 sm:ml-18">
+                        {roles.map((r) => (
+                            <div
+                                key={r.role}
+                                className="flex w-full flex-col gap-0.5"
+                            >
+                                <Text
+                                    variant="primary"
+                                    className="text-sm font-semibold"
+                                >
+                                    {r.role}
+                                </Text>
+                                <Text
+                                    variant="secondary"
+                                    className="text-text-tertiary mt-0.5 mb-1.5 font-mono text-[11px] tracking-wide"
+                                >
+                                    {r.timeframe}
+                                </Text>
+                                <RoleDetails role={r} />
+                            </div>
                         ))}
-                    </span>
+                    </div>
                 )}
             </Card>
         </div>
