@@ -13,16 +13,31 @@ const Navbar = () => {
             return;
         }
 
-        // retry scroll until the target element is in the DOM
-        // (handles navigating to /#work from another route while the home page mounts)
+        // retry scroll until the target element is in the DOM and has settled
+        // (handles navigating to /#work from another route while the home page
+        // mounts - sections load their content async, so the target keeps
+        // moving, and until the page is tall enough the scroll gets clamped)
         let attempts = 0;
+        let settledTicks = 0;
         let cancelled = false;
         const tryScroll = () => {
             if (cancelled) return;
             const element = document.querySelector(location.hash);
             if (element) {
-                element.scrollIntoView();
-                return;
+                // instant, not the smooth default from scroll-behavior on
+                // <html> - a smooth scroll animates asynchronously, so each
+                // retry would restart it and the check below could never see
+                // where it ended up
+                element.scrollIntoView({ behavior: "instant" });
+                // scrollIntoView leaves scroll-margin-top of space above the
+                // target, so landing exactly there means the scroll took hold
+                // rather than being clamped by a page that is still too short
+                const offset =
+                    parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
+                const landed =
+                    Math.abs(element.getBoundingClientRect().top - offset) < 2;
+                settledTicks = landed ? settledTicks + 1 : 0;
+                if (settledTicks >= 2) return;
             }
             if (attempts < 20) {
                 attempts++;

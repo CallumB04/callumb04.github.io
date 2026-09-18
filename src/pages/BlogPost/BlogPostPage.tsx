@@ -69,15 +69,28 @@ const BlogPostPage = () => {
                         {blogPost?.date}
                     </span>
                 </div>
-                {/* Related Project */}
-                {blogPost?.relatedProject && (
-                    <RedirectLabel
-                        type="material"
-                        to={"/projects/" + blogPost.relatedProject}
-                        icon="folder_open"
-                        label="Related Project"
-                        className="w-max"
-                    />
+                {/* Related Project + Role */}
+                {(blogPost?.relatedProject || blogPost?.relatedRole) && (
+                    <span className="flex flex-wrap gap-2">
+                        {blogPost?.relatedProject && (
+                            <RedirectLabel
+                                type="material"
+                                to={"/projects/" + blogPost.relatedProject}
+                                icon="folder_open"
+                                label="Related Project"
+                                className="w-max"
+                            />
+                        )}
+                        {blogPost?.relatedRole && (
+                            <RedirectLabel
+                                type="material"
+                                to="/#work"
+                                icon="work"
+                                label="Related Role"
+                                className="w-max"
+                            />
+                        )}
+                    </span>
                 )}
                 {/* Layout: TOC + content */}
                 <div className="grid gap-8 lg:grid-cols-[1fr_220px]">
@@ -104,7 +117,8 @@ const BlogPostPage = () => {
                                 variant="primary"
                                 className="text-xs font-semibold tracking-[0.2em] uppercase sm:text-sm"
                             >
-                                <span className="text-highlight">#</span> Contents
+                                <span className="text-highlight">#</span>{" "}
+                                Contents
                             </Text>
                             <div className="flex flex-col gap-0.5">
                                 {blogPost?.sections
@@ -122,10 +136,7 @@ const BlogPostPage = () => {
                                                 variant="secondary"
                                                 className="text-text-tertiary group-hover:text-highlight font-mono text-xs transition-colors"
                                             >
-                                                {String(i + 1).padStart(
-                                                    2,
-                                                    "0"
-                                                )}
+                                                {String(i + 1).padStart(2, "0")}
                                             </Text>
                                             <Text
                                                 variant="secondary"

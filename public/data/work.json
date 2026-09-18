@@ -1,0 +1,46 @@
+[
+    {
+        "workplace": "10X Managers",
+        "workLogo": "10X.png",
+        "isCurrent": true,
+        "roles": [
+            {
+                "id": "10x-software-developer",
+                "timeframe": "Aug 2026 - Current",
+                "role": "Software Developer",
+                "details": [
+                    "Migrating large low-code applications into full-code rebuilds, using Go and React",
+                    "Developing AI-powered features, including a personalised AI coach",
+                    "Owning technical and architectural decisions across the business"
+                ],
+                "technologies": ["react", "go", "docker", "supabase"]
+            },
+            {
+                "id": "10x-apprentice-software-developer",
+                "timeframe": "Jan 2025 - Aug 2026",
+                "role": "Apprentice Software Developer",
+                "details": [
+                    "Primarily worked with low-code technologies such as Bubble.io and n8n",
+                    "Quickly gained team lead responsibilities - managing the product roadmap, delegating work, reporting team progress in company meetings, and mentoring team members"
+                ],
+                "technologies": ["bubble", "n8n", "docker"]
+            }
+        ]
+    },
+    {
+        "workplace": "Freelance",
+        "workLogo": "freelance.jpg",
+        "roles": [
+            {
+                "id": "freelance-web-developer",
+                "timeframe": "Oct 2024 - Jan 2025",
+                "role": "Freelance Web Developer",
+                "details": [
+                    "Developed commercial websites for real-world local businesses",
+                    "Connected with clients through Facebook and maintained frequent communication during the development process"
+                ],
+                "technologies": ["javascript", "tailwind"]
+            }
+        ]
+    }
+]

@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import Section from "../../components/Section/Section";
 import { useEffect, useState } from "react";
-import type { Project } from "../../data/models";
-import { loadProjectBySlug } from "../../data/loader";
+import type { BlogPost, Project } from "../../data/models";
+import { loadAllBlogPosts, loadProjectBySlug } from "../../data/loader";
 import usePageTitle from "../../hooks/usePageTitle";
 import Text from "../../components/Text/Text";
 import Skill from "../../components/Skill/Skill";
@@ -10,6 +10,7 @@ import RedirectLabel from "../../components/Icon/RedirectLabel";
 import ProjectStatus from "../../components/ProjectStatus/ProjectStatus";
 import { twMerge } from "tailwind-merge";
 import NotFoundPage from "../NotFound/NotFoundPage";
+import BlogPostCard from "../../components/BlogPostCard/BlogPostCard";
 
 const ProjectPage = () => {
     // get project slug from url to load data
@@ -19,6 +20,9 @@ const ProjectPage = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const [selectedImage, setSelectedImage] = useState<string>("");
+
+    // blog posts written about this project
+    const [relatedBlogs, setRelatedBlogs] = useState<BlogPost[]>([]);
 
     // load project data into state
     useEffect(() => {
@@ -34,6 +38,20 @@ const ProjectPage = () => {
         };
 
         loadProjectData();
+    }, [slug]);
+
+    // load blog posts related to this project into state
+    useEffect(() => {
+        const loadRelatedBlogs = async () => {
+            const resp = await loadAllBlogPosts();
+            setRelatedBlogs(
+                resp.filter(
+                    (b) => b.relatedProject && b.relatedProject === slug
+                )
+            );
+        };
+
+        loadRelatedBlogs();
     }, [slug]);
 
     usePageTitle(
@@ -53,17 +71,12 @@ const ProjectPage = () => {
                         variant="primary"
                         className="text-4xl leading-tight font-semibold sm:text-5xl"
                     >
-                        <span className="text-highlight">
-                            {project?.title}
-                        </span>
+                        <span className="text-highlight">{project?.title}</span>
                     </Text>
                     {/* Status + year */}
                     <span className="flex flex-wrap items-center gap-2">
                         {project && (
-                            <ProjectStatus
-                                status={project.status}
-                                size="md"
-                            />
+                            <ProjectStatus status={project.status} size="md" />
                         )}
                         {project?.date && (
                             <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide sm:gap-2 sm:px-2.5 sm:py-1 sm:text-[13px]">
@@ -132,7 +145,12 @@ const ProjectPage = () => {
                             target="_blank"
                         >
                             <img
-                                src={"/project_images/" + project.slug + "/" + img}
+                                src={
+                                    "/project_images/" +
+                                    project.slug +
+                                    "/" +
+                                    img
+                                }
                                 className="border-card-border w-full rounded-md border"
                             />
                         </a>
@@ -153,24 +171,56 @@ const ProjectPage = () => {
                                 onClick={() => setSelectedImage(img)}
                             >
                                 <img
-                                    src={"/project_images/" + project.slug + "/" + img}
+                                    src={
+                                        "/project_images/" +
+                                        project.slug +
+                                        "/" +
+                                        img
+                                    }
                                     className="size-full object-cover"
                                 />
                             </div>
                         ))}
                     </div>
                     <a
-                        href={"/project_images/" + project?.slug + "/" + selectedImage}
+                        href={
+                            "/project_images/" +
+                            project?.slug +
+                            "/" +
+                            selectedImage
+                        }
                         target="_blank"
                         className="h-max"
                     >
                         <img
-                            src={"/project_images/" + project?.slug + "/" + selectedImage}
+                            src={
+                                "/project_images/" +
+                                project?.slug +
+                                "/" +
+                                selectedImage
+                            }
                             className="border-card-border block w-full rounded-lg border shadow-xl shadow-black/40"
                         />
                     </a>
                 </div>
             </Section>
+            {/* Blog posts written about this project, hidden when there are none */}
+            {relatedBlogs.length > 0 && (
+                <Section
+                    header="Blog Posts"
+                    redirect={{ text: "View all", to: "/blogs" }}
+                >
+                    <div className="flex flex-col gap-3">
+                        {relatedBlogs.map((b) => (
+                            <BlogPostCard
+                                key={b.slug}
+                                post={b}
+                                hideRelatedProject
+                            />
+                        ))}
+                    </div>
+                </Section>
+            )}
         </main>
     );
 };

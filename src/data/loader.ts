@@ -1,8 +1,9 @@
-import type { BlogPost, Project, Technology } from "./models";
+import type { BlogPost, Project, Technology, Workplace } from "./models";
 
 const PROJECTS_FILE_PATH = "/data/projects.json";
 const TECHNOLOGIES_FILE_PATH = "/data/technologies.json";
 const BLOGS_FILE_PATH = "/data/blogs.json";
+const WORK_FILE_PATH = "/data/work.json";
 
 // Projects
 export const loadAllProjects = async (): Promise<Project[]> => {
@@ -72,6 +73,18 @@ export const loadBlogPostBySlug = async (
         }
     } catch (err) {
         console.error(err);
+    }
+};
+
+// Work Experience
+export const loadAllWorkplaces = async (): Promise<Workplace[]> => {
+    try {
+        const resp = await fetch(WORK_FILE_PATH);
+        const workplaces = await resp.json();
+        return workplaces;
+    } catch (err) {
+        console.error(err);
+        return [];
     }
 };
 

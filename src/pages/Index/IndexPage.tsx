@@ -4,8 +4,12 @@ import PersonalDetail from "../../components/PersonalDetail/PersonalDetail";
 import Skill from "../../components/Skill/Skill";
 import Text from "../../components/Text/Text";
 import usePageTitle from "../../hooks/usePageTitle";
-import { type BlogPost, type Project } from "../../data/models";
-import { loadAllBlogPosts, loadAllProjects } from "../../data/loader";
+import { type BlogPost, type Project, type Workplace } from "../../data/models";
+import {
+    loadAllBlogPosts,
+    loadAllProjects,
+    loadAllWorkplaces,
+} from "../../data/loader";
 import Section from "../../components/Section/Section";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
@@ -14,6 +18,7 @@ import RedirectIcon from "../../components/Icon/RedirectIcon";
 import RedirectLabel from "../../components/Icon/RedirectLabel";
 import ProjectStatus from "../../components/ProjectStatus/ProjectStatus";
 import WorkExperience from "./components/WorkExperience";
+import BlogPostCard from "../../components/BlogPostCard/BlogPostCard";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python"];
@@ -35,6 +40,7 @@ const IndexPage = () => {
 
     const [projects, setProjects] = useState<Project[]>([]);
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+    const [workplaces, setWorkplaces] = useState<Workplace[]>([]);
 
     // load projects into state
     useEffect(() => {
@@ -56,6 +62,17 @@ const IndexPage = () => {
             }
         };
         loadBlogPosts();
+    }, []);
+
+    // load work experience into state
+    useEffect(() => {
+        const loadWorkplaces = async () => {
+            const resp = await loadAllWorkplaces();
+            if (resp) {
+                setWorkplaces(resp);
+            }
+        };
+        loadWorkplaces();
     }, []);
 
     const featuredProjects = projects.filter((p) => p.featured);
@@ -302,53 +319,14 @@ const IndexPage = () => {
             {/* Work experience section */}
             <Section header="Work" id="work">
                 <div className="flex flex-col gap-0">
-                    <WorkExperience
-                        workplace="10X Managers"
-                        workLogo="10X.png"
-                        roles={[
-                            {
-                                timeframe: "Aug 2026 - Current",
-                                role: "Software Developer",
-                                details: [
-                                    "Migrating large low-code applications into full-code rebuilds, using Go and React",
-                                    "Developing AI-powered features, including a personalised AI coach",
-                                    "Owning technical and architectural decisions across the business",
-                                ],
-                                technologies: [
-                                    "react",
-                                    "go",
-                                    "docker",
-                                    "supabase",
-                                ],
-                            },
-                            {
-                                timeframe: "Jan 2025 - Aug 2026",
-                                role: "Apprentice Software Developer",
-                                details: [
-                                    "Primarily worked with low-code technologies such as Bubble.io and n8n",
-                                    "Quickly gained team lead responsibilities - managing the product roadmap, delegating work, reporting team progress in company meetings, and mentoring team members",
-                                ],
-                                technologies: ["bubble", "n8n", "docker"],
-                            },
-                        ]}
-                        isCurrent
-                    />
-                    <WorkExperience
-                        workplace="Freelance"
-                        workLogo="freelance.jpg"
-                        roles={[
-                            {
-                                timeframe: "Oct 2024 - Jan 2025",
-                                role: "Freelance Web Developer",
-                                details: [
-                                    "Developed commercial websites for real-world local businesses",
-                                    "Connected with clients through Facebook and maintained frequent communication during the development process",
-                                ],
-                                technologies: ["javascript", "tailwind"],
-                            },
-                        ]}
-                        isLast
-                    />
+                    {workplaces.map((w, i) => (
+                        <WorkExperience
+                            key={w.workplace}
+                            workplace={w}
+                            blogPosts={blogPosts}
+                            isLast={i === workplaces.length - 1}
+                        />
+                    ))}
                 </div>
             </Section>
             {/* Recent Blogs section (preview of max 3 and can redirect to all blogs page) */}
@@ -360,75 +338,7 @@ const IndexPage = () => {
                 {/* 3 recent blog posts */}
                 <div className="flex flex-col gap-3">
                     {blogPosts.slice(0, 3).map((b) => (
-                        <Card
-                            key={b.slug}
-                            className="flex w-full flex-col gap-0 overflow-hidden p-0"
-                            onClick={() => navigate(`/blogs/${b.slug}`)}
-                        >
-                            {/* Banner */}
-                            <div className="relative hidden aspect-7/1 w-full overflow-hidden sm:block">
-                                <img
-                                    src={`/blogs/${b.slug}/banner.png`}
-                                    className="size-full object-cover"
-                                    loading="lazy"
-                                />
-                                <div className="from-card-bg/70 via-card-bg/20 absolute inset-0 bg-linear-to-t to-transparent"></div>
-                            </div>
-                            {/* Body */}
-                            <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-8">
-                                {/* Date, Title and summary */}
-                                <div className="flex flex-col gap-1">
-                                    <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
-                                        <i
-                                            className="material-symbols-outlined"
-                                            style={{ fontSize: "14px" }}
-                                        >
-                                            calendar_month
-                                        </i>
-                                        {b.date}
-                                    </span>
-                                    <Text
-                                        variant="primary"
-                                        className="text-lg font-semibold"
-                                    >
-                                        {b.title}
-                                    </Text>
-                                    <Text
-                                        variant="secondary"
-                                        className="text-sm"
-                                    >
-                                        {b.summary}
-                                    </Text>
-                                </div>
-                                {/* Related Project */}
-                                <span className="flex flex-wrap gap-2">
-                                    {b.relatedProject && (
-                                        <>
-                                            <RedirectIcon
-                                                type="material"
-                                                to={
-                                                    "/projects/" +
-                                                    b.relatedProject
-                                                }
-                                                icon="folder_open"
-                                                hoverText="Related Project"
-                                                className="hidden sm:flex"
-                                            />
-                                            <RedirectLabel
-                                                type="material"
-                                                to={
-                                                    "/projects/" +
-                                                    b.relatedProject
-                                                }
-                                                icon="folder_open"
-                                                label="Related Project"
-                                                className="sm:hidden"
-                                            />
-                                        </>
-                                    )}
-                                </span>
-                            </div>
-                        </Card>
+                        <BlogPostCard key={b.slug} post={b} />
                     ))}
                 </div>
             </Section>

@@ -1,21 +1,14 @@
 import { twMerge } from "tailwind-merge";
+import { Link } from "react-router-dom";
 import Card from "../../../components/Card/Card";
 import Icon from "../../../components/Icon/Icon";
 import Skill from "../../../components/Skill/Skill";
 import Text from "../../../components/Text/Text";
-
-export interface WorkRole {
-    timeframe: string; // Jan 2024 - Feb 2025
-    role: string;
-    details?: string[]; // bullet points
-    technologies?: string[];
-}
+import type { BlogPost, WorkRole, Workplace } from "../../../data/models";
 
 interface WorkExperienceProps {
-    workplace: string;
-    workLogo: string; // /public/work_logos/<imageFile>
-    roles: WorkRole[]; // most recent role first
-    isCurrent?: boolean;
+    workplace: Workplace;
+    blogPosts: BlogPost[]; // all posts, filtered per role by relatedRole
     isLast?: boolean;
 }
 
@@ -29,35 +22,80 @@ const Timeframe = ({ timeframe }: { timeframe: string }) => (
     </span>
 );
 
-const RoleDetails = ({ role }: { role: WorkRole }) => (
-    <div className="flex flex-col gap-3">
-        {/* Bullet point details */}
-        {role.details && role.details.length > 0 && (
-            <div className="flex flex-col gap-1.5">
-                {role.details.map((d) => (
-                    <span key={d} className="flex gap-1">
-                        <Icon
-                            variant="highlight"
-                            icon="chevron_right"
-                            className="shrink-0 text-xs leading-5"
-                        />
-                        <Text variant="secondary" className="text-sm">
-                            {d}
-                        </Text>
-                    </span>
-                ))}
-            </div>
-        )}
-        {/* Technologies */}
-        {role.technologies && role.technologies.length > 0 && (
-            <span className="mt-1 flex flex-wrap gap-1">
-                {role.technologies.map((t) => (
-                    <Skill key={t} skill={t} />
-                ))}
-            </span>
-        )}
-    </div>
-);
+const RoleDetails = ({
+    role,
+    blogPosts,
+}: {
+    role: WorkRole;
+    blogPosts: BlogPost[];
+}) => {
+    const relatedPosts = blogPosts.filter(
+        (b) => b.relatedRole && b.relatedRole === role.id
+    );
+
+    return (
+        <div className="flex flex-col gap-3">
+            {/* Bullet point details */}
+            {role.details && role.details.length > 0 && (
+                <div className="flex flex-col gap-1.5">
+                    {role.details.map((d) => (
+                        <span key={d} className="flex gap-1">
+                            <Icon
+                                variant="highlight"
+                                icon="chevron_right"
+                                className="shrink-0 text-xs leading-5"
+                            />
+                            <Text variant="secondary" className="text-sm">
+                                {d}
+                            </Text>
+                        </span>
+                    ))}
+                </div>
+            )}
+            {/* Technologies */}
+            {role.technologies && role.technologies.length > 0 && (
+                <span className="mt-1 flex flex-wrap gap-1">
+                    {role.technologies.map((t) => (
+                        <Skill key={t} skill={t} />
+                    ))}
+                </span>
+            )}
+            {/* Blog posts written about this role */}
+            {relatedPosts.length > 0 && (
+                <div className="mt-1 flex flex-col gap-1">
+                    <Text
+                        variant="secondary"
+                        className="text-text-tertiary font-mono text-[11px] tracking-wide"
+                    >
+                        Related posts
+                    </Text>
+                    <div className="flex flex-col gap-0.5">
+                        {relatedPosts.map((p) => (
+                            <Link
+                                key={p.slug}
+                                to={`/blogs/${p.slug}`}
+                                className="group hover:bg-card-bg-elevated -mx-2 flex w-fit max-w-full items-start gap-2 rounded px-2 py-1 transition-colors"
+                            >
+                                <Icon
+                                    variant="highlight"
+                                    icon="article_person"
+                                    className="shrink-0 text-xs leading-5"
+                                />
+                                <Text
+                                    variant="secondary"
+                                    redirect
+                                    className="text-sm"
+                                >
+                                    {p.title}
+                                </Text>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
 
 // Combined span across every role at the workplace, e.g. roles running
 // "Jan 2025 - Aug 2026" and "Aug 2026 - Current" become "Jan 2025 - Current"
@@ -68,12 +106,14 @@ const combinedTimeframe = (roles: WorkRole[]): string => {
 };
 
 const WorkExperience = ({
-    workplace,
-    workLogo,
-    roles,
-    isCurrent,
+    workplace: { workplace, workLogo, roles, isCurrent },
+    blogPosts,
     isLast,
 }: WorkExperienceProps) => {
+    if (roles.length === 0) {
+        return null;
+    }
+
     const isMultiRole = roles.length > 1;
 
     return (
@@ -120,7 +160,7 @@ const WorkExperience = ({
                 {/* Single role: details sit directly under the workplace header */}
                 {!isMultiRole && (
                     <div className="sm:ml-18">
-                        <RoleDetails role={roles[0]} />
+                        <RoleDetails role={roles[0]} blogPosts={blogPosts} />
                     </div>
                 )}
                 {/* Multiple roles at the same workplace, most recent first */}
@@ -128,7 +168,7 @@ const WorkExperience = ({
                     <div className="flex flex-col gap-5 sm:ml-18">
                         {roles.map((r) => (
                             <div
-                                key={r.role}
+                                key={r.id}
                                 className="flex w-full flex-col gap-0.5"
                             >
                                 <Text
@@ -143,7 +183,7 @@ const WorkExperience = ({
                                 >
                                     {r.timeframe}
                                 </Text>
-                                <RoleDetails role={r} />
+                                <RoleDetails role={r} blogPosts={blogPosts} />
                             </div>
                         ))}
                     </div>
