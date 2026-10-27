@@ -1,0 +1,11 @@
+# Taking on responsibility
+
+As well as the freedom I earned early on as the solo developer for the company, and the trust to build, maintain, and collaborate with the wider team, I also gained other responsibilities.
+
+Firstly, in our team meetings, I was given a time slot to give important updates, provide an overview of the upcoming development roadmap, and ask any open questions. This experience was new to me at first, but quickly allowed me to build my communication skills, especially when explaining technical subjects to non-technical stakeholders. This also allowed me to stay aligned to the company goals, and allowed the wider team to stay informed about what is new and how to use or sell it effectively.
+
+Next, 7 months into my apprenticeship, we hired another software development apprentice. This gave me a variety of new responsibilities, where I was trusted to mentor the new developer, and take somewhat of a lead developer position in the business. At this point, I was still heavily inexperienced myself, and had to balance my personal learning journey with also assisting a new developer in learning the technologies, and the platform that I had now taken over completely. I learned and continued to develop my key leadership skills, such as delegating tasks, providing feedback, and leading frequent 1-1 meetings to see progress, and provide help where needed.
+
+Finally, after the first year of owning the development - but still having a close line of communication with the founder for bigger decisions and prioritisation - I fully took ownership of the roadmap and product owner responsibilities. This gave me further freedom, and allowed me to further improve at managing a product roadmap, deciding on priorities, and delegating between myself and the other developer.
+
+When starting my apprenticeship, with no professional experience, I assumed I wouldn't come close to holding the responsibilities I ended up with inside my first 12 months. However, I think these experiences, and being thrown in at the deep end quickly, have allowed me to become not only a confident software developer, but strong in a variety of tasks and responsibilities, especially with my experience in a leadership role.

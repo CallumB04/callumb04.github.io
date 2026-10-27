@@ -1,11 +1,113 @@
 [
     {
+        "slug": "playrates",
+        "title": "Building PlayRates v1.0",
+        "summary": "How my personal hobby project, is turning into a live community",
+        "date": "27th October 2026",
+        "sections": [
+            {
+                "title": "What is PlayRates",
+                "textFile": "what-is-playrates.md"
+            },
+            {
+                "title": "The PlayRates home page as a signed in user",
+                "imageFile": "home.png"
+            },
+            {
+                "title": "An example of a user creating a game log and review",
+                "imageFile": "logs.png"
+            },
+            {
+                "title": "How I built it",
+                "textFile": "how-i-built-it.md"
+            },
+            {
+                "title": "An example of the library page on the local dev database, simulating real user data",
+                "imageFile": "local-dev.png"
+            },
+            {
+                "title": "Built for mobile",
+                "textFile": "built-for-mobile.md"
+            },
+            {
+                "title": "Mobile UI: Bottom nav, collapsed filters, and modals opening from the bottom",
+                "imageFile": "mobile.png"
+            },
+            {
+                "title": "The community",
+                "textFile": "the-community.md"
+            },
+            {
+                "title": "The community page",
+                "imageFile": "community.png"
+            },
+            {
+                "title": "Next steps",
+                "textFile": "next-steps.md"
+            },
+            {
+                "title": "Upcoming Linear initiatives and projects for development",
+                "imageFile": "linear-roadmap.png"
+            }
+        ],
+        "relatedProject": "playrates"
+    },
+    {
+        "slug": "apprenticeship",
+        "title": "Software Development Apprenticeship",
+        "summary": "The journey in my first 18 months as a full-time Software Developer",
+        "date": "18th September 2026",
+        "sections": [
+            {
+                "title": "Where it all started",
+                "textFile": "where-it-all-started.md"
+            },
+            {
+                "title": "Thrown in at the deep end",
+                "textFile": "thrown-in-at-the-deep-end.md"
+            },
+            {
+                "title": "Getting comfortable, fast",
+                "textFile": "getting-comfortable-fast.md"
+            },
+            {
+                "title": "What I built",
+                "textFile": "what-i-built.md"
+            },
+            {
+                "title": "The Execution Plan I built in LeadersLab",
+                "imageFile": "executionplan.png"
+            },
+            {
+                "title": "The same functionality in the code rebuild",
+                "imageFile": "beyond-low-code.png"
+            },
+            {
+                "title": "Taking on responsibility",
+                "textFile": "taking-on-responsibility.md"
+            },
+            {
+                "title": "Where are things now",
+                "textFile": "where-are-things-now.md"
+            },
+            {
+                "title": "My final grade for the Level 4 apprenticeship - Distinction",
+                "imageFile": "distinction.png"
+            }
+        ],
+        "relatedRole": "10x-apprentice-software-developer",
+        "relatedCertification": "qa-level-4-software-development"
+    },
+    {
         "slug": "booth",
         "title": "Why am I building booth?",
         "summary": "How the experiences in my first full-time role, turned into a project idea",
         "date": "15th July 2026",
         "sections": [
-            { "title": "What is booth?", "textFile": "what-is-booth.md" },
+            {
+                "title": "What is booth?",
+                "textFile": "what-is-booth.md"
+            },
             {
                 "title": "A screenshot of the landing page",
                 "imageFile": "home.png"
@@ -27,21 +129,30 @@
     },
     {
         "slug": "clothing-shop",
-        "title": "Building 'Clothing Shop'",
+        "title": "Building Clothing Shop",
         "summary": "My first experience building a full-stack project using Go",
         "date": "13th January 2026",
         "sections": [
-            { "title": "Introduction", "textFile": "intro.md" },
+            {
+                "title": "Introduction",
+                "textFile": "intro.md"
+            },
             {
                 "title": "A screenshot of the shop page",
                 "imageFile": "shop.png"
             },
-            { "title": "Why did I choose Go?", "textFile": "why-choose-go.md" },
+            {
+                "title": "Why did I choose Go?",
+                "textFile": "why-choose-go.md"
+            },
             {
                 "title": "A screenshot of the backend logs, showing fast response times",
                 "imageFile": "logging.png"
             },
-            { "title": "What went well", "textFile": "what-went-well.md" },
+            {
+                "title": "What went well",
+                "textFile": "what-went-well.md"
+            },
             {
                 "title": "A screenshot of the checkout page, showing the applied discount and basket total calculated in the backend",
                 "imageFile": "checkout.png"

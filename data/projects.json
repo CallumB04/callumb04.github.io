@@ -1,5 +1,39 @@
 [
     {
+        "slug": "playrates",
+        "title": "PlayRates",
+        "summary": "A full-stack video game tracking website",
+        "longDescription": "PlayRates is a video game tracking, rating and reviewing website. This app was originally a passion project of mine, as someone who loves to track my hobbies and couldn't find one for video games that met my requirements. However, it has now transformed into a live application with a small but growing, active user base.\nCurrently the application allows for the general functionality you would expect from a site like this, such as logging games with details, giving them a rating, and writing reviews. Another feature I added was a community, that allows for users to speak in threads about games and other topics. My goal and plan is to continue adding a wide variety of unique features that other sites in this space do not share, to stand out and be the most intuitive and feature-rich video game tracking platform there is.\nThe mobile experience in the application was built not just to be responsive, but to feel like a native application. It is a Progressive Web App (PWA), which allows the website to live on a phone like a real app. It also provides several important features for a native mobile experience, such as a bottom bar for navigation, optimised modals and interfaces, and easy use of all interactive elements.\nThe application is built using React on the frontend, with a backend written in Express.js. I also used Supabase both for authentication and a PostgreSQL database. The app has a large test suite, with continuous integration, which prevents any failing pull requests from being merged into main and therefore deployed into the live application on Vercel.\nOne extremely useful tool that I built into this project is the local development environment, which boots up a local Supabase in Docker, with a significant amount of preset data. This allows me to interact with, update, and delete data in a safe environment, to test functionality, and prevent any live data from being altered. This also allows me to work on the application whilst offline, where access to live data wouldn't be possible.\nMy ideas for the future of the application are endless, and my next steps are to implement new features and continue to maintain the site, whilst trying to expand the user base. My end goal is to build a large, active community, of people that share my love for this hobby.",
+        "technologies": [
+            "react",
+            "typescript",
+            "express-js",
+            "node-js",
+            "tailwind",
+            "supabase",
+            "postgresql",
+            "vite",
+            "vitest",
+            "docker",
+            "vercel"
+        ],
+        "status": "in-progress",
+        "images": [
+            "home.png",
+            "game.png",
+            "logs.png",
+            "library.png",
+            "profile.png",
+            "community.png",
+            "mobile-home.png",
+            "mobile-log.png",
+            "mobile-library.png"
+        ],
+        "githubRepo": "CallumB04/PlayRates",
+        "featured": true,
+        "liveURL": "https://playrates.app"
+    },
+    {
         "slug": "booth",
         "title": "booth",
         "summary": "An AI-powered internal ticketing system",
@@ -15,8 +49,7 @@
             "vite",
             "vitest"
         ],
-        "date": "2026",
-        "status": "in-progress",
+        "status": "on-hold",
         "images": ["home.png"],
         "githubRepo": "CallumB04/booth",
         "featured": true
@@ -34,57 +67,9 @@
             "vite",
             "vitest"
         ],
-        "date": "2025",
         "status": "finished",
         "images": ["shop.png", "preview.png", "item.png", "checkout.png"],
         "githubRepo": "CallumB04/clothing-shop",
         "featured": true
-    },
-    {
-        "slug": "playrates",
-        "title": "PlayRates",
-        "summary": "A video game tracking website",
-        "longDescription": "PlayRates is a full-stack Video Game tracking website, built using React/TypeScript (Frontend) and Express.js (Backend). This was my first time creating a backend server, and building a full-stack project, which was a massive learning experience for me.\nThis website allows for the creation of user accounts; a friendship system; tracking, rating and reviewing of Video Games; etc. My end goal with this project is to add necessary functionalities such as a proper database; secure user accounts and authentication; and a few small improvements, and then host the website live for public use. However, for now, I have put this plan on hold whilst I focus on other projects.",
-        "technologies": [
-            "react",
-            "typescript",
-            "express-js",
-            "node-js",
-            "tailwind",
-            "vite"
-        ],
-        "date": "2025",
-        "status": "on-hold",
-        "images": [
-            "homepage.png",
-            "profile.png",
-            "login.png",
-            "remove-friend.png"
-        ],
-        "githubRepo": "CallumB04/PlayRates",
-        "featured": true
-    },
-    {
-        "slug": "sjb-safety",
-        "title": "sjbsafety.co.uk",
-        "summary": "A commercial website built for a scaffolding safety business",
-        "longDescription": "I developed a commercial website for a scaffolding safety business based in London and surrounding areas.\nThis was my second freelance web development client, and the project gave me valuable experience in creating a clean, professional, and user-friendly website tailored to meet the client's business needs.\nThroughout the development process, I maintained constant communication with the client, to give updates about progress and ensure the website was tailored to their exact requirements.",
-        "technologies": ["javascript", "tailwind", "html"],
-        "date": "2024",
-        "status": "finished",
-        "images": ["homepage.png", "services.png"],
-        "githubRepo": "CallumB04/sjbsafety.co.uk",
-        "liveURL": "https://sjbsafety.co.uk"
-    },
-    {
-        "slug": "auto-mate",
-        "title": "Auto-mate",
-        "summary": "A Discord bot for automation and moderation",
-        "longDescription": "A Discord bot with many automation and moderation features. I presented this application as the final project for A-Level Computer Science course, where I was tasked with conducting rigorous testing during and following the development. The bot was containerized with Docker for deployment.",
-        "technologies": ["python", "discord-py", "docker"],
-        "date": "2022",
-        "status": "finished",
-        "images": ["chat.png", "logo.png"],
-        "githubRepo": "CallumB04/auto-mate"
     }
 ]
