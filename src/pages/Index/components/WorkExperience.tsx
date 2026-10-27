@@ -1,9 +1,9 @@
 import { twMerge } from "tailwind-merge";
-import { Link } from "react-router-dom";
 import Card from "../../../components/Card/Card";
 import Icon from "../../../components/Icon/Icon";
 import Skill from "../../../components/Skill/Skill";
 import Text from "../../../components/Text/Text";
+import RelatedPosts from "../../../components/RelatedPosts/RelatedPosts";
 import type { BlogPost, WorkRole, Workplace } from "../../../data/models";
 
 interface WorkExperienceProps {
@@ -61,38 +61,7 @@ const RoleDetails = ({
                 </span>
             )}
             {/* Blog posts written about this role */}
-            {relatedPosts.length > 0 && (
-                <div className="mt-1 flex flex-col gap-1">
-                    <Text
-                        variant="secondary"
-                        className="text-text-tertiary font-mono text-[11px] tracking-wide"
-                    >
-                        Related posts
-                    </Text>
-                    <div className="flex flex-col gap-0.5">
-                        {relatedPosts.map((p) => (
-                            <Link
-                                key={p.slug}
-                                to={`/blogs/${p.slug}`}
-                                className="group hover:bg-card-bg-elevated -mx-2 flex w-fit max-w-full items-start gap-2 rounded px-2 py-1 transition-colors"
-                            >
-                                <Icon
-                                    variant="highlight"
-                                    icon="article_person"
-                                    className="shrink-0 text-xs leading-5"
-                                />
-                                <Text
-                                    variant="secondary"
-                                    redirect
-                                    className="text-sm"
-                                >
-                                    {p.title}
-                                </Text>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
+            <RelatedPosts posts={relatedPosts} />
         </div>
     );
 };

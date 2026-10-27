@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Section from "../../components/Section/Section";
-import type { Project, ProjectStatusType } from "../../data/models";
+import type { BlogPost, Project, ProjectStatusType } from "../../data/models";
 import usePageTitle from "../../hooks/usePageTitle";
-import { loadAllProjects } from "../../data/loader";
+import { loadAllBlogPosts, loadAllProjects } from "../../data/loader";
 import Card from "../../components/Card/Card";
 import { useNavigate } from "react-router-dom";
 import Text from "../../components/Text/Text";
@@ -10,6 +10,7 @@ import Skill from "../../components/Skill/Skill";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import RedirectLabel from "../../components/Icon/RedirectLabel";
 import ProjectStatus from "../../components/ProjectStatus/ProjectStatus";
+import RelatedPosts from "../../components/RelatedPosts/RelatedPosts";
 import { twMerge } from "tailwind-merge";
 
 const TIMELINE_DOT_CLASSES: Record<ProjectStatusType, string> = {
@@ -24,6 +25,7 @@ const ProjectsPage = () => {
     const navigate = useNavigate();
 
     const [projects, setProjects] = useState<Project[]>([]);
+    const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
 
     // load projects into state
     useEffect(() => {
@@ -36,6 +38,17 @@ const ProjectsPage = () => {
         loadProjects();
     }, []);
 
+    // load blog posts into state, to show those written about each project
+    useEffect(() => {
+        const loadBlogPosts = async () => {
+            const resp = await loadAllBlogPosts();
+            if (resp) {
+                setBlogPosts(resp);
+            }
+        };
+        loadBlogPosts();
+    }, []);
+
     return (
         <main>
             <Section header="My Projects">
@@ -46,19 +59,8 @@ const ProjectsPage = () => {
                         return (
                             <div
                                 key={p.slug}
-                                className="relative flex gap-4 pb-6 last:pb-0 xl:-ml-[124px] xl:w-[calc(100%_+_124px)]"
+                                className="relative flex gap-4 pb-6 last:pb-0 xl:-ml-[28px] xl:w-[calc(100%_+_28px)]"
                             >
-                                {/* Timeline year column (xl+) */}
-                                <div className="hidden w-20 flex-shrink-0 flex-col items-end pt-5 xl:flex">
-                                    {p.date && (
-                                        <Text
-                                            variant="secondary"
-                                            className="text-text-tertiary text-right font-mono text-xs leading-tight tracking-wide"
-                                        >
-                                            {p.date}
-                                        </Text>
-                                    )}
-                                </div>
                                 {/* Rail (xl+) */}
                                 <div className="relative hidden w-3 flex-shrink-0 xl:block">
                                     <span
@@ -89,27 +91,11 @@ const ProjectsPage = () => {
                                     {/* Body */}
                                     <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-8">
                                         <div className="flex flex-col gap-3">
-                                            {/* Status, (mobile date), Title and summary */}
+                                            {/* Status, Title and summary */}
                                             <div className="flex flex-col gap-1">
-                                                <span className="flex flex-wrap items-center gap-2">
-                                                    <ProjectStatus
-                                                        status={p.status}
-                                                    />
-                                                    {p.date && (
-                                                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide xl:hidden">
-                                                            <i
-                                                                className="material-symbols-outlined"
-                                                                style={{
-                                                                    fontSize:
-                                                                        "14px",
-                                                                }}
-                                                            >
-                                                                calendar_month
-                                                            </i>
-                                                            {p.date}
-                                                        </span>
-                                                    )}
-                                                </span>
+                                                <ProjectStatus
+                                                    status={p.status}
+                                                />
                                                 <Text
                                                     variant="primary"
                                                     className="text-lg font-semibold"
@@ -134,6 +120,15 @@ const ProjectsPage = () => {
                                                         />
                                                     ))}
                                             </span>
+                                            {/* Blog posts written about this project */}
+                                            <RelatedPosts
+                                                posts={blogPosts.filter(
+                                                    (b) =>
+                                                        b.relatedProject &&
+                                                        b.relatedProject ===
+                                                            p.slug
+                                                )}
+                                            />
                                         </div>
                                         {/* Github and/or Live Link */}
                                         <span className="flex flex-wrap gap-2">
@@ -170,14 +165,14 @@ const ProjectsPage = () => {
                                                         to={p.liveURL}
                                                         icon="link"
                                                         newTab
-                                                        hoverText="Live Demo"
+                                                        hoverText="Live Site"
                                                         className="hidden text-sm sm:flex"
                                                     />
                                                     <RedirectLabel
                                                         type="material"
                                                         to={p.liveURL}
                                                         icon="link"
-                                                        label="Live Demo"
+                                                        label="Live Site"
                                                         newTab
                                                         className="sm:hidden"
                                                     />

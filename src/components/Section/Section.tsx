@@ -22,7 +22,10 @@ const Section = ({ children, header, redirect, id }: SectionProps) => {
                     observer.unobserve(el);
                 }
             },
-            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+            // threshold stays at 0 so tall sections (a long blog post
+            // runs to several screens) still reveal - a ratio they can
+            // never reach would leave them stuck at opacity 0
+            { threshold: 0, rootMargin: "0px 0px -40px 0px" }
         );
         observer.observe(el);
         return () => observer.disconnect();

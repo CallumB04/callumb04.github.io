@@ -10,7 +10,6 @@ export interface Project {
     summary: string;
     longDescription: string;
     technologies: string[]; // key of objects in technologies.json, first 3 are "main" technologies, displayed on preview
-    date?: string; // year the project was started, format: 2006
     status: ProjectStatusType;
     images: string[]; // file names in project folder (folder also includes banner.png for preview card) (/public/project_images/<project slug>/<file>)
     githubRepo?: string; // CallumB04/<repo>
@@ -31,6 +30,7 @@ export interface BlogPost {
     sections: BlogPostSection[]; // section for each block of markdown text or image
     relatedProject?: string; // slug of project
     relatedRole?: string; // id of work role
+    relatedCertification?: string; // id of certification
 }
 
 export interface BlogPostSection {
@@ -52,4 +52,15 @@ export interface Workplace {
     workLogo: string; // file name in /public/work_logos/<file>
     roles: WorkRole[]; // most recent role first
     isCurrent?: boolean; // currently working here?
+}
+
+export interface Certification {
+    id: string; // unique id, used to link blog posts to a certification
+    title: string;
+    issuer: string;
+    issuerLogo: string; // file name in /public/cert_logos/<file>
+    date: string; // completion date, format: Aug 2026
+    grade?: string; // e.g. Distinction
+    details?: string[]; // bullet points
+    credentialURL?: string; // link to the certificate itself
 }

@@ -1,4 +1,4 @@
-# Tech Stack
+# Tech stack
 
 This project will also be a massive learning opportunity for myself, being the largest personal project that I will have worked on currently, and the first real-world project that I am building outside of my role.
 

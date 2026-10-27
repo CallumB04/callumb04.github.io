@@ -19,24 +19,38 @@ main {
 
 /* Markdown Conversion Styling */
 .blog-post-markdown h1 {
-    @apply text-text-primary mt-12 mb-5 pb-3 text-2xl font-bold tracking-tight sm:text-3xl;
+    @apply text-text-primary mt-12 mb-5 pt-4 text-2xl font-bold tracking-tight sm:text-3xl;
     position: relative;
 }
-.blog-post-markdown h1::after {
+/* a short accent rule above the heading, rather than a hairline under it */
+.blog-post-markdown h1::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--color-card-border);
+    width: 2.5rem;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(
+        to right,
+        var(--color-highlight),
+        var(--color-highlight-soft)
+    );
 }
 
 .blog-post-markdown h2 {
-    @apply text-text-primary mt-8 mb-3 text-xl font-semibold tracking-tight sm:text-2xl;
+    @apply text-text-primary mt-10 mb-3 flex items-center gap-2.5 text-xl font-semibold tracking-tight sm:text-2xl;
+}
+.blog-post-markdown h2::before {
+    content: "";
+    flex-shrink: 0;
+    width: 0.25rem;
+    height: 1.125rem;
+    border-radius: 2px;
+    background: var(--color-highlight);
 }
 .blog-post-markdown h3 {
-    @apply text-text-primary mt-5 mb-2 text-lg font-semibold sm:text-xl;
+    @apply text-text-primary mt-6 mb-2 text-lg font-semibold sm:text-xl;
 }
 .blog-post-markdown p {
     font-family: var(--font-body);
@@ -123,6 +137,7 @@ main {
 
 #projects,
 #work,
+#certifications,
 #blogs,
 .blog-post-markdown {
     scroll-margin-top: calc(var(--navbar-height) + 24px);

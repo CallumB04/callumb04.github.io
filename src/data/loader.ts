@@ -1,9 +1,16 @@
-import type { BlogPost, Project, Technology, Workplace } from "./models";
+import type {
+    BlogPost,
+    Certification,
+    Project,
+    Technology,
+    Workplace,
+} from "./models";
 
 const PROJECTS_FILE_PATH = "/data/projects.json";
 const TECHNOLOGIES_FILE_PATH = "/data/technologies.json";
 const BLOGS_FILE_PATH = "/data/blogs.json";
 const WORK_FILE_PATH = "/data/work.json";
+const CERTIFICATIONS_FILE_PATH = "/data/certifications.json";
 
 // Projects
 export const loadAllProjects = async (): Promise<Project[]> => {
@@ -82,6 +89,18 @@ export const loadAllWorkplaces = async (): Promise<Workplace[]> => {
         const resp = await fetch(WORK_FILE_PATH);
         const workplaces = await resp.json();
         return workplaces;
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+};
+
+// Certifications
+export const loadAllCertifications = async (): Promise<Certification[]> => {
+    try {
+        const resp = await fetch(CERTIFICATIONS_FILE_PATH);
+        const certifications = await resp.json();
+        return certifications;
     } catch (err) {
         console.error(err);
         return [];

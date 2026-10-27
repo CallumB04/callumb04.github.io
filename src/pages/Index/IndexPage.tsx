@@ -4,9 +4,15 @@ import PersonalDetail from "../../components/PersonalDetail/PersonalDetail";
 import Skill from "../../components/Skill/Skill";
 import Text from "../../components/Text/Text";
 import usePageTitle from "../../hooks/usePageTitle";
-import { type BlogPost, type Project, type Workplace } from "../../data/models";
+import {
+    type BlogPost,
+    type Certification,
+    type Project,
+    type Workplace,
+} from "../../data/models";
 import {
     loadAllBlogPosts,
+    loadAllCertifications,
     loadAllProjects,
     loadAllWorkplaces,
 } from "../../data/loader";
@@ -18,7 +24,9 @@ import RedirectIcon from "../../components/Icon/RedirectIcon";
 import RedirectLabel from "../../components/Icon/RedirectLabel";
 import ProjectStatus from "../../components/ProjectStatus/ProjectStatus";
 import WorkExperience from "./components/WorkExperience";
+import CertificationCard from "./components/CertificationCard";
 import BlogPostCard from "../../components/BlogPostCard/BlogPostCard";
+import RelatedPosts from "../../components/RelatedPosts/RelatedPosts";
 
 // My Key Skills
 const KEY_SKILLS = ["typescript", "react", "go", "tailwind", "python"];
@@ -41,6 +49,7 @@ const IndexPage = () => {
     const [projects, setProjects] = useState<Project[]>([]);
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
     const [workplaces, setWorkplaces] = useState<Workplace[]>([]);
+    const [certifications, setCertifications] = useState<Certification[]>([]);
 
     // load projects into state
     useEffect(() => {
@@ -73,6 +82,17 @@ const IndexPage = () => {
             }
         };
         loadWorkplaces();
+    }, []);
+
+    // load certifications into state
+    useEffect(() => {
+        const loadCertifications = async () => {
+            const resp = await loadAllCertifications();
+            if (resp) {
+                setCertifications(resp);
+            }
+        };
+        loadCertifications();
     }, []);
 
     const featuredProjects = projects.filter((p) => p.featured);
@@ -228,22 +248,7 @@ const IndexPage = () => {
                             <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-16">
                                 <div className="flex flex-col gap-3">
                                     <div className="flex flex-col gap-1">
-                                        <span className="flex flex-wrap items-center gap-2">
-                                            <ProjectStatus status={p.status} />
-                                            {p.date && (
-                                                <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
-                                                    <i
-                                                        className="material-symbols-outlined"
-                                                        style={{
-                                                            fontSize: "14px",
-                                                        }}
-                                                    >
-                                                        calendar_month
-                                                    </i>
-                                                    {p.date}
-                                                </span>
-                                            )}
-                                        </span>
+                                        <ProjectStatus status={p.status} />
                                         <Text
                                             variant="primary"
                                             className="mt-1 text-lg font-semibold"
@@ -262,6 +267,14 @@ const IndexPage = () => {
                                             <Skill key={t} skill={t} />
                                         ))}
                                     </span>
+                                    {/* Blog posts written about this project */}
+                                    <RelatedPosts
+                                        posts={blogPosts.filter(
+                                            (b) =>
+                                                b.relatedProject &&
+                                                b.relatedProject === p.slug
+                                        )}
+                                    />
                                 </div>
                                 <span className="flex flex-wrap gap-2">
                                     {p.githubRepo && (
@@ -297,14 +310,14 @@ const IndexPage = () => {
                                                 to={p.liveURL}
                                                 icon="link"
                                                 newTab
-                                                hoverText="Live Demo"
+                                                hoverText="Live Site"
                                                 className="hidden text-sm sm:flex"
                                             />
                                             <RedirectLabel
                                                 type="material"
                                                 to={p.liveURL}
                                                 icon="link"
-                                                label="Live Demo"
+                                                label="Live Site"
                                                 newTab
                                                 className="sm:hidden"
                                             />
@@ -329,6 +342,18 @@ const IndexPage = () => {
                     ))}
                 </div>
             </Section>
+            {/* Certifications section */}
+            <Section header="Certifications" id="certifications">
+                <div className="flex flex-col gap-3">
+                    {certifications.map((c) => (
+                        <CertificationCard
+                            key={c.id}
+                            certification={c}
+                            blogPosts={blogPosts}
+                        />
+                    ))}
+                </div>
+            </Section>
             {/* Recent Blogs section (preview of max 3 and can redirect to all blogs page) */}
             <Section
                 header="Recent Blogs"
@@ -338,7 +363,12 @@ const IndexPage = () => {
                 {/* 3 recent blog posts */}
                 <div className="flex flex-col gap-3">
                     {blogPosts.slice(0, 3).map((b) => (
-                        <BlogPostCard key={b.slug} post={b} />
+                        <BlogPostCard
+                            key={b.slug}
+                            post={b}
+                            projects={projects}
+                            workplaces={workplaces}
+                        />
                     ))}
                 </div>
             </Section>

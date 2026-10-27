@@ -7,6 +7,6 @@ Another big improvement I noticed between this project and my last, is my web de
 Finally, another thing I believe went well was my use of the backend to perform all calculations and filtering, which had 2 main advantages:
 
 1. Performing these in Go allowed for quicker execution, and provided data to the frontend at a faster rate on page load
-2. In a real-world e-commerce platform, calculations during checkout would need to be completed in the backend anyway for security purposes, therefore its a good standard to implement
+2. In a real-world e-commerce platform, calculations during checkout would need to be completed in the backend anyway for security purposes, therefore it's a good standard to implement
 
 Whilst the dataset I used was small and did not see extremely significant differences, a real-world e-commerce website with thousands of products would see much more efficient results using this approach, especially with multiple filters needing to be applied to the data and served to the user quickly.

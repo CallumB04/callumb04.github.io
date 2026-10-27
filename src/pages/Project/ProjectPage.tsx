@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
 import Section from "../../components/Section/Section";
 import { useEffect, useState } from "react";
-import type { BlogPost, Project } from "../../data/models";
-import { loadAllBlogPosts, loadProjectBySlug } from "../../data/loader";
+import type { BlogPost, Project, Workplace } from "../../data/models";
+import {
+    loadAllBlogPosts,
+    loadAllWorkplaces,
+    loadProjectBySlug,
+} from "../../data/loader";
 import usePageTitle from "../../hooks/usePageTitle";
 import Text from "../../components/Text/Text";
 import Skill from "../../components/Skill/Skill";
@@ -23,6 +27,9 @@ const ProjectPage = () => {
 
     // blog posts written about this project
     const [relatedBlogs, setRelatedBlogs] = useState<BlogPost[]>([]);
+
+    // loaded to resolve the names of roles those posts relate to
+    const [workplaces, setWorkplaces] = useState<Workplace[]>([]);
 
     // load project data into state
     useEffect(() => {
@@ -54,6 +61,20 @@ const ProjectPage = () => {
         loadRelatedBlogs();
     }, [slug]);
 
+    // load the data needed to name the roles those posts relate to
+    useEffect(() => {
+        const loadRelationNames = async () => {
+            setWorkplaces(await loadAllWorkplaces());
+        };
+
+        loadRelationNames();
+    }, []);
+
+    const images = project?.images ?? [];
+    const selectedIndex = Math.max(0, images.indexOf(selectedImage));
+    const showImage = (index: number) =>
+        setSelectedImage(images[(index + images.length) % images.length]);
+
     usePageTitle(
         project?.title ? project.title + " | Callum Burgoyne" : "Page not found"
     );
@@ -73,21 +94,10 @@ const ProjectPage = () => {
                     >
                         <span className="text-highlight">{project?.title}</span>
                     </Text>
-                    {/* Status + year */}
+                    {/* Status */}
                     <span className="flex flex-wrap items-center gap-2">
                         {project && (
                             <ProjectStatus status={project.status} size="md" />
-                        )}
-                        {project?.date && (
-                            <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide sm:gap-2 sm:px-2.5 sm:py-1 sm:text-[13px]">
-                                <i
-                                    className="material-symbols-outlined"
-                                    style={{ fontSize: "14px" }}
-                                >
-                                    calendar_month
-                                </i>
-                                {project.date}
-                            </span>
                         )}
                     </span>
                 </div>
@@ -113,7 +123,7 @@ const ProjectPage = () => {
                                 type="material"
                                 to={project.liveURL}
                                 icon="link"
-                                label="Live Demo"
+                                label="Live Site"
                                 newTab
                             />
                         )}
@@ -156,32 +166,8 @@ const ProjectPage = () => {
                         </a>
                     ))}
                 </div>
-                {/* Desktop: sidebar thumbnails + selected image */}
-                <div className="hidden gap-4 sm:flex">
-                    <div className="flex w-24 flex-shrink-0 flex-col gap-3">
-                        {project?.images.map((img) => (
-                            <div
-                                key={img}
-                                className={twMerge(
-                                    "ring-offset-page-bg size-24 cursor-pointer overflow-hidden rounded-md ring-2 ring-offset-2 transition-all duration-200",
-                                    selectedImage === img
-                                        ? "ring-highlight"
-                                        : "ring-card-border hover:ring-card-border-hover"
-                                )}
-                                onClick={() => setSelectedImage(img)}
-                            >
-                                <img
-                                    src={
-                                        "/project_images/" +
-                                        project.slug +
-                                        "/" +
-                                        img
-                                    }
-                                    className="size-full object-cover"
-                                />
-                            </div>
-                        ))}
-                    </div>
+                {/* Desktop: the selected image, stepped through with the arrows */}
+                <div className="group relative hidden sm:block">
                     <a
                         href={
                             "/project_images/" +
@@ -190,7 +176,7 @@ const ProjectPage = () => {
                             selectedImage
                         }
                         target="_blank"
-                        className="h-max"
+                        className="block"
                     >
                         <img
                             src={
@@ -199,9 +185,42 @@ const ProjectPage = () => {
                                 "/" +
                                 selectedImage
                             }
-                            className="border-card-border block w-full rounded-lg border shadow-xl shadow-black/40"
+                            className="border-card-border mx-auto block max-h-[70vh] w-auto max-w-full rounded-lg border shadow-xl shadow-black/40"
                         />
                     </a>
+                    {images.length > 1 && (
+                        <>
+                            <button
+                                type="button"
+                                onClick={() => showImage(selectedIndex - 1)}
+                                aria-label="Previous image"
+                                className={twMerge(
+                                    "bg-card-bg/70 text-text-primary hover:bg-card-bg hover:text-highlight border-card-border absolute top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition-colors duration-200",
+                                    "left-4"
+                                )}
+                            >
+                                <i className="material-symbols-outlined text-xs">
+                                    chevron_left
+                                </i>
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => showImage(selectedIndex + 1)}
+                                aria-label="Next image"
+                                className={twMerge(
+                                    "bg-card-bg/70 text-text-primary hover:bg-card-bg hover:text-highlight border-card-border absolute top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition-colors duration-200",
+                                    "right-4"
+                                )}
+                            >
+                                <i className="material-symbols-outlined text-xs">
+                                    chevron_right
+                                </i>
+                            </button>
+                            <span className="bg-card-bg/70 text-text-primary border-card-border absolute right-4 bottom-4 rounded-md border px-2 py-0.5 font-mono text-[11px] tracking-wide backdrop-blur">
+                                {selectedIndex + 1} of {images.length}
+                            </span>
+                        </>
+                    )}
                 </div>
             </Section>
             {/* Blog posts written about this project, hidden when there are none */}
@@ -215,6 +234,7 @@ const ProjectPage = () => {
                             <BlogPostCard
                                 key={b.slug}
                                 post={b}
+                                workplaces={workplaces}
                                 hideRelatedProject
                             />
                         ))}

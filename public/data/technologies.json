@@ -74,5 +74,9 @@
     "postgresql": {
         "name": "PostgreSQL",
         "devicon": "postgresql-plain"
+    },
+    "vercel": {
+        "name": "Vercel",
+        "devicon": "vercel-original"
     }
 }
