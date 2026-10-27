@@ -166,62 +166,66 @@ const ProjectPage = () => {
                         </a>
                     ))}
                 </div>
-                {/* Desktop: the selected image, stepped through with the arrows */}
-                <div className="group relative hidden sm:block">
-                    <a
-                        href={
-                            "/project_images/" +
-                            project?.slug +
-                            "/" +
-                            selectedImage
-                        }
-                        target="_blank"
-                        className="block"
-                    >
-                        <img
-                            src={
+                {/* Desktop: the selected image, stepped through with the arrows.
+                    Held back until the project has loaded, so the src never
+                    resolves to /project_images/undefined and fetches a 404. */}
+                {project && selectedImage && (
+                    <div className="group relative hidden sm:block">
+                        <a
+                            href={
                                 "/project_images/" +
-                                project?.slug +
+                                project.slug +
                                 "/" +
                                 selectedImage
                             }
-                            className="border-card-border mx-auto block max-h-[70vh] w-auto max-w-full rounded-lg border shadow-xl shadow-black/40"
-                        />
-                    </a>
-                    {images.length > 1 && (
-                        <>
-                            <button
-                                type="button"
-                                onClick={() => showImage(selectedIndex - 1)}
-                                aria-label="Previous image"
-                                className={twMerge(
-                                    "bg-card-bg/70 text-text-primary hover:bg-card-bg hover:text-highlight border-card-border absolute top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition-colors duration-200",
-                                    "left-4"
-                                )}
-                            >
-                                <i className="material-symbols-outlined text-xs">
-                                    chevron_left
-                                </i>
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => showImage(selectedIndex + 1)}
-                                aria-label="Next image"
-                                className={twMerge(
-                                    "bg-card-bg/70 text-text-primary hover:bg-card-bg hover:text-highlight border-card-border absolute top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition-colors duration-200",
-                                    "right-4"
-                                )}
-                            >
-                                <i className="material-symbols-outlined text-xs">
-                                    chevron_right
-                                </i>
-                            </button>
-                            <span className="bg-card-bg/70 text-text-primary border-card-border absolute right-4 bottom-4 rounded-md border px-2 py-0.5 font-mono text-[11px] tracking-wide backdrop-blur">
-                                {selectedIndex + 1} of {images.length}
-                            </span>
-                        </>
-                    )}
-                </div>
+                            target="_blank"
+                            className="block"
+                        >
+                            <img
+                                src={
+                                    "/project_images/" +
+                                    project.slug +
+                                    "/" +
+                                    selectedImage
+                                }
+                                className="border-card-border mx-auto block max-h-[70vh] w-auto max-w-full rounded-lg border shadow-xl shadow-black/40"
+                            />
+                        </a>
+                        {images.length > 1 && (
+                            <>
+                                <button
+                                    type="button"
+                                    onClick={() => showImage(selectedIndex - 1)}
+                                    aria-label="Previous image"
+                                    className={twMerge(
+                                        "bg-card-bg/70 text-text-primary hover:bg-card-bg hover:text-highlight border-card-border absolute top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition-colors duration-200",
+                                        "left-4"
+                                    )}
+                                >
+                                    <i className="material-symbols-outlined text-xs">
+                                        chevron_left
+                                    </i>
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => showImage(selectedIndex + 1)}
+                                    aria-label="Next image"
+                                    className={twMerge(
+                                        "bg-card-bg/70 text-text-primary hover:bg-card-bg hover:text-highlight border-card-border absolute top-1/2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition-colors duration-200",
+                                        "right-4"
+                                    )}
+                                >
+                                    <i className="material-symbols-outlined text-xs">
+                                        chevron_right
+                                    </i>
+                                </button>
+                                <span className="bg-card-bg/70 text-text-primary border-card-border absolute right-4 bottom-4 rounded-md border px-2 py-0.5 font-mono text-[11px] tracking-wide backdrop-blur">
+                                    {selectedIndex + 1} of {images.length}
+                                </span>
+                            </>
+                        )}
+                    </div>
+                )}
             </Section>
             {/* Blog posts written about this project, hidden when there are none */}
             {relatedBlogs.length > 0 && (

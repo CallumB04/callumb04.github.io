@@ -21,6 +21,10 @@ const BlogPostPageSection = ({
 
     // parse markdown file
     useEffect(() => {
+        // image sections carry no markdown, and asking for one fetches
+        // /text/undefined
+        if (!section.textFile) return;
+
         const loadMarkdown = async () => {
             const markdown = await loadBlogPostMarkdown(
                 "/blogs/" + blogSlug + "/text/" + section.textFile
