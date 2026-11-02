@@ -6,6 +6,7 @@ export interface RelatedLink {
     icon: string; // material symbol
     label: string;
     to: string;
+    download?: boolean; // a static file rather than a route
 }
 
 interface RelatedLinksProps {
@@ -13,9 +14,9 @@ interface RelatedLinksProps {
     heading?: string; // omit when each label already describes itself
 }
 
-// Quiet cross-references to other pages on this site. Deliberately lighter
-// than RedirectIcon / RedirectLabel, which are reserved for actions and
-// outbound links (Github, Live Site, Email me, View Credential).
+// Quiet cross-references to other pages on this site, and to files it serves.
+// Deliberately lighter than RedirectIcon / RedirectLabel, which are reserved
+// for outbound links (Github, Live Site, Email me, View Credential).
 const RelatedLinks = ({ links, heading }: RelatedLinksProps) => {
     if (links.length === 0) {
         return null;
@@ -35,23 +36,50 @@ const RelatedLinks = ({ links, heading }: RelatedLinksProps) => {
                 </Text>
             )}
             <div className="flex flex-col gap-0.5">
-                {links.map((l) => (
-                    <Link
-                        key={l.to + l.label}
-                        to={l.to}
-                        className="group hover:bg-card-bg-elevated -mx-2 flex w-fit max-w-full items-start gap-2 rounded px-2 py-1 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <Icon
-                            variant="highlight"
-                            icon={l.icon}
-                            className="shrink-0 text-xs leading-5"
-                        />
-                        <Text variant="secondary" redirect className="text-sm">
-                            {l.label}
-                        </Text>
-                    </Link>
-                ))}
+                {links.map((l) => {
+                    const className =
+                        "group hover:bg-card-bg-elevated -mx-2 flex w-fit max-w-full items-start gap-2 rounded px-2 py-1 transition-colors";
+                    const stop = (e: React.MouseEvent) => e.stopPropagation();
+                    const body = (
+                        <>
+                            <Icon
+                                variant="highlight"
+                                icon={l.icon}
+                                className="shrink-0 text-xs leading-5"
+                            />
+                            <Text
+                                variant="secondary"
+                                redirect
+                                className="text-sm"
+                            >
+                                {l.label}
+                            </Text>
+                        </>
+                    );
+
+                    // a download points at a static file, so it needs a plain
+                    // anchor - a router Link would be intercepted as a route
+                    return l.download ? (
+                        <a
+                            key={l.to + l.label}
+                            href={l.to}
+                            download
+                            className={className}
+                            onClick={stop}
+                        >
+                            {body}
+                        </a>
+                    ) : (
+                        <Link
+                            key={l.to + l.label}
+                            to={l.to}
+                            className={className}
+                            onClick={stop}
+                        >
+                            {body}
+                        </Link>
+                    );
+                })}
             </div>
         </div>
     );
