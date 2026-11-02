@@ -1,3 +1,4 @@
+import Button from "../../../components/Button/Button";
 import Card from "../../../components/Card/Card";
 import Icon from "../../../components/Icon/Icon";
 import Text from "../../../components/Text/Text";
@@ -77,15 +78,44 @@ const CertificationCard = ({
                         ))}
                     </div>
                 )}
-                {certification.credentialURL && (
-                    <RedirectLabel
-                        type="material"
-                        to={certification.credentialURL}
-                        icon="verified"
-                        label="View Credential"
-                        newTab
-                        className="w-max"
-                    />
+                {(certification.credentialURL ||
+                    certification.certificateFile) && (
+                    <div className="flex flex-wrap items-center gap-2">
+                        {certification.credentialURL && (
+                            <RedirectLabel
+                                type="material"
+                                to={certification.credentialURL}
+                                icon="verified"
+                                label="View Credential"
+                                newTab
+                                className="w-max"
+                            />
+                        )}
+                        {/* a plain anchor, not a router Link - the PDF is a
+                            static file rather than a route */}
+                        {certification.certificateFile && (
+                            <a
+                                href={
+                                    "/certificates/" +
+                                    certification.certificateFile
+                                }
+                                download
+                                onClick={(e) => e.stopPropagation()}
+                                className="w-max"
+                            >
+                                <Button
+                                    variant="secondary"
+                                    className="cursor-pointer"
+                                >
+                                    Download Certificate
+                                    <Icon
+                                        icon="download"
+                                        variant="button-secondary"
+                                    />
+                                </Button>
+                            </a>
+                        )}
+                    </div>
                 )}
                 {/* Blog posts written about this certification */}
                 <RelatedPosts posts={relatedPosts} />

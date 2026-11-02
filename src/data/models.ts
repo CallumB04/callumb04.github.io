@@ -63,4 +63,5 @@ export interface Certification {
     grade?: string; // e.g. Distinction
     details?: string[]; // bullet points
     credentialURL?: string; // link to the certificate itself
+    certificateFile?: string; // file name in /public/certificates/<file>
 }
