@@ -94,12 +94,12 @@ const CertificationCard = ({
                         heading="Certification"
                         links={[
                             {
-                                icon: "download",
-                                label: "Download certificate (PDF)",
+                                icon: "open_in_new",
+                                label: "View certificate (PDF)",
                                 to:
                                     "/certificates/" +
                                     certification.certificateFile,
-                                download: true,
+                                file: true,
                             },
                         ]}
                     />

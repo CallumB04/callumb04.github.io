@@ -6,7 +6,7 @@ export interface RelatedLink {
     icon: string; // material symbol
     label: string;
     to: string;
-    download?: boolean; // a static file rather than a route
+    file?: boolean; // a static file rather than a route, opened in a new tab
 }
 
 interface RelatedLinksProps {
@@ -57,13 +57,14 @@ const RelatedLinks = ({ links, heading }: RelatedLinksProps) => {
                         </>
                     );
 
-                    // a download points at a static file, so it needs a plain
-                    // anchor - a router Link would be intercepted as a route
-                    return l.download ? (
+                    // a file is served as-is rather than routed, so it needs
+                    // a plain anchor - a router Link would be intercepted
+                    return l.file ? (
                         <a
                             key={l.to + l.label}
                             href={l.to}
-                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={className}
                             onClick={stop}
                         >
