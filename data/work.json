@@ -9,21 +9,26 @@
                 "timeframe": "Aug 2026 - Current",
                 "role": "Software Developer",
                 "details": [
-                    "Migrating large low-code applications into full-code rebuilds, using Go and React",
-                    "Developing AI-powered features, including a personalised AI coach",
-                    "Owning technical and architectural decisions across the business"
+                    "Leading a full-code rebuild of LeadersLab, our primary web platform used by over 7,000 users across 35+ active client programmes, migrating every feature from low-code tools to React, Go and Supabase, alongside new features such as gamification to drive higher platform retention",
+                    "Built an extensive testing suite with CI/CD, running tests on every pull request and preventing failing changes from being merged, alongside strict branching and pull request guidelines for all development",
+                    "Built AI-assisted tooling that allows non-technical colleagues to create client workshops and reports - 200+ workshops built so far, taking 1-2 days of work across multiple people down to 1-2 hours for one person",
+                    "Owning all technical and architectural decisions across the business"
                 ],
-                "technologies": ["react", "go", "docker", "supabase"]
+                "technologies": ["react", "go", "supabase", "docker"]
             },
             {
                 "id": "10x-apprentice-software-developer",
                 "timeframe": "Jan 2025 - Aug 2026",
                 "role": "Apprentice Software Developer",
                 "details": [
-                    "Primarily worked with low-code technologies such as Bubble.io and n8n",
-                    "Quickly gained team lead responsibilities - managing the product roadmap, delegating work, reporting team progress in company meetings, and mentoring team members"
+                    "Built 3 major features within my first 3 months, including a personalised AI leadership coach, and a mentoring service with live direct messaging",
+                    "Developed the AI coach into our primary product, using a vector database (Pinecone) for a bespoke user experience and AI voice chat through ElevenLabs - now used by hundreds of users across live client programmes, and creating a new revenue opportunity for the business",
+                    "Automated content creation using AI, turning recorded interviews into publishable content and video clips, taking multiple days of work down to a 30 minute background process",
+                    "Designed and implemented a new system for all development in the company, with rigorous testing and a development environment using realistic data, but no risk to live clients",
+                    "Became team lead and began mentoring a new apprentice developer after 7 months, delegating tasks, providing feedback and leading frequent 1-1 meetings",
+                    "Took full ownership of the product roadmap after the first year, presenting team progress and upcoming work in company meetings"
                 ],
-                "technologies": ["bubble", "n8n", "docker"]
+                "technologies": ["bubble", "n8n", "pinecone", "elevenlabs"]
             }
         ]
     },
@@ -36,8 +41,8 @@
                 "timeframe": "Oct 2024 - Jan 2025",
                 "role": "Freelance Web Developer",
                 "details": [
-                    "Developed commercial websites for real-world local businesses",
-                    "Connected with clients through Facebook and maintained frequent communication during the development process"
+                    "Developed 3 commercial websites for real-world local businesses",
+                    "Found and managed clients independently, and maintained frequent communication throughout the development process"
                 ],
                 "technologies": ["javascript", "tailwind"]
             }

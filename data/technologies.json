@@ -78,5 +78,11 @@
     "vercel": {
         "name": "Vercel",
         "devicon": "vercel-original"
+    },
+    "pinecone": {
+        "name": "Pinecone"
+    },
+    "elevenlabs": {
+        "name": "ElevenLabs"
     }
 }
