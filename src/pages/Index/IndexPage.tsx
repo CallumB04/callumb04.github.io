@@ -127,7 +127,7 @@ const IndexPage = () => {
                             />
                         </div>
                         {/* Download CV Button */}
-                        <a href="/CV.pdf" download className="w-full">
+                        <a href="/Callum_Burgoyne_CV.pdf" download className="w-full">
                             <Button
                                 variant="primary"
                                 maxWidth
