@@ -11,8 +11,7 @@
                 "details": [
                     "Leading a full-code rebuild of LeadersLab, our primary web platform used by over 7,000 users across 35+ active client programmes, migrating every feature from low-code tools to React, Go and Supabase, alongside new features such as gamification to drive higher platform retention",
                     "Built an extensive testing suite with CI/CD, running tests on every pull request and preventing failing changes from being merged, alongside strict branching and pull request guidelines for all development",
-                    "Built AI-assisted tooling that allows non-technical colleagues to create client workshops and reports - 200+ workshops built so far, taking 1-2 days of work across multiple people down to 1-2 hours for one person",
-                    "Owning all technical and architectural decisions across the business"
+                    "Built AI-assisted tooling that allows non-technical colleagues to create client workshops and reports - 200+ workshops built so far, taking 1-2 days of work across multiple people down to 1-2 hours for one person"
                 ],
                 "technologies": ["react", "go", "supabase", "docker"]
             },
@@ -23,7 +22,6 @@
                 "details": [
                     "Built an AI leadership coach, turning it into our primary product, using a vector database (Pinecone) for a bespoke user experience and AI voice chat through ElevenLabs - now used by hundreds of users across live client programmes, and creating a new revenue opportunity for the business",
                     "Automated content creation using AI, turning recorded interviews into publishable content and video clips, taking multiple days of work down to a 30 minute background process",
-                    "Designed and implemented a new system for all development in the company, with rigorous testing and a development environment using realistic data, but no risk to live clients",
                     "Became team lead + product owner and began mentoring a new apprentice developer after 7 months, delegating tasks, providing feedback and leading frequent 1-1 meetings, whilst presenting progress to the wider team in company meetings"
                 ],
                 "technologies": ["bubble", "n8n", "pinecone", "elevenlabs"]
