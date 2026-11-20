@@ -93,18 +93,20 @@ const ProjectsPage = () => {
                                     {/* Body */}
                                     <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:flex-wrap sm:gap-x-8">
                                         <div className="flex flex-col gap-3">
-                                            {/* Status, Title and summary */}
+                                            {/* Title with its status beside it, and summary */}
                                             <div className="flex flex-col gap-1">
-                                                <ProjectStatus
-                                                    status={p.status}
-                                                />
-                                                <Text
-                                                    as="h3"
-                                                    variant="primary"
-                                                    className="group-hover/card:text-highlight-soft text-lg font-semibold transition-colors duration-300"
-                                                >
-                                                    {p.title}
-                                                </Text>
+                                                <div className="flex flex-wrap items-baseline gap-x-3">
+                                                    <Text
+                                                        as="h3"
+                                                        variant="primary"
+                                                        className="group-hover/card:text-highlight-soft text-lg font-semibold transition-colors duration-300"
+                                                    >
+                                                        {p.title}
+                                                    </Text>
+                                                    <ProjectStatus
+                                                        status={p.status}
+                                                    />
+                                                </div>
                                                 <Text
                                                     variant="secondary"
                                                     className="text-sm"

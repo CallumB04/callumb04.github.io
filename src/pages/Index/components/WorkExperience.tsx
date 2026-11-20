@@ -4,6 +4,7 @@ import Icon from "../../../components/Icon/Icon";
 import Skill from "../../../components/Skill/Skill";
 import Text from "../../../components/Text/Text";
 import RelatedPosts from "../../../components/RelatedPosts/RelatedPosts";
+import Timeframe from "../../../components/Timeframe/Timeframe";
 import type { BlogPost, WorkRole, Workplace } from "../../../data/models";
 
 interface WorkExperienceProps {
@@ -11,16 +12,6 @@ interface WorkExperienceProps {
     blogPosts: BlogPost[]; // all posts, filtered per role by relatedRole
     isLast?: boolean;
 }
-
-// Timeframe badge, e.g. "Jan 2025 - Current"
-const Timeframe = ({ timeframe }: { timeframe: string }) => (
-    <span className="bg-card-bg-elevated text-text-tertiary border-card-border mb-1 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums">
-        <i className="material-symbols-outlined" style={{ fontSize: "14px" }}>
-            calendar_month
-        </i>
-        {timeframe}
-    </span>
-);
 
 const RoleDetails = ({
     role,
@@ -110,20 +101,23 @@ const WorkExperience = ({
                     />
                     {/* Job Info */}
                     <div className="flex w-full flex-col gap-0.5">
-                        <Timeframe
-                            timeframe={
-                                isMultiRole
-                                    ? combinedTimeframe(roles)
-                                    : roles[0].timeframe
-                            }
-                        />
-                        <Text
-                            as="h3"
-                            variant="primary"
-                            className="font-semibold"
-                        >
-                            {workplace}
-                        </Text>
+                        {/* Workplace, with its dates opposite on wider screens */}
+                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                            <Text
+                                as="h3"
+                                variant="primary"
+                                className="font-semibold"
+                            >
+                                {workplace}
+                            </Text>
+                            <Timeframe
+                                timeframe={
+                                    isMultiRole
+                                        ? combinedTimeframe(roles)
+                                        : roles[0].timeframe
+                                }
+                            />
+                        </div>
                         {!isMultiRole && (
                             <Text variant="secondary" className="text-sm">
                                 {roles[0].role}
@@ -145,18 +139,18 @@ const WorkExperience = ({
                                 key={r.id}
                                 className="flex w-full flex-col gap-0.5"
                             >
-                                <Text
-                                    variant="primary"
-                                    className="text-sm font-semibold"
-                                >
-                                    {r.role}
-                                </Text>
-                                <Text
-                                    variant="secondary"
-                                    className="text-text-tertiary mt-0.5 mb-1.5 text-xs font-medium tabular-nums"
-                                >
-                                    {r.timeframe}
-                                </Text>
+                                <div className="mb-1.5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                                    <Text
+                                        variant="primary"
+                                        className="text-sm font-semibold"
+                                    >
+                                        {r.role}
+                                    </Text>
+                                    <Timeframe
+                                        timeframe={r.timeframe}
+                                        className="text-[13px]"
+                                    />
+                                </div>
                                 <RoleDetails role={r} blogPosts={blogPosts} />
                             </div>
                         ))}

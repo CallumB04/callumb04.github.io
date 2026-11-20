@@ -4,6 +4,7 @@ import Text from "../../../components/Text/Text";
 import RedirectLabel from "../../../components/Icon/RedirectLabel";
 import RelatedLinks from "../../../components/RelatedLinks/RelatedLinks";
 import RelatedPosts from "../../../components/RelatedPosts/RelatedPosts";
+import Timeframe from "../../../components/Timeframe/Timeframe";
 import type { BlogPost, Certification } from "../../../data/models";
 
 interface CertificationCardProps {
@@ -31,33 +32,21 @@ const CertificationCard = ({
                 />
                 {/* Certification info */}
                 <div className="flex w-full flex-col gap-0.5">
-                    <span className="mb-1 flex flex-wrap items-center gap-2">
-                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums">
-                            <i
-                                className="material-symbols-outlined"
-                                style={{ fontSize: "14px" }}
-                            >
-                                calendar_month
-                            </i>
-                            {certification.date}
-                        </span>
-                        {certification.grade && (
-                            <span className="bg-highlight/10 text-highlight border-highlight/30 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums">
-                                <i
-                                    className="material-symbols-outlined"
-                                    style={{ fontSize: "14px" }}
-                                >
-                                    workspace_premium
-                                </i>
-                                {certification.grade}
-                            </span>
-                        )}
-                    </span>
-                    <Text as="h3" variant="primary" className="font-semibold">
-                        {certification.title}
-                    </Text>
+                    {/* Title, with the completion date opposite on wider screens */}
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                        <Text
+                            as="h3"
+                            variant="primary"
+                            className="font-semibold"
+                        >
+                            {certification.title}
+                        </Text>
+                        <Timeframe timeframe={certification.date} />
+                    </div>
                     <Text variant="secondary" className="text-sm">
                         {certification.issuer}
+                        {certification.grade &&
+                            ", awarded with " + certification.grade}
                     </Text>
                 </div>
             </div>
