@@ -45,7 +45,7 @@ const HeroPhoto = ({ className }: { className?: string }) => (
 );
 
 const IndexPage = () => {
-    usePageTitle("Callum Burgoyne | Software Developer");
+    usePageTitle("Callum Burgoyne | Full-Stack Web Developer");
 
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
@@ -134,7 +134,7 @@ const IndexPage = () => {
                         {/* Personal details */}
                         <div className="flex flex-col gap-4">
                             <PersonalDetail
-                                text="Software Developer"
+                                text="Full-Stack Web Developer"
                                 icon="code"
                             />
                             <PersonalDetail text="10X Managers" icon="work" />
