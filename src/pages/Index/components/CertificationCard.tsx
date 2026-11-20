@@ -24,7 +24,7 @@ const CertificationCard = ({
 
     return (
         <Card className="flex w-full flex-col gap-3">
-            <div className="flex w-full flex-row-reverse gap-4 sm:flex-row">
+            <div className="flex w-full flex-row-reverse items-center gap-4 sm:flex-row">
                 <img
                     src={"/cert_logos/" + certification.issuerLogo}
                     alt={certification.issuer + " logo"}
