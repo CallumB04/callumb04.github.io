@@ -14,7 +14,7 @@ interface WorkExperienceProps {
 
 // Timeframe badge, e.g. "Jan 2025 - Current"
 const Timeframe = ({ timeframe }: { timeframe: string }) => (
-    <span className="bg-card-bg-elevated text-text-tertiary border-card-border mb-1 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
+    <span className="bg-card-bg-elevated text-text-tertiary border-card-border mb-1 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums">
         <i className="material-symbols-outlined" style={{ fontSize: "14px" }}>
             calendar_month
         </i>
@@ -105,7 +105,8 @@ const WorkExperience = ({
                 <div className="flex w-full flex-row-reverse gap-4 sm:flex-row">
                     <img
                         src={"/work_logos/" + workLogo}
-                        className="border-card-border size-14 rounded-full border"
+                        alt={workplace + " logo"}
+                        className="border-card-border size-14 shrink-0 rounded-full border"
                     />
                     {/* Job Info */}
                     <div className="flex w-full flex-col gap-0.5">
@@ -116,7 +117,11 @@ const WorkExperience = ({
                                     : roles[0].timeframe
                             }
                         />
-                        <Text variant="primary" className="font-semibold">
+                        <Text
+                            as="h3"
+                            variant="primary"
+                            className="font-semibold"
+                        >
                             {workplace}
                         </Text>
                         {!isMultiRole && (
@@ -148,7 +153,7 @@ const WorkExperience = ({
                                 </Text>
                                 <Text
                                     variant="secondary"
-                                    className="text-text-tertiary mt-0.5 mb-1.5 font-mono text-[11px] tracking-wide"
+                                    className="text-text-tertiary mt-0.5 mb-1.5 text-xs font-medium tabular-nums"
                                 >
                                     {r.timeframe}
                                 </Text>

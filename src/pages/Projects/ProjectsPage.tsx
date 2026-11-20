@@ -14,7 +14,8 @@ import RelatedPosts from "../../components/RelatedPosts/RelatedPosts";
 import { twMerge } from "tailwind-merge";
 
 const TIMELINE_DOT_CLASSES: Record<ProjectStatusType, string> = {
-    finished: "bg-emerald-400",
+    live: "bg-emerald-400 animate-timeline-pulse [--pulse-rgb:52_211_153]",
+    finished: "bg-violet-300",
     "in-progress": "bg-highlight animate-timeline-pulse",
     "on-hold": "bg-amber-400",
     discontinued: "bg-card-border-hover",
@@ -51,7 +52,7 @@ const ProjectsPage = () => {
 
     return (
         <main>
-            <Section header="My Projects">
+            <Section header="Projects">
                 {/* project timeline */}
                 <div className="flex flex-col">
                     {projects.map((p, i) => {
@@ -83,7 +84,8 @@ const ProjectsPage = () => {
                                     <div className="relative hidden aspect-[7/1] w-full overflow-hidden rounded-t-md sm:block">
                                         <img
                                             src={`/project_images/${p.slug}/banner.png`}
-                                            className="size-full object-cover"
+                                            alt=""
+                                            className="size-full object-cover transition-transform duration-700 ease-(--ease-out-soft) group-hover/card:scale-[1.03]"
                                             loading="lazy"
                                         />
                                         <div className="from-card-bg/70 via-card-bg/20 absolute inset-0 bg-gradient-to-t to-transparent"></div>
@@ -97,8 +99,9 @@ const ProjectsPage = () => {
                                                     status={p.status}
                                                 />
                                                 <Text
+                                                    as="h3"
                                                     variant="primary"
-                                                    className="text-lg font-semibold"
+                                                    className="group-hover/card:text-highlight-soft text-lg font-semibold transition-colors duration-300"
                                                 >
                                                     {p.title}
                                                 </Text>
@@ -142,7 +145,7 @@ const ProjectsPage = () => {
                                                         }
                                                         icon="github-original"
                                                         newTab
-                                                        hoverText="Github"
+                                                        hoverText="GitHub"
                                                         className="hidden sm:flex"
                                                     />
                                                     <RedirectLabel
@@ -152,7 +155,7 @@ const ProjectsPage = () => {
                                                             p.githubRepo
                                                         }
                                                         icon="github-original"
-                                                        label="Github"
+                                                        label="GitHub"
                                                         newTab
                                                         className="sm:hidden"
                                                     />

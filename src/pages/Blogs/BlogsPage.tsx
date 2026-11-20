@@ -40,7 +40,7 @@ const BlogsPage = () => {
 
     return (
         <main>
-            <Section header="My Blogs">
+            <Section header="Blog posts">
                 {/* list of blogs */}
                 <div className="flex flex-col gap-3">
                     {blogs.map((b) => (

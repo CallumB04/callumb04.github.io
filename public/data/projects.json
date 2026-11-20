@@ -17,7 +17,7 @@
             "docker",
             "vercel"
         ],
-        "status": "in-progress",
+        "status": "live",
         "images": [
             "home.png",
             "game.png",

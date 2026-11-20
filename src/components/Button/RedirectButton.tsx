@@ -28,10 +28,11 @@ const RedirectButton = ({
     return (
         <Link
             to={to}
+            // only sizing belongs on the link - the rest of className styles
+            // the button, and applying it to both doubles up the padding
             className={twMerge(
                 maxWidth ? "w-full" : "",
-                maxWidthMobile ? "w-full sm:w-max" : "",
-                className
+                maxWidthMobile ? "w-full sm:w-max" : ""
             )}
         >
             <Button

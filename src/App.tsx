@@ -9,6 +9,7 @@ import Navbar from "./layout/Navbar/Navbar";
 import ProjectsPage from "./pages/Projects/ProjectsPage";
 import { Particles } from "./layout/Particles/Particles";
 import ContactPage from "./pages/Contact/ContactPage";
+import Footer from "./layout/Footer/Footer";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     );
 }

@@ -27,9 +27,9 @@ const BlogPostContents = ({
         <>
             <Text
                 variant="secondary"
-                className="text-xs font-semibold tracking-[0.2em] uppercase"
+                className="text-text-primary text-sm font-semibold"
             >
-                <span className="text-highlight">#</span> Contents
+                Contents
             </Text>
             {/* the track runs the height of the list, and the active link
                 thickens its own slice of it */}
@@ -52,7 +52,7 @@ const BlogPostContents = ({
                             <Text
                                 variant="secondary"
                                 className={twMerge(
-                                    "font-mono text-[11px] transition-colors duration-200",
+                                    "text-xs font-medium tabular-nums transition-colors duration-200",
                                     isActive
                                         ? "text-highlight"
                                         : "text-text-tertiary group-hover:text-highlight"

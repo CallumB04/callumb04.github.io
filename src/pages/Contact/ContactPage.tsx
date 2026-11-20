@@ -1,36 +1,23 @@
-import { useState } from "react";
-import Icon from "../../components/Icon/Icon";
 import RedirectIcon from "../../components/Icon/RedirectIcon";
 import RedirectLabel from "../../components/Icon/RedirectLabel";
 import Text from "../../components/Text/Text";
 import usePageTitle from "../../hooks/usePageTitle";
-
-const EMAIL = "burgoynecallum04@gmail.com";
+import CopyEmail, { EMAIL } from "../../components/CopyEmail/CopyEmail";
 
 const ContactPage = () => {
     usePageTitle("Contact Me | Callum Burgoyne");
 
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = async () => {
-        try {
-            await navigator.clipboard.writeText(EMAIL);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        } catch {
-            // no-op
-        }
-    };
-
     return (
         <main className="relative z-20 mx-auto mt-0! flex h-screen max-w-max flex-col items-center justify-center gap-6! px-2 text-center sm:gap-8! sm:px-4">
-            <div className="flex flex-col items-center gap-3 sm:gap-4">
+            <div className="intro flex flex-col items-center gap-3 sm:gap-4">
                 {/* Image of me */}
                 <img
                     src="/work_logos/freelance.jpg"
-                    className="border-card-border size-24 rounded-full border-2 sm:size-32"
+                    alt="Callum Burgoyne"
+                    className="border-card-border ring-highlight/20 ring-offset-page-bg size-24 rounded-full border-2 ring-1 ring-offset-4 sm:size-32"
                 />
                 <Text
+                    as="h1"
                     variant="primary"
                     className="text-3xl font-semibold sm:text-4xl"
                 >
@@ -42,21 +29,7 @@ const ContactPage = () => {
             </div>
 
             {/* Copy email */}
-            <button
-                onClick={handleCopy}
-                className="group border-card-border bg-card-bg hover:border-highlight hover:shadow-highlight/20 relative flex cursor-pointer items-center gap-2 rounded-md border px-4 py-2.5 font-mono text-xs font-medium transition-all hover:shadow-lg sm:text-sm"
-            >
-                <Icon
-                    icon={copied ? "check" : "content_copy"}
-                    variant={copied ? "highlight" : "primary"}
-                    className="text-xs"
-                />
-                <span
-                    className={copied ? "text-highlight" : "text-text-primary"}
-                >
-                    {copied ? "Copied to clipboard!" : EMAIL}
-                </span>
-            </button>
+            <CopyEmail />
 
             {/* Socials */}
             <span className="flex flex-wrap justify-center gap-2 sm:gap-3">
@@ -64,7 +37,7 @@ const ContactPage = () => {
                     type="devicon"
                     to="https://github.com/CallumB04"
                     icon="github-original"
-                    hoverText="Github"
+                    hoverText="GitHub"
                     newTab
                     className="hidden size-11 sm:flex"
                     iconClassName="text-[26px]"
@@ -73,7 +46,7 @@ const ContactPage = () => {
                     type="devicon"
                     to="https://github.com/CallumB04"
                     icon="github-original"
-                    label="Github"
+                    label="GitHub"
                     newTab
                     className="sm:hidden"
                 />
@@ -81,7 +54,7 @@ const ContactPage = () => {
                     type="devicon"
                     to="https://www.linkedin.com/in/callum-burgoyne-1b411a324/"
                     icon="linkedin-plain"
-                    hoverText="Linkedin"
+                    hoverText="LinkedIn"
                     newTab
                     className="hidden size-11 sm:flex"
                     iconClassName="text-2xl"
@@ -90,7 +63,7 @@ const ContactPage = () => {
                     type="devicon"
                     to="https://www.linkedin.com/in/callum-burgoyne-1b411a324/"
                     icon="linkedin-plain"
-                    label="Linkedin"
+                    label="LinkedIn"
                     newTab
                     className="sm:hidden"
                 />

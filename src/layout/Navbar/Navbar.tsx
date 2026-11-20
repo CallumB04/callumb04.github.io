@@ -52,9 +52,13 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <nav className="bg-page-bg h-navbar-height border-layout-border fixed top-0 left-0 z-99 flex w-screen items-center justify-center border-b px-4 sm:left-1/2 sm:w-fit sm:-translate-x-1/2 sm:items-end sm:border-b-0 sm:bg-transparent">
-            {/* Navbar Items */}
-            <span className="sm:bg-navbar-bg flex w-full max-w-80 items-center justify-between rounded-full sm:w-max sm:justify-center sm:py-1">
+        <nav
+            aria-label="Main"
+            className="bg-page-bg/85 h-navbar-height border-layout-border fixed top-0 left-0 z-99 flex w-screen items-center justify-center border-b px-4 backdrop-blur-md sm:left-1/2 sm:w-fit sm:-translate-x-1/2 sm:items-end sm:border-b-0 sm:bg-transparent sm:backdrop-blur-none"
+        >
+            {/* Navbar Items (z-95 keeps their hover labels above the
+                "Return to all" pill below - the blur traps them otherwise) */}
+            <span className="sm:bg-navbar-bg/75 sm:border-card-border relative z-95 flex w-full max-w-80 items-center justify-between rounded-full sm:w-max sm:justify-center sm:border sm:py-1 sm:shadow-lg sm:shadow-black/30 sm:backdrop-blur-md">
                 <NavbarItem text="Home" icon="home" to="/" />
                 <NavbarItem text="Projects" icon="folder_open" to="/projects" />
                 <NavbarItem text="Work" icon="work" to="/#work" />
@@ -64,7 +68,7 @@ const Navbar = () => {
             {/* Optional floating navbar item, for returning back to all projects/blogs pages */}
             {(location.pathname.includes("/projects/") ||
                 location.pathname.includes("/blogs/")) && (
-                <span className="bg-navbar-bg absolute -bottom-16 z-90 hidden w-max items-center gap-2 rounded-full p-2 sm:flex">
+                <span className="bg-navbar-bg/75 border-card-border absolute -bottom-16 z-90 hidden w-max items-center gap-2 rounded-full border p-2 shadow-lg shadow-black/30 backdrop-blur-md sm:flex">
                     <NavbarItem
                         className="sm:px-2"
                         text={

@@ -10,23 +10,24 @@ const NotFoundPage = () => {
             <div className="flex flex-col gap-2">
                 <Text
                     variant="highlight-soft"
-                    className="text-8xl font-medium tracking-wide sm:text-9xl"
+                    className="font-display text-8xl font-medium tracking-tight sm:text-9xl"
                 >
                     404
                 </Text>
                 <Text
-                    variant="highlight-soft"
+                    as="h1"
+                    variant="primary"
                     className="text-2xl font-medium sm:text-3xl"
                 >
-                    PAGE NOT FOUND
+                    Page not found
                 </Text>
             </div>
             <Text variant="secondary" className="px-4 text-sm sm:text-base">
-                The page you are looking for does not exist or is currently
-                unavailable...
+                This page doesn't exist. The link may be out of date, or the
+                address mistyped.
             </Text>
             <RedirectButton to="/" maxWidthMobile>
-                Return to Portfolio{" "}
+                Back to the homepage
                 <Icon icon="keyboard_return" variant="button-primary" />
             </RedirectButton>
         </main>

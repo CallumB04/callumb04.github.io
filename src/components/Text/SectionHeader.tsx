@@ -8,8 +8,9 @@ interface SectionHeaderProps {
 const SectionHeader = ({ children }: SectionHeaderProps) => {
     return (
         <Text
-            variant="secondary"
-            className="text-xs font-semibold tracking-[0.2em] uppercase sm:text-sm"
+            as="h2"
+            variant="primary"
+            className="text-lg font-semibold sm:text-xl"
         >
             {children}
         </Text>

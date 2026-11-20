@@ -37,7 +37,8 @@ const BlogPostCard = ({
             <div className="relative hidden aspect-7/1 w-full overflow-hidden rounded-t-md sm:block">
                 <img
                     src={`/blogs/${post.slug}/banner.png`}
-                    className="size-full object-cover"
+                    alt=""
+                    className="size-full object-cover transition-transform duration-700 ease-(--ease-out-soft) group-hover/card:scale-[1.03]"
                     loading="lazy"
                 />
                 <div className="from-card-bg/70 via-card-bg/20 absolute inset-0 bg-linear-to-t to-transparent"></div>
@@ -49,13 +50,14 @@ const BlogPostCard = ({
                     <div className="flex flex-col gap-1">
                         <Text
                             variant="secondary"
-                            className="text-text-tertiary font-mono text-[11px] tracking-wide"
+                            className="text-text-tertiary text-xs font-medium tabular-nums"
                         >
                             {post.date}
                         </Text>
                         <Text
+                            as="h3"
                             variant="primary"
-                            className="text-lg font-semibold"
+                            className="group-hover/card:text-highlight-soft text-lg font-semibold transition-colors duration-300"
                         >
                             {post.title}
                         </Text>

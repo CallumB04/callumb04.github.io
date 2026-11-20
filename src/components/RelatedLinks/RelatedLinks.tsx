@@ -30,7 +30,7 @@ const RelatedLinks = ({ links, heading }: RelatedLinksProps) => {
             {heading && (
                 <Text
                     variant="secondary"
-                    className="text-text-tertiary font-mono text-[11px] tracking-wide"
+                    className="text-text-tertiary text-xs font-medium"
                 >
                     {heading}
                 </Text>

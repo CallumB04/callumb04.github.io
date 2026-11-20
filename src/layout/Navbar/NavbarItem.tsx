@@ -27,8 +27,7 @@ const NavbarItem = ({
             const [path, hash] = to.split("#");
             const targetPath = path || "/";
             return (
-                location.pathname === targetPath &&
-                location.hash === "#" + hash
+                location.pathname === targetPath && location.hash === "#" + hash
             );
         }
         // Home — only active if on / with no hash
@@ -45,6 +44,8 @@ const NavbarItem = ({
     return (
         <Link
             to={to}
+            aria-label={text}
+            aria-current={isActive ? "page" : undefined}
             className={twMerge(
                 "group/navitem relative flex items-center px-2 py-2 sm:px-5",
                 className
@@ -63,9 +64,10 @@ const NavbarItem = ({
                 <span className="bg-highlight absolute -bottom-0.5 left-1/2 size-1 -translate-x-1/2 rounded-full sm:-bottom-1"></span>
             )}
             <Text
+                as="span"
                 variant="primary"
                 redirect
-                className="bg-navbar-bg pointer-events-none absolute bottom-0 left-1/2 z-99 w-max -translate-x-1/2 rounded-full px-2 py-1 text-sm font-medium opacity-0 transition-all duration-250 ease-in-out sm:group-hover/navitem:-bottom-11 sm:group-hover/navitem:opacity-100"
+                className="bg-navbar-bg border-card-border pointer-events-none absolute bottom-0 left-1/2 z-99 w-max -translate-x-1/2 rounded-full border px-2 py-1 text-sm font-medium opacity-0 transition-all duration-250 ease-in-out sm:group-hover/navitem:-bottom-11 sm:group-hover/navitem:opacity-100"
             >
                 {text}
             </Text>

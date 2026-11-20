@@ -1,4 +1,5 @@
 export type ProjectStatusType =
+    | "live" // released with real users, still being worked on
     | "finished"
     | "in-progress"
     | "on-hold"

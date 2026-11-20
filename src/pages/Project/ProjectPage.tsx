@@ -85,10 +85,11 @@ const ProjectPage = () => {
 
     return (
         <main className="gap-10! sm:gap-12!">
-            <Section header="Info">
+            <Section>
                 <div className="flex flex-col gap-2">
                     {/* Title */}
                     <Text
+                        as="h1"
                         variant="primary"
                         className="text-4xl leading-tight font-semibold sm:text-5xl"
                     >
@@ -114,7 +115,7 @@ const ProjectPage = () => {
                                 type="devicon"
                                 to={"https://github.com/" + project.githubRepo}
                                 icon="github-original"
-                                label="View on Github"
+                                label="View on GitHub"
                                 newTab
                             />
                         )}
@@ -219,7 +220,7 @@ const ProjectPage = () => {
                                         chevron_right
                                     </i>
                                 </button>
-                                <span className="bg-card-bg/70 text-text-primary border-card-border absolute right-4 bottom-4 rounded-md border px-2 py-0.5 font-mono text-[11px] tracking-wide backdrop-blur">
+                                <span className="bg-card-bg/70 text-text-primary border-card-border absolute right-4 bottom-4 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums backdrop-blur">
                                     {selectedIndex + 1} of {images.length}
                                 </span>
                             </>
@@ -230,7 +231,7 @@ const ProjectPage = () => {
             {/* Blog posts written about this project, hidden when there are none */}
             {relatedBlogs.length > 0 && (
                 <Section
-                    header="Blog Posts"
+                    header="Blog posts"
                     redirect={{ text: "View all", to: "/blogs" }}
                 >
                     <div className="flex flex-col gap-3">

@@ -10,22 +10,29 @@ interface StatusStyle {
 }
 
 const STATUS_STYLES: Record<ProjectStatusType, StatusStyle> = {
-    finished: {
-        label: "Finished",
-        dot: "bg-emerald-400",
+    live: {
+        label: "Live",
+        dot: "bg-emerald-400 animate-pulse",
         bg: "bg-emerald-400/10",
         text: "text-emerald-400",
         border: "border-emerald-400/30",
     },
+    finished: {
+        label: "Finished",
+        dot: "bg-violet-300",
+        bg: "bg-violet-300/10",
+        text: "text-violet-300",
+        border: "border-violet-300/30",
+    },
     "in-progress": {
-        label: "In Progress",
+        label: "In progress",
         dot: "bg-highlight animate-pulse",
         bg: "bg-highlight/10",
         text: "text-highlight",
         border: "border-highlight/30",
     },
     "on-hold": {
-        label: "On Hold",
+        label: "On hold",
         dot: "bg-amber-400",
         bg: "bg-amber-400/10",
         text: "text-amber-400",
@@ -54,13 +61,13 @@ const ProjectStatus = ({
     const s = STATUS_STYLES[status];
     const sizeClasses =
         size === "md"
-            ? "gap-1.5 px-2 py-0.5 text-[11px] sm:gap-2 sm:px-2.5 sm:py-1 sm:text-[13px]"
-            : "gap-1.5 px-2 py-0.5 text-[11px]";
+            ? "gap-1.5 px-2 py-0.5 text-xs sm:gap-2 sm:px-2.5 sm:py-1 sm:text-[13px]"
+            : "gap-1.5 px-2 py-0.5 text-xs";
     const dotSize = size === "md" ? "size-1.5 sm:size-2" : "size-1.5";
     return (
         <span
             className={twMerge(
-                "font-mono inline-flex w-max items-center rounded-md border font-medium tracking-wide",
+                "inline-flex w-max items-center rounded-md border font-semibold",
                 sizeClasses,
                 s.bg,
                 s.text,

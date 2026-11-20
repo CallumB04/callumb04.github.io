@@ -1,15 +1,23 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import SectionHeader from "../Text/SectionHeader";
 import RedirectText from "../Text/RedirectText";
+import { twMerge } from "tailwind-merge";
 
 interface SectionProps {
     children?: ReactNode;
-    header: string;
+    header?: string; // omit when the content opens with its own heading
     redirect?: { text: string; to: string };
     id?: string;
+    className?: string;
 }
 
-const Section = ({ children, header, redirect, id }: SectionProps) => {
+const Section = ({
+    children,
+    header,
+    redirect,
+    id,
+    className,
+}: SectionProps) => {
     const ref = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -36,16 +44,18 @@ const Section = ({ children, header, redirect, id }: SectionProps) => {
             id={id}
             ref={ref}
             data-reveal
-            className="z-20 flex flex-col gap-4 sm:gap-6"
+            className={twMerge("z-20 flex flex-col gap-4 sm:gap-6", className)}
         >
-            <span className="flex w-full items-center justify-between">
-                <SectionHeader>{header}</SectionHeader>
-                {redirect && (
-                    <RedirectText to={redirect.to}>
-                        {redirect.text}
-                    </RedirectText>
-                )}
-            </span>
+            {header && (
+                <span className="flex w-full items-baseline justify-between">
+                    <SectionHeader>{header}</SectionHeader>
+                    {redirect && (
+                        <RedirectText to={redirect.to}>
+                            {redirect.text}
+                        </RedirectText>
+                    )}
+                </span>
+            )}
             {children}
         </section>
     );

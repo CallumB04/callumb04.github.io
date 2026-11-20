@@ -80,16 +80,17 @@ const BlogPostPage = () => {
 
     return (
         <main>
-            <Section header="Blog Post">
+            <Section>
                 {/* Title and date */}
                 <div className="flex flex-col gap-2">
                     <Text
                         variant="secondary"
-                        className="text-text-tertiary font-mono text-[11px] tracking-wide sm:text-[13px]"
+                        className="text-text-tertiary text-xs font-medium tabular-nums sm:text-sm"
                     >
                         {blogPost?.date}
                     </Text>
                     <Text
+                        as="h1"
                         variant="primary"
                         className="text-4xl leading-tight font-semibold sm:text-5xl"
                     >

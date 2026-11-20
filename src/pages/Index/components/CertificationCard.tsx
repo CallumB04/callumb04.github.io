@@ -26,12 +26,13 @@ const CertificationCard = ({
             <div className="flex w-full flex-row-reverse gap-4 sm:flex-row">
                 <img
                     src={"/cert_logos/" + certification.issuerLogo}
-                    className="border-card-border size-14 rounded-full border"
+                    alt={certification.issuer + " logo"}
+                    className="border-card-border size-14 shrink-0 rounded-full border"
                 />
                 {/* Certification info */}
                 <div className="flex w-full flex-col gap-0.5">
                     <span className="mb-1 flex flex-wrap items-center gap-2">
-                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
+                        <span className="bg-card-bg-elevated text-text-tertiary border-card-border inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums">
                             <i
                                 className="material-symbols-outlined"
                                 style={{ fontSize: "14px" }}
@@ -41,7 +42,7 @@ const CertificationCard = ({
                             {certification.date}
                         </span>
                         {certification.grade && (
-                            <span className="bg-highlight/10 text-highlight border-highlight/30 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium tracking-wide">
+                            <span className="bg-highlight/10 text-highlight border-highlight/30 inline-flex w-max items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium tabular-nums">
                                 <i
                                     className="material-symbols-outlined"
                                     style={{ fontSize: "14px" }}
@@ -52,7 +53,7 @@ const CertificationCard = ({
                             </span>
                         )}
                     </span>
-                    <Text variant="primary" className="font-semibold">
+                    <Text as="h3" variant="primary" className="font-semibold">
                         {certification.title}
                     </Text>
                     <Text variant="secondary" className="text-sm">
